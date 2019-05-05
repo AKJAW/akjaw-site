@@ -1,5 +1,8 @@
 [
   {
+    "all":{
+      //TODO zdjęcia i wszystkie wspólne rzeczy
+    },
     "pl":{
       "name": "Logo-quiz web",
       "description": "no fajna apka"
