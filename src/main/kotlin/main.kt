@@ -1,10 +1,11 @@
 package akjaw
 
+import akjaw.HTML.SiteBuilder
+import akjaw.Repository.Repository
+
 fun main(args: Array<String>){
-    val pjp = ProjectJSONParser("data/projects.json")
-    val projects = pjp.getProjects()
-    println(projects)
-    projects.forEach {
-        println(it.translationList)
-    }
+    val projects = Repository("data/projects.json").getProjects()
+    val siteBuilder = SiteBuilder(projects)
+    val html = siteBuilder.build()
+    val s = 's'
 }

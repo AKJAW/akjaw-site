@@ -1,25 +1,25 @@
 [
   {
-    "all":{
-      //TODO zdjęcia i wszystkie wspólne rzeczy
-    },
-    "pl":{
-      "name": "Logo-quiz web",
-      "description": "no fajna apka"
-    },
-    "en":{
-      "name": "Logo-quiz web",
-      "description": "cool app"
+    "logo-quiz-web":{
+      "h1-name": "Logo-quiz web",
+      "div-description": {
+        "h2-1": {
+          "pl": "The biggest project I have worked on",
+          "en": "Największy projekt nad jakim pracowałem"
+        },
+        "p-1": "I was the solo developer on this project for the most part. Me and the owner had talks discussing the app development and any problems that i have encountered.",
+        "span-1": "Used technologies",
+        "ul-1": {
+          "li-1": "React",
+          "li-2": "Redux",
+          "li-3": "Firebase (Firestore and Auth)"
+        }
+      }
     }
   },
   {
-    "pl":{
-      "name": "akjTimer",
-      "description": "ayy"
-    },
-    "en":{
-      "name": "akjTimer",
-      "description": "lmaro"
+    "akj-timer":{
+      "h1-name": "Akj Timer"
     }
   }
 ]
