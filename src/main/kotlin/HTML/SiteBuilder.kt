@@ -4,8 +4,10 @@ import akjaw.Attributes
 import akjaw.HTMLBuilder
 import akjaw.Model.Project
 import akjaw.Repository.Repository
+import akjaw.Style
 import akjaw.Tag
 import com.beust.klaxon.JsonObject
+import java.lang.IllegalStateException
 
 class SiteBuilder(private val projects: List<Project>){
 
@@ -31,7 +33,9 @@ class SiteBuilder(private val projects: List<Project>){
         tag("body"){
             projects.map {
                 val s = 's'
-                getTag(it.projectData)
+                tag("div"){
+                    getTag(it.projectData)
+                }
 
             }
         }
@@ -41,19 +45,59 @@ class SiteBuilder(private val projects: List<Project>){
         if(jsonObject.keys.size == 0){
             val s = 's'
         }
-        if(jsonObject.keys.size == 1){
-            val name = jsonObject.keys.first().toString()
-            val (tagName, tagIndentificator) = name.split("-")
-
-            val tagClass = when{
-                tagIndentificator.toIntOrNull() == null -> tagIndentificator
-                else -> ""
-            }
-            return tag(name)
-        }
         jsonObject.keys.map {
-            getTag(jsonObject.obj(it)!!)
+
+            val parsed = jsonObject[it]
+            when(parsed){
+                is String -> {
+                    if(it == "pl" || it == "en"){
+                        getLanguageString(it, parsed)
+                    } else {
+                        getString(it, parsed)
+                    }
+                }
+                is JsonObject -> getTag(parsed)
+                else -> {
+                    val s = 's'
+                    throw IllegalStateException()
+                }
+            }
         }
+        return this
+    }
+
+    private fun Tag.getLanguageString(languageKey: String, value: String): Tag{
+        return tag("div"){
+            //            if(tagClass != null){
+//                + Style("class" to tagClass)
+//            }
+            + Attributes("class" to languageKey)
+        }
+    }
+
+    private fun Tag.getString(key: String, value: String): Tag{
+        val (tagName, tagClass) = parseJsonKey(key)
+        return tag(tagName){
+            if(tagClass != null){
+                + Attributes("class" to tagClass)
+            }
+        }
+    }
+
+    private fun parseJsonKey(key: String): Pair<String, String?> {
+        val splitted = key.split("-")
+        if(splitted.size == 1){
+            return splitted[0] to null
+        }
+        val tagName = splitted[0]
+        val tagClass: String = splitted[1]
+
+        return if(tagClass.toIntOrNull() != null){
+            tagName to null
+        } else {
+            tagName to tagClass
+        }
+
     }
 
 }
@@ -62,5 +106,6 @@ fun main(args: Array<String>){
     val projects = Repository("data/projects.json").getProjects()
     val siteBuilder = SiteBuilder(projects)
     val html = siteBuilder.build()
+    print(html)
     val s = 's'
 }
