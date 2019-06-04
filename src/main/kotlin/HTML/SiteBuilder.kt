@@ -32,7 +32,6 @@ class SiteBuilder(private val projects: List<Project>){
     private fun Tag.createBody(){
         tag("body"){
             projects.map {
-                val s = 's'
                 tag("div"){
                     getTag(it.projectData)
                 }
@@ -46,51 +45,61 @@ class SiteBuilder(private val projects: List<Project>){
             val s = 's'
         }
         jsonObject.keys.map {
-
-            val parsed = jsonObject[it]
-            when(parsed){
-                is String -> {
-                    if(it == "pl" || it == "en"){
-                        getLanguageString(it, parsed)
-                    } else {
-                        getString(it, parsed)
+                val parsed = jsonObject[it]
+                when(parsed){
+                    is String -> getString(it, parsed)
+                    is JsonObject -> getNestedTag(it, parsed)
+                    else -> {
+                        val s = 's'
+                        throw IllegalStateException()
                     }
                 }
-                is JsonObject -> getTag(parsed)
-                else -> {
-                    val s = 's'
-                    throw IllegalStateException()
-                }
-            }
         }
         return this
     }
 
+    private fun Tag.getNestedTag(key: String, parsed: JsonObject): Tag {
+        val (tagName, tagClass) = parseJsonKey(key)
+        return tag(tagName) {
+            if(tagClass != null){
+                + Attributes("class" to tagClass)
+            }
+            getTag(parsed)
+        }
+    }
+
+    private fun Tag.getString(key: String, value: String): Tag {
+        return if(key == "pl" || key == "en"){
+            getLanguageString(key, value)
+        } else {
+            getSimpleString(key, value)
+        }
+    }
+
     private fun Tag.getLanguageString(languageKey: String, value: String): Tag{
         return tag("div"){
-            //            if(tagClass != null){
-//                + Style("class" to tagClass)
-//            }
+            + value
             + Attributes("class" to languageKey)
         }
     }
 
-    private fun Tag.getString(key: String, value: String): Tag{
+    private fun Tag.getSimpleString(key: String, value: String): Tag{
         val (tagName, tagClass) = parseJsonKey(key)
         return tag(tagName){
+            + value
             if(tagClass != null){
                 + Attributes("class" to tagClass)
             }
+
         }
     }
 
     private fun parseJsonKey(key: String): Pair<String, String?> {
-        val splitted = key.split("-")
-        if(splitted.size == 1){
-            return splitted[0] to null
+        val split = key.split("-")
+        if(split.size == 1){
+            return split[0] to null
         }
-        val tagName = splitted[0]
-        val tagClass: String = splitted[1]
+        val (tagName, tagClass) = split
 
         return if(tagClass.toIntOrNull() != null){
             tagName to null
