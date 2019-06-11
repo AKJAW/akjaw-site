@@ -1,7 +1,9 @@
 package akjaw.HTML
 
 class Style(vararg rules: Pair<String, String>){
-    val rules = rules.joinToString("; ") {
-        "${it.first}:${it.second}"
+    private val rules = rules.joinToString("; ") {
+        "${it.first.toLowerCase()}:${it.second.toLowerCase()}"
     }
+
+    override fun toString(): String = rules
 }

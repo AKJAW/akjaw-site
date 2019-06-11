@@ -29,7 +29,7 @@ class Tag(name: String){
     }
 
     operator fun Style.unaryPlus() {
-        attributes.add(Attribute("style", this.rules))
+        attributes.add(Attribute("style", this.toString()))
     }
 
     operator fun Attributes.unaryPlus() {

@@ -7,6 +7,8 @@ class Attributes(vararg attributes: Pair<String, String>): Iterable<Attribute>{
 
     override fun iterator() = _attrs.iterator()
 
+    operator fun get(index: Int): Attribute = _attrs[index]
+
     fun add(attribute: Attribute){
         _attrs.add(attribute)
     }
@@ -22,6 +24,4 @@ class Attributes(vararg attributes: Pair<String, String>): Iterable<Attribute>{
             _attrs.joinToString(" ", " ")
         }
     }
-
-    operator fun get(index: Int): Attribute = _attrs[index]
 }
