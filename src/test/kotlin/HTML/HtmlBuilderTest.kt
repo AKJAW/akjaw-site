@@ -1,9 +1,9 @@
 package HTML
 
-import akjaw.Attribute
-import akjaw.Attributes
-import akjaw.HTMLBuilder
-import akjaw.Style
+import akjaw.HTML.Attribute
+import akjaw.HTML.Attributes
+import akjaw.HTML.HTMLBuilder
+import akjaw.HTML.Style
 import com.google.common.truth.Truth
 import org.junit.Test
 

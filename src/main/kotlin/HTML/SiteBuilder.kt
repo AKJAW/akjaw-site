@@ -1,11 +1,7 @@
 package akjaw.HTML
 
-import akjaw.Attributes
-import akjaw.HTMLBuilder
 import akjaw.Model.Project
 import akjaw.Repository.Repository
-import akjaw.Style
-import akjaw.Tag
 import com.beust.klaxon.JsonObject
 import java.lang.IllegalStateException
 
@@ -40,7 +36,7 @@ class SiteBuilder(private val projects: List<Project>){
         }
     }
 
-    private fun Tag.getTag(jsonObject: JsonObject): Tag{
+    private fun Tag.getTag(jsonObject: JsonObject): Tag {
         if(jsonObject.keys.size == 0){
             val s = 's'
         }
@@ -76,14 +72,14 @@ class SiteBuilder(private val projects: List<Project>){
         }
     }
 
-    private fun Tag.getLanguageString(languageKey: String, value: String): Tag{
+    private fun Tag.getLanguageString(languageKey: String, value: String): Tag {
         return tag("div"){
             + value
             + Attributes("class" to languageKey)
         }
     }
 
-    private fun Tag.getSimpleString(key: String, value: String): Tag{
+    private fun Tag.getSimpleString(key: String, value: String): Tag {
         val (tagName, tagClass) = parseJsonKey(key)
         return tag(tagName){
             + value

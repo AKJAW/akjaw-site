@@ -1,12 +1,9 @@
-package akjaw
+package akjaw.HTML
 
 class Attributes(vararg attributes: Pair<String, String>): Iterable<Attribute>{
-
     private val _attrs: MutableList<Attribute> = attributes.map {
         Attribute(it.first, it.second)
     }.toMutableList()
-
-    val attrs: List<Attribute> = _attrs
 
     override fun iterator() = _attrs.iterator()
 
@@ -14,8 +11,8 @@ class Attributes(vararg attributes: Pair<String, String>): Iterable<Attribute>{
         _attrs.add(attribute)
     }
 
-    fun addAll(collection: Collection<Attribute>){
-        _attrs.addAll(collection)
+    fun addAll(attributes: Attributes){
+        _attrs.addAll(attributes)
     }
 
     override fun toString(): String {
@@ -26,5 +23,5 @@ class Attributes(vararg attributes: Pair<String, String>): Iterable<Attribute>{
         }
     }
 
-    operator fun get(index: Int) = attrs[index]
+    operator fun get(index: Int): Attribute = _attrs[index]
 }

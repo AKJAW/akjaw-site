@@ -1,7 +1,7 @@
-package akjaw
+package akjaw.HTML
 
 object HTMLBuilder{
-    fun html(init: (Tag.() -> Unit)? = null): Tag{
+    fun html(init: (Tag.() -> Unit)? = null): Tag {
         return Tag("html").apply {
             init?.invoke(this)
         }
@@ -16,7 +16,7 @@ class Tag(name: String){
 
     fun tag(name: String, init: (Tag.() -> Unit)? = null) = initTag(Tag(name.toLowerCase()), init)
 
-    private fun initTag(tag: Tag, init: (Tag.() -> Unit)?): Tag{
+    private fun initTag(tag: Tag, init: (Tag.() -> Unit)?): Tag {
         if (init != null) {
             tag.init()
         }
@@ -33,7 +33,7 @@ class Tag(name: String){
     }
 
     operator fun Attributes.unaryPlus() {
-        attributes.addAll(this.attrs)
+        attributes.addAll(this)
     }
 
     fun toStringWithoutWhitespace(): String{
