@@ -1,7 +1,5 @@
 package akjaw
 
-import akjaw.Model.Translation
-
 object HTMLBuilder{
     fun html(init: (Tag.() -> Unit)? = null): Tag{
         return Tag("html").apply {
@@ -10,10 +8,11 @@ object HTMLBuilder{
     }
 }
 
-class Tag(private val name: String){
-    private val tagList = mutableListOf<Tag>()
-    private val attributes = mutableListOf<Attribute>()
-    private var textContent: String = ""
+class Tag(name: String){
+    val name = name.toLowerCase()
+    val tagList = mutableListOf<Tag>()
+    val attributes = Attributes()
+    var textContent: String = ""
 
     fun tag(name: String, init: (Tag.() -> Unit)? = null) = initTag(Tag(name.toLowerCase()), init)
 
@@ -26,7 +25,7 @@ class Tag(private val name: String){
     }
 
     operator fun String.unaryPlus(){
-        textContent += this
+        textContent += this.toLowerCase()
     }
 
     operator fun Style.unaryPlus() {
@@ -37,36 +36,16 @@ class Tag(private val name: String){
         attributes.addAll(this.attrs)
     }
 
-    override fun toString(): String {
-        return """<$name${printAttributes()}>${tagList.fold("") {acc, tag -> "$acc$tag"}}$textContent</$name>"""
+    fun toStringWithoutWhitespace(): String{
+        return toString().replace(" ", "")
     }
 
-    private fun printAttributes(): String{
-        return if (attributes.isEmpty()){
-            ""
-        } else {
-            attributes.joinToString(" ", " ") {
-                "${it.name}=\"${it.value}\""
-            }
-        }
+    override fun toString(): String {
+        return """<$name$attributes>${tagList.fold("") {acc, tag -> "$acc$tag"}}$textContent</$name>"""
     }
 
     operator fun plus(s: String) {
         textContent += s
-    }
-}
-
-class Attributes(vararg attributes: Pair<String, String>){
-    val attrs = attributes.map {
-        Attribute(it.first, it.second)
-    }
-}
-
-data class Attribute(val name: String, val value: String)
-
-class Style(vararg rules: Pair<String, String>){
-    val rules = rules.joinToString("; ") {
-        "${it.first}:${it.second}"
     }
 }
 
