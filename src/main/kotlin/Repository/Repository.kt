@@ -7,7 +7,7 @@ import com.beust.klaxon.JsonObject
 
 class Repository(filePath: String): JsonRepository{
     private val jsonProjects: JsonArray<JsonObject> by lazy {
-        JsonParser.from(filePath)
+        JsonParser.from(filePath) as JsonArray<JsonObject>
     }
 
     private val projectList: List<Project> by lazy {
