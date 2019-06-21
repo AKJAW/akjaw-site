@@ -1,29 +1,42 @@
 package akjaw
 
-import akjaw.Model.Project
-import com.beust.klaxon.JsonArray
+import akjaw.Result.*
 import com.beust.klaxon.JsonBase
-import com.beust.klaxon.JsonObject
+import com.beust.klaxon.KlaxonException
 import com.beust.klaxon.Parser
-import java.io.File
-import java.io.FileInputStream
+import java.io.FileNotFoundException
+import java.io.IOException
 import java.lang.IllegalArgumentException
-import java.lang.IllegalStateException
 
 object JsonParser{
-    val parser = Parser.default()
+    private val parser = Parser.default()
 
-    fun from(filePath: String): JsonBase{
-//        val fileInputStream = FileInputStream(filePath)
-
-//        return fileInputStream.let { inputStream ->
-        return parser.parse(filePath) as? JsonBase
-                ?:throw IllegalArgumentException("$filePath is not a JSON")
-//        }
+    fun parse(filePath: String): Result<JsonBase> {
+        return filePath into ::tryToParse then ::cast
     }
+
+    private fun tryToParse(filePath: String): Result<Any>{
+        return try{
+            val json = parser.parse(filePath)
+            Success(json)
+        } catch (exception: FileNotFoundException){
+            Failure("File does not exist")
+        } catch (exception: KlaxonException){
+            Failure("Could not parse json")
+        }
+    }
+
+    private fun cast(json: Any): Result<JsonBase>{
+        return if(json is JsonBase){
+            Success(json)
+        } else {
+            Failure("Could not cast")
+        }
+    }
+
 }
 
 fun main(){
-    val pjp = JsonParser.from("data/projects.json")
+    val pjp = JsonParser.parse("data/projects.json")
 }
 

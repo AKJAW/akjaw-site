@@ -2,6 +2,6 @@ package akjaw.Repository
 
 import akjaw.Model.Project
 
-interface JsonRepository {
+interface Repository {
     fun getProjects(): List<Project>
 }

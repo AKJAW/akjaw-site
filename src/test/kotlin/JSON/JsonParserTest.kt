@@ -1,24 +1,48 @@
 package JSON
 
 import akjaw.JsonParser
+import akjaw.Result.Failure
+import akjaw.Result.Success
 import com.beust.klaxon.JsonArray
 import com.beust.klaxon.JsonBase
 import com.beust.klaxon.JsonObject
 import com.beust.klaxon.KlaxonException
-import com.google.common.io.Resources
 import com.google.common.truth.Truth
 import org.junit.Test
-import sun.misc.IOUtils
-import java.nio.charset.StandardCharsets
-import java.io.File
-import java.lang.NullPointerException
 
-//TODO delete later?
 class JsonParserTest{
 
     @Test
+    fun `correct parse returns Success that includes the JsonBase`(){
+        val result = JsonParser.parse("src/test/resources/json/array.json")
+
+        Truth.assertThat(result is Success).isTrue()
+    }
+
+    @Test
+    fun `when the file doesnt exist parsing returns a Failure`(){
+        val result = JsonParser.parse("doesnt_exist.txt")
+
+        Truth.assertThat(result is Failure).isTrue()
+
+        Truth.assertThat((result as Failure).errorMessage).isEqualTo("File does not exist")
+    }
+
+    @Test
+    fun `when the file doesnt have the correct format parsing returns a Failure`(){
+        val result = JsonParser.parse("src/test/resources/json/not_json.txt")
+
+        Truth.assertThat(result is Failure).isTrue()
+
+        Truth.assertThat((result as Failure).errorMessage).isEqualTo("Could not parse json")
+    }
+
+
+    @Test
     fun `correctly parses json that has an array root`(){
-        val jsonBase = JsonParser.from("src/test/resources/json/array.json")
+        val result = JsonParser.parse("src/test/resources/json/array.json")
+
+        val jsonBase = (result as Success).value
 
         Truth.assertThat(jsonBase is JsonArray<*>).isTrue()
 
@@ -34,7 +58,9 @@ class JsonParserTest{
 
     @Test
     fun `correctly parses json that has an object root`(){
-        val jsonBase = JsonParser.from("src/test/resources/json/object.json")
+        val result = JsonParser.parse("src/test/resources/json/object.json")
+
+        val jsonBase = (result as Success).value
 
         Truth.assertThat(jsonBase is JsonObject).isTrue()
 
@@ -42,11 +68,6 @@ class JsonParserTest{
 
         Truth.assertThat(jsonObject["name"]).isEqualTo("Adam")
         Truth.assertThat(jsonObject["age"]).isEqualTo(15)
-    }
-
-    @Test(expected = KlaxonException::class)
-    fun `throws IllegalArgumentException when json file is not correct`(){
-        val jsonBase = JsonParser.from("src/test/resources/json/not_json.txt")
     }
 
 }

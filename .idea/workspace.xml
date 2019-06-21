@@ -3,10 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="5501444b-1d28-43e3-ba48-b6f8ecabc86d" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Exception/Exceptions.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/akjaw/Repository/JsonRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/akjaw/Repository/Repository.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/HTML/SiteBuilder.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/HTML/SiteBuilder.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/JSON/JsonParser.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/JSON/JsonParser.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Repository/Repository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Repository/Repository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Repository/Repository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Repository/JsonRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/main.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/JSON/JsonParserTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/JSON/JsonParserTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/Repository/RepositoryTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/Repository/JsonRepositoryTest.kt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -42,11 +45,38 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Repository.kt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/kotlin/Repository/Repository.kt">
+      <file leaf-file-name="JsonRepository.kt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/Repository/JsonRepository.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="9" column="58" selection-start-line="9" selection-start-column="58" selection-end-line="9" selection-end-column="58" />
+            <state relative-caret-position="-11">
+              <caret line="6" column="32" lean-forward="true" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Repository.kt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/akjaw/Repository/Repository.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="80">
+              <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JsonRepositoryTest.kt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/kotlin/Repository/JsonRepositoryTest.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="100">
+              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JsonParserTest.kt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/kotlin/JSON/JsonParserTest.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="540">
+              <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
             </state>
           </provider>
         </entry>
@@ -54,11 +84,20 @@
       <file leaf-file-name="JsonParser.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/JSON/JsonParser.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
+            <state relative-caret-position="300">
+              <caret line="24" column="43" lean-forward="true" selection-start-line="24" selection-start-column="43" selection-end-line="24" selection-end-column="43" />
               <folding>
-                <element signature="e#15#273#0" expanded="true" />
+                <element signature="e#15#169#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Result.kt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/Railway/Result.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
             </state>
           </provider>
         </entry>
@@ -66,50 +105,8 @@
       <file leaf-file-name="Parser.kt" pinned="false" current-in-tab="false">
         <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.beust/klaxon/5.0.0/f667bb9e99e252bbec3ac506b490b5ff10774a9a/klaxon-5.0.0-sources.jar!/com/beust/klaxon/Parser.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JsonParserTest.kt" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/kotlin/JSON/JsonParserTest.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
-              <folding>
-                <element signature="e#14#359#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="array.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/resources/json/array.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="40">
-              <caret line="2" column="18" lean-forward="true" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="projects.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/projects.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="500">
-              <caret line="24" column="1" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AttributeTest.kt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/kotlin/HTML/AttributeTest.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="107">
-              <caret line="8" column="9" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
-              <folding>
-                <element signature="e#14#100#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="231">
+              <caret line="21" column="16" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -493,7 +490,6 @@
         <option value="$PROJECT_DIR$/src/main/kotlin/HTMLBuilder.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/JSONParser.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/Model/Translation.kt" />
-        <option value="$PROJECT_DIR$/src/main/java/akjaw/Repository/JsonRepository.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/Model/Project.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/main.kt" />
         <option value="$PROJECT_DIR$/data/projects.json" />
@@ -509,12 +505,24 @@
         <option value="$PROJECT_DIR$/src/test/kotlin/HTML/AttributeTest.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/HTML/SiteBuilder.kt" />
         <option value="$PROJECT_DIR$/src/test/resources/json/array.json" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/Repository/Repository.kt" />
         <option value="$PROJECT_DIR$/src/test/resources/json/object.json" />
         <option value="$PROJECT_DIR$/src/test/resources/json/not_json.txt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/JSON/JsonParser.kt" />
         <option value="$PROJECT_DIR$/src/test/resources/json/incorrect_json.json" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/Repository/JsonRepositorys.kt" />
+        <option value="$PROJECT_DIR$/src/main/java/akjaw/Repository/JsonRepository.kt" />
+        <option value="$PROJECT_DIR$/src/main/java/akjaw/Repository/Repository.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/Repository/Repository.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/Repository/Repositorys.kt" />
+        <option value="$PROJECT_DIR$/src/test/kotlin/Repository/RepositoryTest.kt" />
+        <option value="$PROJECT_DIR$/src/test/kotlin/Repository/JsonRepositoryTest.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/Result/Result.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/Railway/Success.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/Railway/Failure.kt" />
+        <option value="$PROJECT_DIR$/src/test/resources/json/empty.json" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/JSON/JsonParser.kt" />
         <option value="$PROJECT_DIR$/src/test/kotlin/JSON/JsonParserTest.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/Repository/JsonRepository.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/Railway/Result.kt" />
       </list>
     </option>
   </component>
@@ -538,6 +546,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -598,6 +608,14 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="kotlin" type="462c0819:PsiDirectoryNode" />
+              <item name="Railway" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="site" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Site" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
               <item name="Repository" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -634,6 +652,14 @@
               <item name="Site" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
+              <item name="Repository" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="site" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Site" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -648,8 +674,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="Course" />
     </panes>
   </component>
@@ -662,12 +686,15 @@
     <property name="settings.editor.selected.configurable" value="preferences.editor" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateKotlinClassDialog.RecentsKey">
+      <recent name="akjaw.Repository" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/test/resources/json" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/kotlin/JSON" />
       <recent name="$PROJECT_DIR$/src/main/kotlin/HTML" />
-    </key>
-    <key name="CreateKotlinClassDialog.RecentsKey">
-      <recent name="akjaw.Repository" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -703,13 +730,13 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="JsonParserTest.correctly parses json that has an object root" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="JsonParserTest.correct parse returns Success that includes the JsonBase" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="site_test" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="JSON" />
       <option name="MAIN_CLASS_NAME" value="JSON.JsonParserTest" />
-      <option name="METHOD_NAME" value="correctly parses json that has an object root" />
+      <option name="METHOD_NAME" value="correct parse returns Success that includes the JsonBase" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -720,13 +747,13 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="JsonParserTest.throws IllegalArgumentException when json is incorrect" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="JsonParserTest.when parsing encounters a problem it returns A Failure" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="site_test" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="JSON" />
       <option name="MAIN_CLASS_NAME" value="JSON.JsonParserTest" />
-      <option name="METHOD_NAME" value="throws IllegalArgumentException when json is incorrect" />
+      <option name="METHOD_NAME" value="when parsing encounters a problem it returns A Failure" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -737,13 +764,30 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="JsonParserTest.throws IllegalArgumentException when path is not to a json file" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="JsonParserTest.when the file doesnt have the correct format parsing returns a Failue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="site_test" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="JSON" />
       <option name="MAIN_CLASS_NAME" value="JSON.JsonParserTest" />
-      <option name="METHOD_NAME" value="throws IllegalArgumentException when path is not to a json file" />
+      <option name="METHOD_NAME" value="when the file doesnt have the correct format parsing returns a Failue" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="JsonParserTest.when the file doesnt have the correct format parsing returns a Failure" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="site_test" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="JSON" />
+      <option name="MAIN_CLASS_NAME" value="JSON.JsonParserTest" />
+      <option name="METHOD_NAME" value="when the file doesnt have the correct format parsing returns a Failure" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -770,34 +814,24 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="akjaw.JsonParserKt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
-      <module name="site_main" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" value="akjaw.JsonParserKt" />
-      <option name="WORKING_DIRECTORY" />
-    </configuration>
     <configuration name="&lt;template&gt;" type="TestNG" default="true" selected="false">
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
     </configuration>
     <list>
       <item itemvalue="JUnit.JsonParserTest" />
-      <item itemvalue="Kotlin.akjaw.JsonParserKt" />
-      <item itemvalue="JUnit.JsonParserTest.correctly parses json that has an object root" />
-      <item itemvalue="JUnit.JsonParserTest.throws IllegalArgumentException when path is not to a json file" />
-      <item itemvalue="JUnit.JsonParserTest.throws IllegalArgumentException when json is incorrect" />
+      <item itemvalue="JUnit.JsonParserTest.correct parse returns Success that includes the JsonBase" />
+      <item itemvalue="JUnit.JsonParserTest.when parsing encounters a problem it returns A Failure" />
+      <item itemvalue="JUnit.JsonParserTest.when the file doesnt have the correct format parsing returns a Failue" />
+      <item itemvalue="JUnit.JsonParserTest.when the file doesnt have the correct format parsing returns a Failure" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.JsonParserTest" />
-        <item itemvalue="JUnit.JsonParserTest.throws IllegalArgumentException when json is incorrect" />
-        <item itemvalue="JUnit.JsonParserTest.throws IllegalArgumentException when path is not to a json file" />
-        <item itemvalue="Kotlin.akjaw.JsonParserKt" />
-        <item itemvalue="JUnit.JsonParserTest.correctly parses json that has an object root" />
+        <item itemvalue="JUnit.JsonParserTest.when the file doesnt have the correct format parsing returns a Failure" />
+        <item itemvalue="JUnit.JsonParserTest.when the file doesnt have the correct format parsing returns a Failue" />
+        <item itemvalue="JUnit.JsonParserTest.when parsing encounters a problem it returns A Failure" />
+        <item itemvalue="JUnit.JsonParserTest.correct parse returns Success that includes the JsonBase" />
       </list>
     </recent_temporary>
   </component>
@@ -805,52 +839,62 @@
     <configuration />
   </component>
   <component name="TestHistory">
-    <history-entry file="JsonParserTest_correctly_parses_json_that_has_an_object_root - 2019.06.13 at 23h 05m 27s.xml">
-      <configuration name="JsonParserTest.correctly parses json that has an object root" configurationId="JUnit" />
+    <history-entry file="JsonParserTest_when_parsing_encounters_a_problem_it_returns_A_Failure - 2019.06.21 at 19h 51m 10s.xml">
+      <configuration name="JsonParserTest.when parsing encounters a problem it returns A Failure" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="JsonParserTest_correctly_parses_json_that_has_an_object_root - 2019.06.13 at 23h 05m 38s.xml">
-      <configuration name="JsonParserTest.correctly parses json that has an object root" configurationId="JUnit" />
+    <history-entry file="JsonParserTest_when_parsing_encounters_a_problem_it_returns_A_Failure - 2019.06.21 at 19h 51m 19s.xml">
+      <configuration name="JsonParserTest.when parsing encounters a problem it returns A Failure" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="JsonParserTest_correctly_parses_json_that_has_an_object_root - 2019.06.13 at 23h 05m 44s.xml">
-      <configuration name="JsonParserTest.correctly parses json that has an object root" configurationId="JUnit" />
+    <history-entry file="JsonParserTest_when_the_file_doesnt_have_the_correct_format_parsing_returns_a_Failue - 2019.06.21 at 19h 52m 52s.xml">
+      <configuration name="JsonParserTest.when the file doesnt have the correct format parsing returns a Failue" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="JsonParserTest_throws_IllegalArgumentException_when_path_is_not_to_a_json_file - 2019.06.13 at 23h 07m 28s.xml">
-      <configuration name="JsonParserTest.throws IllegalArgumentException when path is not to a json file" configurationId="JUnit" />
+    <history-entry file="JsonParserTest_when_the_file_doesnt_have_the_correct_format_parsing_returns_a_Failue - 2019.06.21 at 19h 53m 21s.xml">
+      <configuration name="JsonParserTest.when the file doesnt have the correct format parsing returns a Failue" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="JsonParserTest_throws_IllegalArgumentException_when_path_is_not_to_a_json_file - 2019.06.13 at 23h 07m 37s.xml">
-      <configuration name="JsonParserTest.throws IllegalArgumentException when path is not to a json file" configurationId="JUnit" />
+    <history-entry file="JsonParserTest_when_the_file_doesnt_have_the_correct_format_parsing_returns_a_Failure - 2019.06.21 at 19h 54m 24s.xml">
+      <configuration name="JsonParserTest.when the file doesnt have the correct format parsing returns a Failure" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="JsonParserTest - 2019.06.13 at 23h 10m 09s.xml">
+    <history-entry file="JsonParserTest_when_the_file_doesnt_have_the_correct_format_parsing_returns_a_Failure - 2019.06.21 at 19h 54m 38s.xml">
+      <configuration name="JsonParserTest.when the file doesnt have the correct format parsing returns a Failure" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="JsonParserTest - 2019.06.21 at 19h 55m 29s.xml">
       <configuration name="JsonParserTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="JsonParserTest_throws_IllegalArgumentException_when_path_is_not_to_a_json_file - 2019.06.13 at 23h 11m 07s.xml">
-      <configuration name="JsonParserTest.throws IllegalArgumentException when path is not to a json file" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="JsonParserTest_throws_IllegalArgumentException_when_json_is_incorrect - 2019.06.13 at 23h 13m 04s.xml">
-      <configuration name="JsonParserTest.throws IllegalArgumentException when json is incorrect" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="JsonParserTest_throws_IllegalArgumentException_when_json_is_incorrect - 2019.06.13 at 23h 13m 16s.xml">
-      <configuration name="JsonParserTest.throws IllegalArgumentException when json is incorrect" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="JsonParserTest - 2019.06.13 at 23h 13m 43s.xml">
+    <history-entry file="JsonParserTest - 2019.06.21 at 19h 56m 16s.xml">
       <configuration name="JsonParserTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="JsonParserTest - 2019.06.21 at 19h 58m 01s.xml">
+      <configuration name="JsonParserTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="JsonParserTest - 2019.06.21 at 19h 58m 59s.xml">
+      <configuration name="JsonParserTest" configurationId="JUnit" />
+    </history-entry>
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="28" width="1920" height="1052" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info anchor="bottom" id="TODO" order="7" />
+      <window_info anchor="bottom" id="TODO" order="7" weight="0.3297414" />
       <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.49946696" weight="0.3286638" />
       <window_info anchor="right" id="Palette&#9;" order="5" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5010661" side_tool="true" weight="0.39870688" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="bottom" id="Version Control" order="10" weight="0.3297414" />
       <window_info active="true" anchor="bottom" id="Run" order="3" visible="true" weight="0.33728448" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28784648" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.29424307" />
       <window_info anchor="bottom" id="Educational.CheckDetails" order="0" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="bottom" id="Find" order="2" />
       <window_info anchor="right" id="Gradle" order="3" weight="0.3296875" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -862,7 +906,6 @@
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Build" order="12" weight="0.32983193" />
-      <window_info anchor="bottom" id="Find" order="2" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -890,12 +933,6 @@
           <line>8</line>
           <properties />
           <option name="timeStamp" value="33" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/JSON/JsonParser.kt</url>
-          <line>22</line>
-          <properties />
-          <option name="timeStamp" value="40" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/main/kotlin/HTML/SiteBuilder.kt</url>
@@ -935,15 +972,21 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/main/kotlin/JSON/JsonParser.kt</url>
-          <line>19</line>
+          <line>22</line>
           <properties />
-          <option name="timeStamp" value="100" />
+          <option name="timeStamp" value="108" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/JSON/JsonParser.kt</url>
+          <line>24</line>
+          <properties />
+          <option name="timeStamp" value="112" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="106" />
+      <option name="time" value="114" />
     </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
@@ -998,44 +1041,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/JSON/JsonParser.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="640">
-          <caret line="32" column="41" selection-start-line="32" selection-start-column="41" selection-end-line="32" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/Model/Translation.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/projects.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="16" column="10" lean-forward="true" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/Model/Project.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="8" column="34" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/main.kt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.beust/klaxon/5.0.1/8a96891436d05bc36bab37f576c4ac9b019bb2c0/klaxon-5.0.1-sources.jar!/com/beust/klaxon/Klaxon.kt" />
     <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/lang/Class.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1073,27 +1078,10 @@
         <state relative-caret-position="-109" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/settings.gradle">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/io/FileInputStream.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="379">
           <caret line="122" column="11" selection-start-line="122" selection-start-column="11" selection-end-line="122" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/akjaw/Repository/JsonRepository.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/Model/Translation.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="6" column="26" lean-forward="true" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -1111,13 +1099,6 @@
           <folding>
             <element signature="e#15#79#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
         </state>
       </provider>
     </entry>
@@ -1185,16 +1166,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/Model/Project.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
-          <folding>
-            <element signature="e#21#93#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/kotlin/HTML/HtmlBuilderTest.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -1216,13 +1187,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/Exception/Exceptions.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/Exception/Exceptions.kt" />
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/HTML/SiteBuilder.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="351">
@@ -1265,16 +1230,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/projects.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="24" column="1" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/kotlin/HTML/AttributeTest.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
+        <state relative-caret-position="120">
           <caret line="8" column="9" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
           <folding>
             <element signature="e#14#100#0" expanded="true" />
@@ -1282,51 +1240,121 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/JSON/JsonParser.kt">
+    <entry file="file://$PROJECT_DIR$/src/test/resources/json/array.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
+        <state relative-caret-position="40">
+          <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/json/incorrect_json.json" />
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/Model/Translation.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="6" column="26" lean-forward="true" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/Model/Project.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
           <folding>
-            <element signature="e#15#273#0" expanded="true" />
+            <element signature="e#21#93#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/Repository/Repository.kt">
+    <entry file="file://$PROJECT_DIR$/data/projects.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="9" column="58" selection-start-line="9" selection-start-column="58" selection-end-line="9" selection-end-column="58" />
+        <state relative-caret-position="480">
+          <caret line="24" column="1" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/settings.gradle">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
         </state>
       </provider>
     </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.beust/klaxon/5.0.0/f667bb9e99e252bbec3ac506b490b5ff10774a9a/klaxon-5.0.0-sources.jar!/com/beust/klaxon/Parser.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
+        <state relative-caret-position="231">
+          <caret line="21" column="16" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/json/array.json">
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/Railway/Success.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="2" column="18" lean-forward="true" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
+        <state relative-caret-position="80">
+          <caret line="4" column="11" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/json/incorrect_json.json">
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/Railway/Failure.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="1" column="14" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
+        <state>
+          <caret lean-forward="true" />
         </state>
       </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-common/1.3.21/224a3bcfa1c088dd5d7c4a3958a68427b44c65dc/kotlin-stdlib-common-1.3.21-sources.jar!/kotlin/util/Result.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="19" column="57" selection-start-line="19" selection-start-column="57" selection-end-line="19" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/json/empty.json">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/kotlin/JSON/JsonParserTest.kt">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/kotlin/Repository/JsonRepositoryTest.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/akjaw/Repository/Repository.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/JSON/JsonParser.kt">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
-          <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
+          <caret line="24" column="43" lean-forward="true" selection-start-line="24" selection-start-column="43" selection-end-line="24" selection-end-column="43" />
           <folding>
-            <element signature="e#14#359#0" expanded="true" />
+            <element signature="e#15#169#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/Repository/JsonRepository.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-11">
+          <caret line="6" column="32" lean-forward="true" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/Railway/Result.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
         </state>
       </provider>
     </entry>

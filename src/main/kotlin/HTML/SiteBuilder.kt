@@ -1,7 +1,7 @@
 package akjaw.HTML
 
 import akjaw.Model.Project
-import akjaw.Repository.Repository
+import akjaw.Repository.JsonRepository
 import com.beust.klaxon.JsonObject
 import java.lang.IllegalStateException
 
@@ -108,7 +108,7 @@ class SiteBuilder(private val projects: List<Project>){
 }
 
 fun main(){
-    val projects = Repository("data/projects.json").getProjects()
+    val projects = JsonRepository("data/projects.json").getProjects()
     val siteBuilder = SiteBuilder(projects)
     val html = siteBuilder.build()
     print(html)
