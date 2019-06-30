@@ -1,6 +1,5 @@
 package akjaw
 
-import akjaw.Result.*
 import com.beust.klaxon.JsonBase
 import com.beust.klaxon.KlaxonException
 import com.beust.klaxon.Parser
@@ -12,26 +11,17 @@ object JsonParser{
     private val parser = Parser.default()
 
     fun parse(filePath: String): Result<JsonBase> {
-        return filePath into ::tryToParse then ::cast
+        return tryToParse(filePath).map(::cast)
     }
 
-    private fun tryToParse(filePath: String): Result<Any>{
-        return try{
-            val json = parser.parse(filePath)
-            Success(json)
-        } catch (exception: FileNotFoundException){
-            Failure("File does not exist")
-        } catch (exception: KlaxonException){
-            Failure("Could not parse json")
+    private fun tryToParse(filePath: String): Result<Any> {
+        return runCatching {
+            parser.parse(filePath)
         }
     }
 
-    private fun cast(json: Any): Result<JsonBase>{
-        return if(json is JsonBase){
-            Success(json)
-        } else {
-            Failure("Could not cast")
-        }
+    private fun cast(json: Any): JsonBase{
+        return json as JsonBase
     }
 
 }

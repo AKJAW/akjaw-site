@@ -108,7 +108,7 @@ class SiteBuilder(private val projects: List<Project>){
 }
 
 fun main(){
-    val projects = JsonRepository("data/projects.json").getProjects()
+    val projects = JsonRepository("data/projects.json").projects
     val siteBuilder = SiteBuilder(projects)
     val html = siteBuilder.build()
     print(html)
