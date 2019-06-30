@@ -47,6 +47,27 @@ class Tag(name: String){
     operator fun plus(s: String) {
         textContent += s
     }
+
+    fun getByName(tagName: String): List<Tag>? {
+        val foundTags = mutableListOf<Tag>()
+
+        tagList.forEach {
+            if(it.name == tagName){
+                foundTags.add(it)
+            }
+            val childFoundTags = it.getByName(tagName)
+            if(childFoundTags != null && childFoundTags.isNotEmpty()){
+                foundTags.addAll(childFoundTags)
+            }
+        }
+
+        return if(foundTags.isEmpty()){
+            null
+        } else {
+            foundTags.toList()
+        }
+
+    }
 }
 
 

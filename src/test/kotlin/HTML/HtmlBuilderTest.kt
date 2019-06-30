@@ -6,6 +6,7 @@ import akjaw.HTML.HTMLBuilder
 import akjaw.HTML.Style
 import com.google.common.truth.Truth
 import org.junit.Test
+import java.lang.NullPointerException
 
 class HtmlBuilderTest{
 
@@ -106,6 +107,100 @@ class HtmlBuilderTest{
 
         //Then toString correctly formats the tree
         Truth.assertThat(html.toString()).isEqualTo("""<html><div style="color:red"><div src="1.jpg" alt="image"></div></div></html>""")
+    }
+
+    @Test
+    fun `getByName returns list of tags that are in that tree`(){
+        val html = HTMLBuilder.html {
+            tag("div") {
+                tag("span"){
+                    + "parent"
+                    tag("span"){
+                        + "child"
+                    }
+                }
+                tag("span") {
+                    + "second"
+                }
+                tag("div")
+            }
+        }
+
+        val foundSpan = html.getByName("span")
+        Truth.assertThat(foundSpan).isNotNull()
+        Truth.assertThat(foundSpan).hasSize(3)
+
+        foundSpan ?: throw NullPointerException()
+
+        Truth.assertThat(foundSpan[0].name).isEqualTo("span")
+        Truth.assertThat(foundSpan[1].name).isEqualTo("span")
+        Truth.assertThat(foundSpan[2].name).isEqualTo("span")
+    }
+
+    @Test
+    fun `getByName returns null if no elements found in that tree`(){
+        val html = HTMLBuilder.html()
+
+        Truth.assertThat(html.getByName("ul")).isNull()
+    }
+
+    @Test
+    fun `getByName returns tags in correct order`(){
+        val html = HTMLBuilder.html {
+            tag("div") {
+                tag("span"){
+                    + "parent"
+                    tag("span"){
+                        + "child"
+                    }
+                }
+                tag("span") {
+                    + "second"
+                }
+                tag("div")
+            }
+        }
+
+        val foundSpan = html.getByName("span")
+
+        foundSpan ?: throw NullPointerException()
+
+        Truth.assertThat(foundSpan[0].textContent).isEqualTo("parent")
+        Truth.assertThat(foundSpan[1].textContent).isEqualTo("child")
+        Truth.assertThat(foundSpan[2].textContent).isEqualTo("second")
+    }
+
+    @Test
+    fun `getByName correctly works with nested calls`(){
+        val html = HTMLBuilder.html {
+            tag("div") {
+               + "first div"
+
+                tag("span"){
+                    + "first span"
+
+                    tag("div"){
+                        + "second div"
+
+                        tag("span"){
+                            + "second span"
+                        }
+                    }
+                }
+            }
+        }
+
+        val firstDiv = html.getByName("div")!!.first()
+        Truth.assertThat(firstDiv.textContent).isEqualTo("first div")
+
+        val firstSpan = firstDiv.getByName("span")!!.first()
+        Truth.assertThat(firstSpan.textContent).isEqualTo("first span")
+
+        val secondDiv = firstSpan.getByName("div")!!.first()
+        Truth.assertThat(secondDiv.textContent).isEqualTo("second div")
+
+        val secondSpan = secondDiv.getByName("span")!!.first()
+        Truth.assertThat(secondSpan.textContent).isEqualTo("second span")
     }
 
 }
