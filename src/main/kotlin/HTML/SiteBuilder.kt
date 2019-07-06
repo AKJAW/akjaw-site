@@ -2,6 +2,7 @@ package akjaw.HTML
 
 import akjaw.Model.Project
 import akjaw.Repository.JsonRepository
+import com.beust.klaxon.JsonArray
 import com.beust.klaxon.JsonObject
 import java.lang.IllegalStateException
 
@@ -42,9 +43,10 @@ class SiteBuilder(private val projects: List<Project>){
         }
         jsonObject.keys.map {
                 val parsed = jsonObject[it]
-                when(parsed){
-                    is String -> getString(it, parsed)
-                    is JsonObject -> getNestedTag(it, parsed)
+                when{
+                    isSpecialTag(it) -> getSpecialTag(it, parsed)
+                    parsed is String -> getString(it, parsed)
+                    parsed is JsonObject -> getNestedTag(it, parsed)
                     else -> {
                         val s = 's'
                         throw IllegalStateException()
@@ -54,13 +56,29 @@ class SiteBuilder(private val projects: List<Project>){
         return this
     }
 
-    private fun Tag.getNestedTag(key: String, parsed: JsonObject): Tag {
-        val (tagName, tagClass) = parseJsonKey(key)
-        return tag(tagName) {
-            if(tagClass != null){
-                + Attributes("class" to tagClass)
+    private fun isSpecialTag(name: String): Boolean {
+        return (
+                name == "list"
+                )
+    }
+
+
+    private fun Tag.getSpecialTag(key: String, parsed: Any?): Tag {
+        val (name, className) = parseJsonKey(key)
+
+        return when(name){
+            "list" -> getListTag(name, className, parsed as JsonArray<*>)
+            else -> throw IllegalStateException("tagName $name doesnt exists")
+        }
+    }
+
+    private fun Tag.getListTag(name: String, className: String?, listItems: JsonArray<*>): Tag {
+        return tag("ul"){
+            listItems.forEach {
+                tag("li"){
+                    + (it as String)
+                }
             }
-            getTag(parsed)
         }
     }
 
@@ -87,6 +105,16 @@ class SiteBuilder(private val projects: List<Project>){
                 + Attributes("class" to tagClass)
             }
 
+        }
+    }
+
+    private fun Tag.getNestedTag(key: String, parsed: JsonObject): Tag {
+        val (tagName, tagClass) = parseJsonKey(key)
+        return tag(tagName) {
+            if(tagClass != null){
+                + Attributes("class" to tagClass)
+            }
+            getTag(parsed)
         }
     }
 

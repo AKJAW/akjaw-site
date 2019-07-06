@@ -175,13 +175,10 @@ class HtmlBuilderTest{
         val html = HTMLBuilder.html {
             tag("div") {
                + "first div"
-
                 tag("span"){
                     + "first span"
-
                     tag("div"){
                         + "second div"
-
                         tag("span"){
                             + "second span"
                         }

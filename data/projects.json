@@ -9,11 +9,11 @@
         },
         "p": "I was the solo developer on this project for the most part. Me and the owner had talks discussing the app development and any problems that i have encountered.",
         "span": "Used technologies",
-        "ul": {
-          "li-1": "React",
-          "li-2": "Redux",
-          "li-3": "Firebase (Firestore and Auth)"
-        }
+        "list": [
+          "React",
+          "Redux",
+          "Firebase (Firestore and Auth)"
+        ]
       }
     }
   },
