@@ -20,6 +20,17 @@ class HtmlBuilderTest{
     }
 
     @Test
+    fun `textContent keeps it's format`(){
+        //Given that the user creates an empty html tree
+        val html = HTMLBuilder.html {
+            + "Text That has Different CAPS"
+        }
+
+        //Then toString correctly outputs only one html tag
+        Truth.assertThat(html.textContent).isEqualTo("Text That has Different CAPS")
+    }
+
+    @Test
     fun `correctly nests tags`(){
         //Given that the user builds a tree with two nested divs
         val html = HTMLBuilder.html {

@@ -26,7 +26,7 @@ class Tag(name: String){
     }
 
     operator fun String.unaryPlus(){
-        textContent += this.toLowerCase()
+        textContent += this
     }
 
     operator fun Style.unaryPlus() {
