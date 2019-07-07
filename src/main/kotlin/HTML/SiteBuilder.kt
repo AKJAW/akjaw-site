@@ -28,12 +28,50 @@ class SiteBuilder(private val projects: List<Project>){
 
     private fun Tag.createBody(){
         tag("body"){
+            createAboutMeSection()
             projects.map {
                 tag("div"){
                     getTag(it.projectData)
                 }
 
             }
+        }
+    }
+
+    private fun Tag.createAboutMeSection() {
+        tag("div"){
+            + Attributes("class" to "about-me")
+            createTagWithLanguages(
+                "h2",
+                "About me",
+                "O mnie")
+
+            createTagWithLanguages(
+                "div",
+                "My name is Aleksander Jaworski, im am studying Applied computer science. I am working as a remote developer for 4 online stores, and for Bubble quiz games. I have finished many projects, mostly web ones, but i have made some desktop application and also i am working on my own Android app. This web page is a portfolio for these projects",
+                "Nazywam się Aleksander Jaworski, jestem studentem informatyki stosowanej. Pracuję jako zdalnym deweloper dla 4 sklepów internetowych, oraz dla Bubble quiz games. Zakończyłem wiele projektów, głownie internetowych, ale stworzyłem też pare aplikacji desktopowych, oraz aktualnie pracuje nad swoją własną aplikacją na systemy Android. Ta strona jest moim portfolio w którym opisane są te projekty"
+                )
+        }
+    }
+
+    private fun Tag.createTagWithLanguages(
+        tagName: String,
+        englishTextContent: String,
+        polishTextContent: String,
+        classes: String? = null){
+
+        tag(tagName){
+            if(classes != null){
+                + Attributes("class" to "en $classes")
+            }
+            + englishTextContent
+        }
+
+        tag(tagName){
+            if(classes != null){
+                + Attributes("class" to "en $classes")
+            }
+            + polishTextContent
         }
     }
 
@@ -47,10 +85,7 @@ class SiteBuilder(private val projects: List<Project>){
                     isSpecialTag(it) -> getSpecialTag(it, parsed)
                     parsed is String -> getString(it, parsed)
                     parsed is JsonObject -> getNestedTag(it, parsed)
-                    else -> {
-                        val s = 's'
-                        throw IllegalStateException()
-                    }
+                    else -> throw IllegalStateException()
                 }
         }
         return this

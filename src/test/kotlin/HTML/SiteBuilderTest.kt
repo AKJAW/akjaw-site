@@ -32,8 +32,12 @@ class SiteBuilderTest{
 
     @Test
     fun `Always creates an about me section`(){
-        //TODO
-        throw NotImplementedError()
+        val builder = SiteBuilder(listOf())
+        val html = builder.build()
+
+        val section = html.getByClass("about-me")
+        Truth.assertThat(section).isNotNull()
+        Truth.assertThat(section).hasSize(1)
     }
 
     @Test
