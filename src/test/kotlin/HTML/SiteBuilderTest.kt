@@ -6,6 +6,7 @@ import com.beust.klaxon.JsonArray
 import com.beust.klaxon.JsonObject
 import com.google.common.truth.Truth
 import org.junit.Test
+import java.io.File
 
 class SiteBuilderTest{
     private fun createProjectJsonObject(name: String, h1: String): JsonObject{
@@ -19,21 +20,21 @@ class SiteBuilderTest{
     @Test
     fun `Always creates a head tag`(){
         val builder = SiteBuilder(listOf())
-        val html = builder.build()
+        val html = builder.html
         Truth.assertThat(html.getByName("head")).isNotNull()
     }
 
     @Test
     fun `Always creates a body tag`(){
         val builder = SiteBuilder(listOf())
-        val html = builder.build()
+        val html = builder.html
         Truth.assertThat(html.getByName("body")).isNotNull()
     }
 
     @Test
     fun `Always creates an about me section`(){
         val builder = SiteBuilder(listOf())
-        val html = builder.build()
+        val html = builder.html
 
         val section = html.getByClass("about-me")
         Truth.assertThat(section).isNotNull()
@@ -51,7 +52,7 @@ class SiteBuilderTest{
         )
 
         val builder = SiteBuilder(projects)
-        val html = builder.build()
+        val html = builder.html
 
         val ul = html.getByName("ul")!!
         val li = ul[0].getByName("li")!!
@@ -62,5 +63,20 @@ class SiteBuilderTest{
         Truth.assertThat(li[2].textContent).isEqualTo("third tech")
     }
 
+    @Test
+    fun `It correctly saves the html tree to a file`(){
+        val path = "src/test/resources/test_file.html"
+        File("src/test/resources/test_file.html").delete()
 
+        val builder = SiteBuilder(listOf())
+        val html = builder.html
+
+        builder.saveToFile(path)
+
+        Truth.assertThat(File(path).exists()).isTrue()
+        val fileContent = File(path).readText()
+        Truth.assertThat(fileContent.contains("<head>")).isTrue()
+        Truth.assertThat(fileContent.contains("<body>")).isTrue()
+
+    }
 }

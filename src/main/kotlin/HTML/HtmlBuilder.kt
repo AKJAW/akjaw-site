@@ -40,10 +40,6 @@ class Tag(name: String){
         attributes.addAll(this)
     }
 
-    fun toStringWithoutWhitespace(): String{
-        return toString().replace(" ", "")
-    }
-
     override fun toString(): String {
         return """<$name$attributes>${tagList.fold("") {acc, tag -> "$acc$tag"}}$textContent</$name>"""
     }

@@ -4,12 +4,14 @@ import akjaw.Model.Project
 import akjaw.Repository.JsonRepository
 import com.beust.klaxon.JsonArray
 import com.beust.klaxon.JsonObject
+import java.io.File
 import java.lang.IllegalStateException
 
 class SiteBuilder(private val projects: List<Project>){
+    val html: Tag
 
-    fun build(): Tag {
-        return HTMLBuilder.html {
+    init {
+        html = HTMLBuilder.html {
             createHead()
             createBody()
         }
@@ -168,12 +170,19 @@ class SiteBuilder(private val projects: List<Project>){
 
     }
 
+    fun saveToFile(path: String) {
+        val file = File(path)
+        file.createNewFile()
+        file.writeText(html.toString(), Charsets.UTF_16)
+    }
+
 }
 
 fun main(){
     val projects = JsonRepository("data/projects.json").projects
     val siteBuilder = SiteBuilder(projects)
-    val html = siteBuilder.build()
+    val html = siteBuilder.html
+    siteBuilder.saveToFile("build/index.html")
     print(html)
     val s = 's'
 }
