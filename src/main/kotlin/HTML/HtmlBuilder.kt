@@ -13,6 +13,7 @@ class Tag(name: String){
     val tagList = mutableListOf<Tag>()
     val attributes = Attributes()
     var textContent: String = ""
+    var className: String? = null
 
     fun tag(name: String, init: (Tag.() -> Unit)? = null) = initTag(Tag(name.toLowerCase()), init)
 
@@ -33,6 +34,9 @@ class Tag(name: String){
     }
 
     operator fun Attributes.unaryPlus() {
+        className = this.firstOrNull{
+            it.name == "class"
+        }?.value
         attributes.addAll(this)
     }
 
@@ -49,13 +53,34 @@ class Tag(name: String){
     }
 
     fun getByName(tagName: String): List<Tag>? {
+        return recursiveFindWithPredicate {
+            it.name == tagName
+        }
+
+    }
+
+    fun getByClass(classNameToFind: String): List<Tag>? {
+        return recursiveFindWithPredicate {
+            val tagClass = it.className
+
+            if(tagClass == null){
+                false
+            } else {
+                tagClass == classNameToFind
+            }
+        }
+    }
+
+    private fun recursiveFindWithPredicate(predicate: ((Tag) -> Boolean)): List<Tag>? {
         val foundTags = mutableListOf<Tag>()
 
         tagList.forEach {
-            if(it.name == tagName){
+
+            if(predicate(it)){
                 foundTags.add(it)
             }
-            val childFoundTags = it.getByName(tagName)
+
+            val childFoundTags = it.recursiveFindWithPredicate(predicate)
             if(childFoundTags != null && childFoundTags.isNotEmpty()){
                 foundTags.addAll(childFoundTags)
             }
@@ -66,7 +91,6 @@ class Tag(name: String){
         } else {
             foundTags.toList()
         }
-
     }
 }
 

@@ -200,4 +200,44 @@ class HtmlBuilderTest{
         Truth.assertThat(secondSpan.textContent).isEqualTo("second span")
     }
 
+    @Test
+    fun `getByClass returns list of tags with class that are in that tree`(){
+        val html = HTMLBuilder.html {
+            tag("div") {
+                + "root"
+                + Attributes("class" to "find")
+                tag("span"){
+                    + "parent"
+                    tag("span"){
+                        + "with class"
+                        + Attributes("class" to "find")
+                    }
+                }
+                tag("div")
+            }
+        }
+
+        val foundSpan = html.getByClass("find")
+        Truth.assertThat(foundSpan).isNotNull()
+        Truth.assertThat(foundSpan).hasSize(2)
+
+        foundSpan ?: throw NullPointerException()
+
+        Truth.assertThat(foundSpan[0].name).isEqualTo("div")
+        Truth.assertThat(foundSpan[0].textContent).isEqualTo("root")
+        Truth.assertThat(foundSpan[1].name).isEqualTo("span")
+        Truth.assertThat(foundSpan[1].textContent).isEqualTo("with class")
+
+    }
+
+    @Test
+    fun `getByClass returns null if no tags with class are in that tree`(){
+        val html = HTMLBuilder.html {
+
+        }
+
+        val foundSpan = html.getByClass("find")
+        Truth.assertThat(foundSpan).isNull()
+    }
+
 }
