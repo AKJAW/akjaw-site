@@ -23,19 +23,55 @@ class SiteBuilder(private val projects: List<Project>){
                 + Attributes("rel" to "stylesheet", "href" to "style.css")
             }
             tag("script") {
-                + Attributes("src" to "script.js")
+                + Attributes("src" to "main.js", "type" to "text/javascript")
             }
         }
     }
 
     private fun Tag.createBody(){
         tag("body"){
-            createAboutMeSection()
-            projects.map {
-                tag("div"){
-                    getTag(it.projectData)
+            createHeader()
+            tag("div"){
+                + Attributes("class" to "content site-break")
+                createAboutMeSection()
+                projects.map {
+                    tag("div"){
+                        getTag(it.projectData)
+                    }
+
+                }
+            }
+        }
+    }
+
+    private fun Tag.createHeader() {
+        tag("div"){
+            + Attributes("class" to "header")
+            tag("div"){
+                + Attributes("class" to "site-break")
+                tag("h3"){
+                    + "AKJAW"
                 }
 
+                tag("div"){
+                    + Attributes("class" to "icon-container")
+                    createHeaderIcon(
+                        "GitHub-Mark-32px.png",
+                        "https://github.com/AKJAW",
+                        "github-icon")
+                }
+            }
+        }
+    }
+
+    private fun Tag.createHeaderIcon(iconPath: String, link: String, iconClassName: String){
+        tag("a"){
+            + Attributes(
+                "class" to "icon $iconClassName",
+                "href" to link,
+                "target" to "_blank")
+            tag("img"){
+                + Attributes("src" to iconPath)
             }
         }
     }
@@ -52,7 +88,7 @@ class SiteBuilder(private val projects: List<Project>){
                 "div",
                 "My name is Aleksander Jaworski, im am studying Applied computer science. I am working as a remote developer for 4 online stores, and for Bubble quiz games. I have finished many projects, mostly web ones, but i have made some desktop application and also i am working on my own Android app. This web page is a portfolio for these projects",
                 "Nazywam się Aleksander Jaworski, jestem studentem informatyki stosowanej. Pracuję jako zdalnym deweloper dla 4 sklepów internetowych, oraz dla Bubble quiz games. Zakończyłem wiele projektów, głownie internetowych, ale stworzyłem też pare aplikacji desktopowych, oraz aktualnie pracuje nad swoją własną aplikacją na systemy Android. Ta strona jest moim portfolio w którym opisane są te projekty"
-                )
+            )
         }
     }
 
@@ -82,13 +118,13 @@ class SiteBuilder(private val projects: List<Project>){
             val s = 's'
         }
         jsonObject.keys.map {
-                val parsed = jsonObject[it]
-                when{
-                    isSpecialTag(it) -> getSpecialTag(it, parsed)
-                    parsed is String -> getString(it, parsed)
-                    parsed is JsonObject -> getNestedTag(it, parsed)
-                    else -> throw IllegalStateException()
-                }
+            val parsed = jsonObject[it]
+            when{
+                isSpecialTag(it) -> getSpecialTag(it, parsed)
+                parsed is String -> getString(it, parsed)
+                parsed is JsonObject -> getNestedTag(it, parsed)
+                else -> throw IllegalStateException()
+            }
         }
         return this
     }
@@ -173,7 +209,7 @@ class SiteBuilder(private val projects: List<Project>){
     fun saveToFile(path: String) {
         val file = File(path)
         file.createNewFile()
-        file.writeText(html.toString(), Charsets.UTF_16)
+        file.writeText(html.toString())
     }
 
 }

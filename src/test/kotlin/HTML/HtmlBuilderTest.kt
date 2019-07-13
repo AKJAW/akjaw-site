@@ -16,7 +16,7 @@ class HtmlBuilderTest{
         val html = HTMLBuilder.html {  }
 
         //Then toString correctly outputs only one html tag
-        Truth.assertThat(html.toStringWithoutWhitespace()).isEqualTo("<html></html>")
+        Truth.assertThat(html).isEqualTo("<html></html>")
     }
 
     @Test

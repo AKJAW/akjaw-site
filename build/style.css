@@ -1,0 +1,75 @@
+body {
+    overflow-x: hidden;
+    margin: 0;
+    /*background-color: #282828;*/
+    /*color: #c1c1c1;*/
+    color: #373737;
+}
+
+.site-break {
+    margin: 0 auto;
+    max-width: 1040px;
+}
+
+.header {
+    background-color: rgb(34, 34, 34);
+    background-color: rgba(34, 34, 34, .97);
+    color: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.header > div {
+}
+
+.header h3{
+    margin: 0 10px;
+    display: inline;
+    line-height: 50px;
+}
+
+.github-icon{
+    height: 50px;
+    width: 50px;
+    background-color: #f4f4f4;
+    cursor: pointer;
+}
+
+.github-icon:hover{
+    background-color: #d7d4d4;
+}
+
+.header .icon-container{
+    float: right;
+}
+
+.header .icon{
+    position: relative;
+    display: block;
+}
+
+.header .icon:focus{
+    outline: none;
+}
+
+.header .icon img{
+    height: 30px;
+    width: 30px;
+    pointer-events: none;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+}
+
+.content {
+    margin: 65px auto;
+    padding: 0 12px;
+}
+
+.site-break{
+
+}
