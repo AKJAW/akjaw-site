@@ -74,7 +74,7 @@ class SiteBuilder(private val projects: List<Project>){
             + Attributes("class" to "language-container")
 
             tag("div"){
-                + Attributes("id" to "en-button", "class" to "language-button")
+                + Attributes("id" to "en-button", "class" to "language-button active")
             }
 
             tag("div"){
