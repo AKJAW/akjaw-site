@@ -3,10 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="5501444b-1d28-43e3-ba48-b6f8ecabc86d" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/GitHub-Mark-32px.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/data/projects.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/projects.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/HTML/Attribute.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/HTML/Attribute.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/HTML/SiteBuilder.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/HTML/SiteBuilder.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/HTML/HtmlBuilderTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/HTML/HtmlBuilderTest.kt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -42,11 +41,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="projects.json" pinned="false" current-in-tab="false">
+      <file leaf-file-name="projects.json" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/data/projects.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="141" column="3" selection-start-line="141" selection-start-column="3" selection-end-line="141" selection-end-column="3" />
+            <state relative-caret-position="510">
+              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+              <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
+              <caret line="55" column="13" selection-start-line="55" selection-start-column="13" selection-end-line="55" selection-end-column="13" />
+              <caret line="78" column="13" selection-start-line="78" selection-start-column="13" selection-end-line="78" selection-end-column="13" />
+              <caret line="101" column="13" selection-start-line="101" selection-start-column="13" selection-end-line="101" selection-end-column="13" />
+              <caret line="124" column="13" selection-start-line="124" selection-start-column="13" selection-end-line="124" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -54,8 +58,8 @@
       <file leaf-file-name="SiteBuilder.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/HTML/SiteBuilder.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="331">
-              <caret line="73" column="29" lean-forward="true" selection-start-line="73" selection-start-column="29" selection-end-line="73" selection-end-column="29" />
+            <state relative-caret-position="81">
+              <caret line="182" column="39" lean-forward="true" selection-start-line="182" selection-start-column="39" selection-end-line="182" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -63,7 +67,7 @@
       <file leaf-file-name="Attributes.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/HTML/Attributes.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="40">
+            <state relative-caret-position="20">
               <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
             </state>
           </provider>
@@ -73,16 +77,16 @@
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/HTML/Attribute.kt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="80">
-              <caret line="4" column="51" lean-forward="true" selection-start-line="4" selection-start-column="51" selection-end-line="4" selection-end-column="51" />
+              <caret line="4" column="51" selection-start-line="4" selection-start-column="51" selection-end-line="4" selection-end-column="51" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/build/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="28" column="22" selection-start-line="28" selection-start-column="22" selection-end-line="28" selection-end-column="22" />
+            <state relative-caret-position="140">
+              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
             </state>
           </provider>
         </entry>
@@ -96,7 +100,7 @@
         <entry file="file://$PROJECT_DIR$/build/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="20">
-              <caret column="120" selection-start-column="6" selection-end-column="120" />
+              <caret column="250" selection-start-column="6" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -116,6 +120,8 @@
     <findStrings>
       <find>children</find>
       <find>style</find>
+      <find>language-container</find>
+      <find>pl</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -514,13 +520,13 @@
         <option value="$PROJECT_DIR$/src/test/kotlin/HTML/SiteBuilderTest.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/HTML/HtmlBuilder.kt" />
         <option value="$PROJECT_DIR$/build/index.html" />
-        <option value="$PROJECT_DIR$/build/main.js" />
-        <option value="$PROJECT_DIR$/data/projects.json" />
         <option value="$PROJECT_DIR$/src/main/kotlin/HTML/Attributes.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/HTML/Attribute.kt" />
         <option value="$PROJECT_DIR$/src/test/kotlin/HTML/HtmlBuilderTest.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/HTML/SiteBuilder.kt" />
+        <option value="$PROJECT_DIR$/build/main.js" />
         <option value="$PROJECT_DIR$/build/style.css" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/HTML/SiteBuilder.kt" />
+        <option value="$PROJECT_DIR$/data/projects.json" />
       </list>
     </option>
   </component>
@@ -534,9 +540,9 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="28" />
+    <option name="y" value="24" />
     <option name="width" value="1920" />
-    <option name="height" value="1052" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -545,6 +551,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -556,6 +563,12 @@
               <item name="site" type="b2602c69:ProjectViewProjectNode" />
               <item name="Site" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="build" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="site" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Site" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="build" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="site" type="b2602c69:ProjectViewProjectNode" />
@@ -677,7 +690,6 @@
         </subPane>
       </pane>
       <pane id="Course" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -691,15 +703,16 @@
     <property name="settings.editor.selected.configurable" value="preferences.editor" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/kotlin/JSON" />
-      <recent name="$PROJECT_DIR$/src/main/kotlin/HTML" />
+    <key name="CreateKotlinClassDialog.RecentsKey">
+      <recent name="akjaw.Repository" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/test/resources/json" />
     </key>
-    <key name="CreateKotlinClassDialog.RecentsKey">
-      <recent name="akjaw.Repository" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/build/assets" />
+      <recent name="$PROJECT_DIR$/src/main/kotlin/JSON" />
+      <recent name="$PROJECT_DIR$/src/main/kotlin/HTML" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -879,24 +892,24 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="28" width="1920" height="1052" extended-state="6" />
+    <frame x="0" y="24" width="1920" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="7" weight="0.3297414" />
-      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.49946696" weight="0.3286638" />
+      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.49946696" weight="0.32832617" />
       <window_info anchor="right" id="Palette&#9;" order="5" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5010661" side_tool="true" weight="0.39870688" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Run" order="3" visible="true" weight="0.33728448" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.3297414" />
+      <window_info active="true" anchor="bottom" id="Run" order="3" visible="true" weight="0.33690986" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3272921" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3347548" />
       <window_info anchor="bottom" id="Educational.CheckDetails" order="0" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="4" />
       <window_info anchor="right" id="Gradle" order="3" weight="0.3296875" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.4989339" weight="0.39870688" />
       <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.4989339" weight="0.39870688" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -935,19 +948,19 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/main/kotlin/HTML/SiteBuilder.kt</url>
-          <line>222</line>
+          <line>249</line>
           <properties />
           <option name="timeStamp" value="55" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/main/kotlin/HTML/SiteBuilder.kt</url>
-          <line>117</line>
+          <line>138</line>
           <properties />
           <option name="timeStamp" value="57" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/main/kotlin/HTML/SiteBuilder.kt</url>
-          <line>125</line>
+          <line>146</line>
           <properties />
           <option name="timeStamp" value="63" />
         </line-breakpoint>
@@ -1243,9 +1256,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="211">
           <caret line="52" column="5" lean-forward="true" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
-          <folding>
-            <element signature="e#14#221#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1253,9 +1263,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="12" column="36" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
-          <folding>
-            <element signature="e#14#218#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1266,48 +1273,53 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/HTML/Attribute.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="4" column="51" selection-start-line="4" selection-start-column="51" selection-end-line="4" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/build/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="20">
-          <caret column="120" selection-start-column="6" selection-end-column="120" />
+          <caret column="250" selection-start-column="6" selection-end-column="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/build/main.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/HTML/Attributes.kt">
+    <entry file="file://$PROJECT_DIR$/build/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
+        <state relative-caret-position="140">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/projects.json">
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/HTML/Attributes.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="141" column="3" selection-start-line="141" selection-start-column="3" selection-end-line="141" selection-end-column="3" />
+        <state relative-caret-position="20">
+          <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/HTML/SiteBuilder.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="73" column="29" lean-forward="true" selection-start-line="73" selection-start-column="29" selection-end-line="73" selection-end-column="29" />
+        <state relative-caret-position="81">
+          <caret line="182" column="39" lean-forward="true" selection-start-line="182" selection-start-column="39" selection-end-line="182" selection-end-column="39" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/HTML/Attribute.kt">
+    <entry file="file://$PROJECT_DIR$/data/projects.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="4" column="51" lean-forward="true" selection-start-line="4" selection-start-column="51" selection-end-line="4" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="28" column="22" selection-start-line="28" selection-start-column="22" selection-end-line="28" selection-end-column="22" />
+        <state relative-caret-position="510">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
+          <caret line="55" column="13" selection-start-line="55" selection-start-column="13" selection-end-line="55" selection-end-column="13" />
+          <caret line="78" column="13" selection-start-line="78" selection-start-column="13" selection-end-line="78" selection-end-column="13" />
+          <caret line="101" column="13" selection-start-line="101" selection-start-column="13" selection-end-line="101" selection-end-column="13" />
+          <caret line="124" column="13" selection-start-line="124" selection-start-column="13" selection-end-line="124" selection-end-column="13" />
         </state>
       </provider>
     </entry>

@@ -12,6 +12,9 @@ class SiteBuilder(private val projects: List<Project>){
 
     init {
         html = HTMLBuilder.html {
+            tag("meta"){
+                + Attributes("charset" to "UTF-8")
+            }
             createHead()
             createBody()
         }
@@ -53,13 +56,29 @@ class SiteBuilder(private val projects: List<Project>){
                     + "AKJAW"
                 }
 
+                createLanguageIcons()
+
                 tag("div"){
                     + Attributes("class" to "icon-container")
                     createHeaderIcon(
-                        "GitHub-Mark-32px.png",
+                        "assets/GitHub-Mark-32px.png",
                         "https://github.com/AKJAW",
                         "github-icon")
                 }
+            }
+        }
+    }
+
+    private fun Tag.createLanguageIcons(){
+        tag("div"){
+            + Attributes("class" to "language-container")
+
+            tag("div"){
+                + Attributes("id" to "en-button", "class" to "language-button")
+            }
+
+            tag("div"){
+                + Attributes("id" to "pl-button", "class" to "language-button")
             }
         }
     }
@@ -98,17 +117,19 @@ class SiteBuilder(private val projects: List<Project>){
         polishTextContent: String,
         classes: String? = null){
 
+        val classValue = if(classes == null){
+            ""
+        } else {
+            " $classes"
+        }
+
         tag(tagName){
-            if(classes != null){
-                + Attributes("class" to "en $classes")
-            }
+            + Attributes("class" to "en$classValue")
             + englishTextContent
         }
 
         tag(tagName){
-            if(classes != null){
-                + Attributes("class" to "en $classes")
-            }
+            + Attributes("class" to "pl none $classValue")
             + polishTextContent
         }
     }
@@ -157,16 +178,22 @@ class SiteBuilder(private val projects: List<Project>){
 
     private fun Tag.getString(key: String, value: String): Tag {
         return if(key == "pl" || key == "en"){
-            getLanguageString(key, value)
+            getLanguageString(key, value, key == "pl")
         } else {
             getSimpleString(key, value)
         }
     }
 
-    private fun Tag.getLanguageString(languageKey: String, value: String): Tag {
+    private fun Tag.getLanguageString(languageKey: String, value: String, isHidden: Boolean): Tag {
         return tag("div"){
             + value
-            + Attributes("class" to languageKey)
+
+            val classValue = if(isHidden){
+                "$languageKey none"
+            } else {
+                languageKey
+            }
+            + Attributes("class" to classValue)
         }
     }
 
