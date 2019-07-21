@@ -7,12 +7,22 @@
           "en": "The biggest project I have worked on",
           "pl": "Największy projekt nad jakim pracowałem"
         },
-        "p": "I was the solo developer on this project for the most part. Me and my employer had talks discussing the app development and any problems that i have encountered.",
-        "span": "Used technologies",
+        "p": {
+          "en": "For the most part I am the solo developer on this project. I have meetings related to the course of action of the project and also some implementation details. I created everything on the front-end aside from the assets and almost everything on the back-end. I started working this project on the end of 2017 with a bit of a hiatus in-between.",
+          "pl": "Przez większość czasu jestem solo developerem przy tym projekcie. Odbywam jedynie meetingi związane z kierunkiem projektu oraz o niektórych detalach implementacyjnych. Stworzyłem wszystko na front-end oprócz assetów i prawie wszystko na back-end. Rozpocząłem pracę nad tym projektem na końcu 2017 z małymi przerwami pomiędzy."
+        },
+        "span": {
+          "en": "Used technologies",
+          "pl": "Użyte technologie"
+        },
         "list": [
           "React",
           "Redux",
-          "Firebase (Firestore and Auth)"
+          {
+            "en": "Firebase (Firestore and Auth)",
+            "pl": "Firebase (Firestore i Auth)"
+          },
+          "Firebase Cloud functions"
         ]
       }
     }

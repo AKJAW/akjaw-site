@@ -169,9 +169,22 @@ class SiteBuilder(private val projects: List<Project>){
     private fun Tag.getListTag(name: String, className: String?, listItems: JsonArray<*>): Tag {
         return tag("ul"){
             listItems.forEach {
-                tag("li"){
-                    + (it as String)
+                    getListItem(it)
+
+            }
+        }
+    }
+
+    private fun Tag.getListItem(item: Any?){
+        tag("li") {
+            if (item is String) {
+                + item
+            } else if (item is JsonObject) {
+                item.forEach {
+                    getString(it.key, it.value as String)
                 }
+            } else {
+                throw IllegalStateException("List item has incorrect type")
             }
         }
     }

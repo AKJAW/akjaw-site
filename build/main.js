@@ -59,6 +59,6 @@ HTMLElement.prototype.addClass = function(className){
     this.classList.add(className)
 }
 
-HTMLElement.prototype.getExistingSibling = function(){
+HTMLElement.prototype.getExistingSibling = function(){//With class
     return this.previousSibling || this.nextSibling
 }
