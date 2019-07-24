@@ -29,7 +29,7 @@ function onLanguageButtonClick(event){
 function toggleButtonActivation(button) {
     button.addClass("active")
 
-    const sibling = button.getExistingSibling()
+    const sibling = button.getShownSibling()
     sibling.removeClass("active")
 
     return LANGUAGE[button.id]
@@ -40,6 +40,7 @@ function toggleLanguageText(activatedLanguage){
 
     for (var i = 0, len = textNodes.length; i < len; i++) {
         console.log(textNodes[i])
+        debugger;
         textNodes[i].toggleLanguage()
     }
 }
@@ -47,7 +48,7 @@ function toggleLanguageText(activatedLanguage){
 HTMLElement.prototype.toggleLanguage = function(){
     this.removeClass("none")
 
-    const sibling = this.getExistingSibling()
+    const sibling = this.getShownSibling()
     sibling.addClass("none")
 }
 
@@ -59,6 +60,14 @@ HTMLElement.prototype.addClass = function(className){
     this.classList.add(className)
 }
 
-HTMLElement.prototype.getExistingSibling = function(){//With class
-    return this.previousSibling || this.nextSibling
+HTMLElement.prototype.getShownSibling = function(){//That is shown
+    if(this.previousSibling && !this.previousSibling.hasClass("none")){
+        return this.previousSibling
+    } else if(this.nextSibling && !this.nextSibling.hasClass("none")){
+        return this.nextSibling
+    }
+}
+
+HTMLElement.prototype.hasClass = function(className){
+    return this.classList.contains(className)
 }

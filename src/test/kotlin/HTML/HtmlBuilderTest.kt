@@ -49,7 +49,7 @@ class HtmlBuilderTest{
         Truth.assertThat(html.tagList[0].tagList[0].name).isEqualTo("div")
 
         //Then toString correctly outputs the tree
-        Truth.assertThat(html.toStringWithoutWhitespace()).isEqualTo("<html><div><div></div></div></html>")
+        Truth.assertThat(html.toString().replace(" ", "")).isEqualTo("<html><div><div></div></div></html>")
     }
 
     @Test
@@ -72,7 +72,7 @@ class HtmlBuilderTest{
             .isEqualTo(Attribute("style", "color:black; background:red"))
 
         //Then toString correctly outputs the tree
-        Truth.assertThat(html.toStringWithoutWhitespace())
+        Truth.assertThat(html.toString().replace(" ", ""))
             .isEqualTo("""<html><divstyle="color:black;background:red"></div></html>""")
     }
 
@@ -95,7 +95,7 @@ class HtmlBuilderTest{
         Truth.assertThat(html.tagList[0].attributes[0]).isEqualTo(Attribute("src", "1.jpg"))
         Truth.assertThat(html.tagList[0].attributes[1]).isEqualTo(Attribute("alt", "image"))
 
-        Truth.assertThat(html.toStringWithoutWhitespace())
+        Truth.assertThat(html.toString().replace(" ", ""))
             .isEqualTo("""<html><imgsrc="1.jpg"alt="image"></img></html>""")
     }
 
@@ -249,6 +249,23 @@ class HtmlBuilderTest{
 
         val foundSpan = html.getByClass("find")
         Truth.assertThat(foundSpan).isNull()
+    }
+
+    @Test
+    fun `parent property has the correct tag reference`(){
+        val html = HTMLBuilder.html {
+            tag("div"){
+                tag("span")
+                tag("p")
+            }
+        }
+
+        val div = html.tagList[0]
+        val span = html.tagList[0].tagList[0]
+        val p = html.tagList[0].tagList[1]
+        Truth.assertThat(span.parent).isEqualTo(div)
+        Truth.assertThat(p.parent).isEqualTo(div)
+        Truth.assertThat(div.parent).isEqualTo(html)
     }
 
 }

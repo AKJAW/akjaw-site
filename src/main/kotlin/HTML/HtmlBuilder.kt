@@ -14,13 +14,16 @@ class Tag(name: String){
     val attributes = Attributes()
     var textContent: String = ""
     var className: String? = null
+    var parent: Tag? = null
+        private set
 
-    fun tag(name: String, init: (Tag.() -> Unit)? = null) = initTag(Tag(name.toLowerCase()), init)
+    fun tag(name: String, init: (Tag.() -> Unit)? = null) = initTag(Tag(name.toLowerCase()), init, this)
 
-    private fun initTag(tag: Tag, init: (Tag.() -> Unit)?): Tag {
+    private fun initTag(tag: Tag, init: (Tag.() -> Unit)?, parent: Tag): Tag {
         if (init != null) {
             tag.init()
         }
+        tag.parent = parent
         tagList.add(tag)
         return tag
     }

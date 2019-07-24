@@ -111,7 +111,7 @@ class SiteBuilder(private val projects: List<Project>){
         }
     }
 
-    private fun Tag.createTagWithLanguages(
+    private fun Tag.createTagWithLanguages(//TODO ma tworzyć dwa tagi rodzica z językiem, nie dwa divy w środku
         tagName: String,
         englishTextContent: String,
         polishTextContent: String,
@@ -198,6 +198,7 @@ class SiteBuilder(private val projects: List<Project>){
     }
 
     private fun Tag.getLanguageString(languageKey: String, value: String, isHidden: Boolean): Tag {
+        //TODO ma tworzyć dwa razy takiego samego taga jak rodzic, a nie dwa divy w środku
         return tag("div"){
             + value
 
