@@ -169,7 +169,7 @@ class SiteBuilder(private val projects: List<Project>){
     private fun Tag.getListTag(name: String, className: String?, listItems: JsonArray<*>): Tag {
         return tag("ul"){
             listItems.forEach {
-                    getListItem(it)
+                getListItem(it)
 
             }
         }
@@ -190,26 +190,22 @@ class SiteBuilder(private val projects: List<Project>){
     }
 
     private fun Tag.getString(key: String, value: String): Tag {
-        return if(key == "pl" || key == "en"){
-            getLanguageString(key, value, key == "pl")
-        } else {
-            getSimpleString(key, value)
-        }
+        return getSimpleString(key, value)
     }
 
-    private fun Tag.getLanguageString(languageKey: String, value: String, isHidden: Boolean): Tag {
-        //TODO ma tworzyć dwa razy takiego samego taga jak rodzic, a nie dwa divy w środku
-        return tag("div"){
-            + value
-
-            val classValue = if(isHidden){
-                "$languageKey none"
-            } else {
-                languageKey
-            }
-            + Attributes("class" to classValue)
-        }
-    }
+//    private fun Tag.getLanguageString(languageKey: String, value: String, isHidden: Boolean): Tag {
+//        //TODO ma tworzyć dwa razy takiego samego taga jak rodzic, a nie dwa divy w środku
+//        return tag("div"){
+//            + value
+//
+//            val classValue = if(isHidden){
+//                "$languageKey none"
+//            } else {
+//                languageKey
+//            }
+//            + Attributes("class" to classValue)
+//        }
+//    }
 
     private fun Tag.getSimpleString(key: String, value: String): Tag {
         val (tagName, tagClass) = parseJsonKey(key)
@@ -222,13 +218,17 @@ class SiteBuilder(private val projects: List<Project>){
         }
     }
 
-    private fun Tag.getNestedTag(key: String, parsed: JsonObject): Tag {
-        val (tagName, tagClass) = parseJsonKey(key)
-        return tag(tagName) {
-            if(tagClass != null){
-                + Attributes("class" to tagClass)
+    private fun Tag.getNestedTag(key: String, parsed: JsonObject) {
+        if(isNestedTagALanguageContainer(parsed)){
+            createLanguageTag(key, parsed)
+        } else {
+            val (tagName, tagClass) = parseJsonKey(key)
+            tag(tagName) {
+                if(tagClass != null){
+                    + Attributes("class" to tagClass)
+                }
+                getTag(parsed)
             }
-            getTag(parsed)
         }
     }
 
@@ -245,6 +245,38 @@ class SiteBuilder(private val projects: List<Project>){
             tagName to tagClass
         }
 
+    }
+
+    private fun isNestedTagALanguageContainer(parsed: JsonObject): Boolean{
+        return if(parsed.keys.size == 2){
+            val first = parsed.keys.first()
+
+            return first == "en" || first == "pl"
+        } else {
+            false
+        }
+    }
+
+    private fun Tag.createLanguageTag(key: String, parsed: JsonObject) {
+        val (tagName, tagClass) = parseJsonKey(key)
+
+        parsed.keys.map {
+            tag(tagName) {//TODO $languageKey
+                val classValue = if(tagClass != null){
+                    "$it $tagClass"
+                } else {
+                    "$it"
+                }
+                + Attributes("class" to classValue)
+
+                val text = parsed[it]
+                if(text is String){
+                    + text
+                }
+            }
+
+//            this.append(languageTag)
+        }
     }
 
     fun saveToFile(path: String) {
