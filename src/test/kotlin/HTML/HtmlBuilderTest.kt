@@ -1,9 +1,6 @@
 package HTML
 
-import akjaw.HTML.Attribute
-import akjaw.HTML.Attributes
-import akjaw.HTML.HTMLBuilder
-import akjaw.HTML.Style
+import akjaw.HTML.*
 import com.google.common.truth.Truth
 import org.junit.Test
 import java.lang.NullPointerException
@@ -16,7 +13,7 @@ class HtmlBuilderTest{
         val html = HTMLBuilder.html {  }
 
         //Then toString correctly outputs only one html tag
-        Truth.assertThat(html).isEqualTo("<html></html>")
+        Truth.assertThat(html.toString()).isEqualTo("<html></html>")
     }
 
     @Test
@@ -268,4 +265,69 @@ class HtmlBuilderTest{
         Truth.assertThat(div.parent).isEqualTo(html)
     }
 
+
+    @Test
+    fun `insertAt correctly inserts tag at given index`(){
+        val html = HTMLBuilder.html {}
+
+        val tag1 = Tag("div")
+        html.insertAt(0, tag1)
+        Truth.assertThat(html.tagList[0]).isEqualTo(tag1)
+
+        val tag2 = Tag("span")
+        html.insertAt(1, tag2)
+        Truth.assertThat(html.tagList[1]).isEqualTo(tag2)
+
+        val tag3 = Tag("p")
+        html.insertAt(0, tag3)
+        Truth.assertThat(html.tagList[0]).isEqualTo(tag3)
+        Truth.assertThat(html.tagList[1]).isEqualTo(tag1)
+        Truth.assertThat(html.tagList[2]).isEqualTo(tag2)
+    }
+
+    @Test(expected = IndexOutOfBoundsException::class)
+    fun `insertAt throws outOfBound error if index is not correct`(){
+        val html = HTMLBuilder.html {
+            tag("div")
+        }
+
+        html.insertAt(2, Tag("div"))
+    }
+
+    @Test
+    fun `append always inserts the tag at the last index`(){
+        val html = HTMLBuilder.html {}
+
+        val tag1 = Tag("div")
+        html.append(tag1)
+        Truth.assertThat(html.tagList[0]).isEqualTo(tag1)
+
+        val tag2 = Tag("span")
+        html.append(tag2)
+        Truth.assertThat(html.tagList[1]).isEqualTo(tag2)
+
+        val tag3 = Tag("p")
+        html.append(tag3)
+        Truth.assertThat(html.tagList[2]).isEqualTo(tag3)
+    }
+
+    @Test
+    fun `prepend always inserts the tag at the first index`(){
+        val html = HTMLBuilder.html {}
+
+        val tag1 = Tag("div")
+        html.prepend(tag1)
+        Truth.assertThat(html.tagList[0]).isEqualTo(tag1)
+
+        val tag2 = Tag("span")
+        html.prepend(tag2)
+        Truth.assertThat(html.tagList[0]).isEqualTo(tag2)
+        Truth.assertThat(html.tagList[1]).isEqualTo(tag1)
+
+        val tag3 = Tag("p")
+        html.prepend(tag3)
+        Truth.assertThat(html.tagList[0]).isEqualTo(tag3)
+        Truth.assertThat(html.tagList[1]).isEqualTo(tag2)
+        Truth.assertThat(html.tagList[2]).isEqualTo(tag1)
+    }
 }

@@ -1,5 +1,7 @@
 package akjaw.HTML
 
+import java.lang.IndexOutOfBoundsException
+
 object HTMLBuilder{
     fun html(init: (Tag.() -> Unit)? = null): Tag {
         return Tag("html").apply {
@@ -10,10 +12,13 @@ object HTMLBuilder{
 
 class Tag(name: String){
     val name = name.toLowerCase()
-    val tagList = mutableListOf<Tag>()
+    private val _tagList = mutableListOf<Tag>()
+    val tagList: List<Tag> = _tagList
     val attributes = Attributes()
     var textContent: String = ""
+        private set
     var className: String? = null
+        private set
     var parent: Tag? = null
         private set
 
@@ -24,7 +29,7 @@ class Tag(name: String){
             tag.init()
         }
         tag.parent = parent
-        tagList.add(tag)
+        _tagList.add(tag)
         return tag
     }
 
@@ -55,7 +60,6 @@ class Tag(name: String){
         return recursiveFindWithPredicate {
             it.name == tagName
         }
-
     }
 
     fun getByClass(classNameToFind: String): List<Tag>? {
@@ -90,6 +94,18 @@ class Tag(name: String){
         } else {
             foundTags.toList()
         }
+    }
+
+    fun append(tag: Tag){
+        insertAt(tagList.size, tag)
+    }
+
+    fun prepend(tag: Tag){
+        insertAt(0, tag)
+    }
+
+    fun insertAt(index: Int, tag: Tag){
+        _tagList.add(index, tag)
     }
 }
 
