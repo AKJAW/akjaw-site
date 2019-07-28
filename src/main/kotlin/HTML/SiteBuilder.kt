@@ -279,6 +279,8 @@ class SiteBuilder(private val projects: List<Project>){
                 } else {
                     it
                 }
+//                addClass //TODO
+
                 + Attributes("class" to classValue)
 
                 val text = parsed[it]

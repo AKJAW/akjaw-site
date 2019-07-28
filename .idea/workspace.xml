@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5501444b-1d28-43e3-ba48-b6f8ecabc86d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/projects.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/projects.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/HTML/HtmlBuilder.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/HTML/HtmlBuilder.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/HTML/SiteBuilder.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/HTML/SiteBuilder.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/HTML/SiteBuilderTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/HTML/SiteBuilderTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/HTML/HtmlBuilderTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/HTML/HtmlBuilderTest.kt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -54,8 +52,8 @@
       <file leaf-file-name="SiteBuilder.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/HTML/SiteBuilder.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="280" column="17" lean-forward="true" selection-start-line="280" selection-start-column="17" selection-end-line="280" selection-end-column="17" />
+            <state relative-caret-position="210">
+              <caret line="272" column="51" lean-forward="true" selection-start-line="272" selection-start-column="51" selection-end-line="272" selection-end-column="51" />
             </state>
           </provider>
         </entry>
@@ -63,8 +61,8 @@
       <file leaf-file-name="SiteBuilderTest.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/kotlin/HTML/SiteBuilderTest.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="76" column="9" lean-forward="true" selection-start-line="76" selection-start-column="9" selection-end-line="76" selection-end-column="9" />
+            <state relative-caret-position="370">
+              <caret line="84" column="41" lean-forward="true" selection-start-line="84" selection-start-column="41" selection-end-line="84" selection-end-column="41" />
               <folding>
                 <element signature="e#14#256#0" expanded="true" />
               </folding>
@@ -72,11 +70,32 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HtmlBuilder.kt" pinned="false" current-in-tab="false">
+      <file leaf-file-name="HtmlBuilder.kt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/HTML/HtmlBuilder.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="58" column="8" selection-start-line="58" selection-start-column="8" selection-end-line="58" selection-end-column="8" />
+            <state relative-caret-position="378">
+              <caret line="69" selection-start-line="69" selection-end-line="69" />
+              <folding>
+                <element signature="e#20#101#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Strings.kt" pinned="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-common/1.3.21/224a3bcfa1c088dd5d7c4a3958a68427b44c65dc/kotlin-stdlib-common-1.3.21-sources.jar!/kotlin/text/Strings.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="197">
+              <caret line="119" column="25" selection-start-line="119" selection-start-column="25" selection-end-line="119" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HtmlBuilderTest.kt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/kotlin/HTML/HtmlBuilderTest.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="552">
+              <caret line="381" column="12" selection-start-line="381" selection-start-column="12" selection-end-line="381" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -99,29 +118,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/build/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="303">
+            <state relative-caret-position="2280">
               <caret line="114" selection-start-line="114" selection-end-line="114" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build/main.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1300">
-              <caret line="65" column="51" selection-start-line="65" selection-start-column="51" selection-end-line="65" selection-end-column="51" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Documents/Projects/Piotr/Python/Magazyn/POKAZ/main.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="20">
-              <caret line="1" column="55" selection-start-line="1" selection-start-column="55" selection-end-line="1" selection-end-column="55" />
             </state>
           </provider>
         </entry>
@@ -156,6 +157,7 @@
       <find>parent</find>
       <find>$languageKey</find>
       <find>tags</find>
+      <find>flex</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -554,13 +556,13 @@
         <option value="$PROJECT_DIR$/src/main/kotlin/HTML/Attributes.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/HTML/Attribute.kt" />
         <option value="$PROJECT_DIR$/build/main.js" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/HTML/HtmlBuilder.kt" />
-        <option value="$PROJECT_DIR$/src/test/kotlin/HTML/HtmlBuilderTest.kt" />
         <option value="$PROJECT_DIR$/src/test/kotlin/HTML/AttributeTest.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/HTML/SiteBuilder.kt" />
         <option value="$PROJECT_DIR$/src/test/kotlin/HTML/SiteBuilderTest.kt" />
         <option value="$PROJECT_DIR$/data/projects.json" />
         <option value="$PROJECT_DIR$/build/style.css" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/HTML/SiteBuilder.kt" />
+        <option value="$PROJECT_DIR$/src/test/kotlin/HTML/HtmlBuilderTest.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/HTML/HtmlBuilder.kt" />
       </list>
     </option>
   </component>
@@ -761,9 +763,43 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Kotlin.akjaw.HTML.SiteBuilderKt">
+  <component name="RunManager" selected="JUnit.HtmlBuilderTest.removeClass correctly removes the specified class">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    </configuration>
+    <configuration name="HtmlBuilderTest.addClass correctly adds the spiecified class" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="site_test" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="HTML" />
+      <option name="MAIN_CLASS_NAME" value="HTML.HtmlBuilderTest" />
+      <option name="METHOD_NAME" value="addClass correctly adds the spiecified class" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="HtmlBuilderTest.removeClass correctly removes the specified class" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="site_test" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="HTML" />
+      <option name="MAIN_CLASS_NAME" value="HTML.HtmlBuilderTest" />
+      <option name="METHOD_NAME" value="removeClass correctly removes the specified class" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
     </configuration>
     <configuration name="SiteBuilderTest.Correctly creates custom &quot;tags&quot; tag" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="site_test" />
@@ -815,25 +851,6 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="kotlin in site_test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="site_test" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="directory" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <dir value="$PROJECT_DIR$/src/test/kotlin" />
-      <patterns />
-    </configuration>
-    <configuration name="index.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/site/build/index.html" />
     <configuration name="akjaw.HTML.SiteBuilderKt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
       <module name="site_main" />
       <option name="VM_PARAMETERS" />
@@ -849,19 +866,19 @@
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
     </configuration>
     <list>
-      <item itemvalue="JUnit.kotlin in site_test" />
       <item itemvalue="Kotlin.akjaw.HTML.SiteBuilderKt" />
-      <item itemvalue="JavaScript Debug.index.html" />
       <item itemvalue="JUnit.SiteBuilderTest.Correctly creates custom &quot;tags&quot; tag" />
       <item itemvalue="JUnit.SiteBuilderTest.Correctly creates custom projectTags tag" />
+      <item itemvalue="JUnit.HtmlBuilderTest.addClass correctly adds the spiecified class" />
+      <item itemvalue="JUnit.HtmlBuilderTest.removeClass correctly removes the specified class" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.HtmlBuilderTest.removeClass correctly removes the specified class" />
+        <item itemvalue="JUnit.HtmlBuilderTest.addClass correctly adds the spiecified class" />
         <item itemvalue="Kotlin.akjaw.HTML.SiteBuilderKt" />
         <item itemvalue="JUnit.SiteBuilderTest.Correctly creates custom projectTags tag" />
         <item itemvalue="JUnit.SiteBuilderTest.Correctly creates custom &quot;tags&quot; tag" />
-        <item itemvalue="JavaScript Debug.index.html" />
-        <item itemvalue="JUnit.kotlin in site_test" />
       </list>
     </recent_temporary>
   </component>
@@ -869,27 +886,6 @@
     <configuration />
   </component>
   <component name="TestHistory">
-    <history-entry file="kotlin_in_site_test - 2019.07.24 at 21h 29m 03s.xml">
-      <configuration name="kotlin in site_test" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SiteBuilderTest_Correctly_creates_custom__tags__tag - 2019.07.28 at 20h 19m 03s.xml">
-      <configuration name="SiteBuilderTest.Correctly creates custom &quot;tags&quot; tag" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SiteBuilderTest_Correctly_creates_custom__tags__tag - 2019.07.28 at 20h 19m 18s.xml">
-      <configuration name="SiteBuilderTest.Correctly creates custom &quot;tags&quot; tag" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SiteBuilderTest_Correctly_creates_custom_projectTags_tag - 2019.07.28 at 20h 26m 52s.xml">
-      <configuration name="SiteBuilderTest.Correctly creates custom projectTags tag" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SiteBuilderTest_Correctly_creates_custom_projectTags_tag - 2019.07.28 at 20h 27m 54s.xml">
-      <configuration name="SiteBuilderTest.Correctly creates custom projectTags tag" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SiteBuilderTest_Correctly_creates_custom_projectTags_tag - 2019.07.28 at 20h 30m 23s.xml">
-      <configuration name="SiteBuilderTest.Correctly creates custom projectTags tag" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SiteBuilderTest_Correctly_creates_custom_projectTags_tag - 2019.07.28 at 20h 31m 44s.xml">
-      <configuration name="SiteBuilderTest.Correctly creates custom projectTags tag" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="SiteBuilderTest_Correctly_creates_custom_projectTags_tag - 2019.07.28 at 20h 32m 13s.xml">
       <configuration name="SiteBuilderTest.Correctly creates custom projectTags tag" configurationId="JUnit" />
     </history-entry>
@@ -898,6 +894,27 @@
     </history-entry>
     <history-entry file="SiteBuilderTest_Correctly_creates_custom_projectTags_tag - 2019.07.28 at 20h 38m 21s.xml">
       <configuration name="SiteBuilderTest.Correctly creates custom projectTags tag" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="HtmlBuilderTest_addClass_correctly_adds_the_spiecified_class - 2019.07.28 at 20h 53m 54s.xml">
+      <configuration name="HtmlBuilderTest.addClass correctly adds the spiecified class" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="HtmlBuilderTest_addClass_correctly_adds_the_spiecified_class - 2019.07.28 at 20h 54m 07s.xml">
+      <configuration name="HtmlBuilderTest.addClass correctly adds the spiecified class" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="HtmlBuilderTest_addClass_correctly_adds_the_spiecified_class - 2019.07.28 at 20h 59m 11s.xml">
+      <configuration name="HtmlBuilderTest.addClass correctly adds the spiecified class" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="HtmlBuilderTest_addClass_correctly_adds_the_spiecified_class - 2019.07.28 at 21h 00m 00s.xml">
+      <configuration name="HtmlBuilderTest.addClass correctly adds the spiecified class" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="HtmlBuilderTest_addClass_correctly_adds_the_spiecified_class - 2019.07.28 at 21h 00m 35s.xml">
+      <configuration name="HtmlBuilderTest.addClass correctly adds the spiecified class" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="HtmlBuilderTest_addClass_correctly_adds_the_spiecified_class - 2019.07.28 at 21h 00m 41s.xml">
+      <configuration name="HtmlBuilderTest.addClass correctly adds the spiecified class" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="HtmlBuilderTest_addClass_correctly_adds_the_spiecified_class - 2019.07.28 at 21h 00m 47s.xml">
+      <configuration name="HtmlBuilderTest.addClass correctly adds the spiecified class" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -914,12 +931,12 @@
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="7" weight="0.3297414" />
-      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.49946696" weight="0.32832617" />
+      <window_info active="true" anchor="bottom" id="Messages" order="11" sideWeight="0.49946696" visible="true" weight="0.32832617" />
       <window_info anchor="right" id="Palette&#9;" order="5" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5010661" side_tool="true" weight="0.39870688" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.3297414" />
-      <window_info active="true" anchor="bottom" id="Run" order="3" visible="true" weight="0.33690986" />
+      <window_info anchor="bottom" id="Run" order="3" weight="0.33690986" />
       <window_info id="Designer" order="2" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25159913" />
       <window_info anchor="bottom" id="Educational.CheckDetails" order="0" show_stripe_button="false" />
@@ -954,13 +971,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/main/kotlin/HTML/HtmlBuilder.kt</url>
-          <line>110</line>
+          <line>131</line>
           <properties />
           <option name="timeStamp" value="32" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/main/kotlin/HTML/HtmlBuilder.kt</url>
-          <line>10</line>
+          <line>11</line>
           <properties />
           <option name="timeStamp" value="33" />
         </line-breakpoint>
@@ -978,13 +995,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/test/kotlin/HTML/HtmlBuilderTest.kt</url>
-          <line>254</line>
+          <line>255</line>
           <properties />
           <option name="timeStamp" value="156" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/main/kotlin/HTML/SiteBuilder.kt</url>
-          <line>289</line>
+          <line>291</line>
           <properties />
           <option name="timeStamp" value="170" />
         </line-breakpoint>
@@ -1001,16 +1018,16 @@
           <option name="timeStamp" value="172" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/test/kotlin/HTML/SiteBuilderTest.kt</url>
-          <line>84</line>
+          <url>file://$PROJECT_DIR$/src/test/kotlin/HTML/HtmlBuilderTest.kt</url>
+          <line>334</line>
           <properties />
-          <option name="timeStamp" value="174" />
+          <option name="timeStamp" value="177" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="175" />
+      <option name="time" value="178" />
     </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
@@ -1068,7 +1085,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/HTML/Tag.kt" />
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.truth/truth/0.44/4330281abb66c66d08ae2c43653278040bb72902/truth-0.44-sources.jar!/com/google/common/truth/StringSubject.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="197">
@@ -1293,13 +1309,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/kotlin/HTML/HtmlBuilderTest.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3320">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-common/1.3.21/224a3bcfa1c088dd5d7c4a3958a68427b44c65dc/kotlin-stdlib-common-1.3.21-sources.jar!/generated/_Collections.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3440">
@@ -1311,13 +1320,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="40">
           <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/HTML/HtmlBuilder.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="58" column="8" selection-start-line="58" selection-start-column="8" selection-end-line="58" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -1335,10 +1337,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/build/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2280">
+          <caret line="114" selection-start-line="114" selection-end-line="114" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-common/1.3.21/224a3bcfa1c088dd5d7c4a3958a68427b44c65dc/kotlin-stdlib-common-1.3.21-sources.jar!/kotlin/text/Strings.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="119" column="25" selection-start-line="119" selection-start-column="25" selection-end-line="119" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/kotlin/HTML/SiteBuilderTest.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="76" column="9" lean-forward="true" selection-start-line="76" selection-start-column="9" selection-end-line="76" selection-end-column="9" />
+        <state relative-caret-position="370">
+          <caret line="84" column="41" lean-forward="true" selection-start-line="84" selection-start-column="41" selection-end-line="84" selection-end-column="41" />
           <folding>
             <element signature="e#14#256#0" expanded="true" />
           </folding>
@@ -1347,15 +1363,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/HTML/SiteBuilder.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="280" column="17" lean-forward="true" selection-start-line="280" selection-start-column="17" selection-end-line="280" selection-end-column="17" />
+        <state relative-caret-position="210">
+          <caret line="272" column="51" lean-forward="true" selection-start-line="272" selection-start-column="51" selection-end-line="272" selection-end-column="51" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build/style.css">
+    <entry file="file://$PROJECT_DIR$/src/test/kotlin/HTML/HtmlBuilderTest.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="114" selection-start-line="114" selection-end-line="114" />
+        <state relative-caret-position="552">
+          <caret line="381" column="12" selection-start-line="381" selection-start-column="12" selection-end-line="381" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/HTML/HtmlBuilder.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="69" selection-start-line="69" selection-end-line="69" />
+          <folding>
+            <element signature="e#20#101#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -1,5 +1,6 @@
 package akjaw.HTML
 
+import java.lang.IllegalStateException
 import java.lang.IndexOutOfBoundsException
 
 object HTMLBuilder{
@@ -46,6 +47,30 @@ class Tag(name: String){
             it.name == "class"
         }?.value
         attributes.addAll(this)
+    }
+
+    fun addClass(classValue: String){
+        val classNameOrEmptyString = className ?: ""
+        val newClassName = "$classNameOrEmptyString $classValue"
+        className = newClassName.trim().replace("\\s+".toRegex(), " ")
+    }
+
+    fun removeClass(classValue: String){
+        val classes = className?.split(" ") ?: throw IllegalStateException("class is null")
+
+        val newClasses = classes.filterNot {
+            it == classValue
+        }
+
+        if(newClasses.size == classes.size){
+            throw IllegalStateException("class $classValue does not is not inside className $className")
+        }
+
+        className = if(newClasses.isEmpty()){
+            null
+        } else {
+            newClasses.joinToString(" ")
+        }
     }
 
     override fun toString(): String {

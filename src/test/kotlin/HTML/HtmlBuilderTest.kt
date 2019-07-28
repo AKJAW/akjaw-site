@@ -5,22 +5,22 @@ import com.google.common.truth.Truth
 import org.junit.Test
 import java.lang.NullPointerException
 
-class HtmlBuilderTest{
+class HtmlBuilderTest {
 
     @Test
-    fun `correctly builds root`(){
+    fun `correctly builds root`() {
         //Given that the user creates an empty html tree
-        val html = HTMLBuilder.html {  }
+        val html = HTMLBuilder.html { }
 
         //Then toString correctly outputs only one html tag
         Truth.assertThat(html.toString()).isEqualTo("<html></html>")
     }
 
     @Test
-    fun `textContent keeps it's format`(){
+    fun `textContent keeps it's format`() {
         //Given that the user creates an empty html tree
         val html = HTMLBuilder.html {
-            + "Text That has Different CAPS"
+            +"Text That has Different CAPS"
         }
 
         //Then toString correctly outputs only one html tag
@@ -28,7 +28,7 @@ class HtmlBuilderTest{
     }
 
     @Test
-    fun `correctly nests tags`(){
+    fun `correctly nests tags`() {
         //Given that the user builds a tree with two nested divs
         val html = HTMLBuilder.html {
             tag("div") {
@@ -50,11 +50,11 @@ class HtmlBuilderTest{
     }
 
     @Test
-    fun `correctly adds style`(){
+    fun `correctly adds style`() {
         //Given that the user adds style to a node
         val html = HTMLBuilder.html {
             tag("div") {
-                + Style(
+                +Style(
                     "color" to "black",
                     "background" to "red"
                 )
@@ -74,11 +74,11 @@ class HtmlBuilderTest{
     }
 
     @Test
-    fun `correctly adds attributes`(){
+    fun `correctly adds attributes`() {
         //Given that the user adds two attributes to a tag
         val html = HTMLBuilder.html {
             tag("img") {
-                + Attributes(
+                +Attributes(
                     "src" to "1.jpg",
                     "alt" to "image"
                 )
@@ -97,15 +97,15 @@ class HtmlBuilderTest{
     }
 
     @Test
-    fun `toString output has correct format`(){
+    fun `toString output has correct format`() {
         //Given that the user creates a tree with nested nodes with style and attributes
         val html = HTMLBuilder.html {
             tag("div") {
-                + Style (
+                +Style(
                     "color" to "red"
                 )
                 tag("div") {
-                    + Attributes(
+                    +Attributes(
                         "src" to "1.jpg",
                         "alt" to "image"
                     )
@@ -114,21 +114,22 @@ class HtmlBuilderTest{
         }
 
         //Then toString correctly formats the tree
-        Truth.assertThat(html.toString()).isEqualTo("""<html><div style="color:red"><div src="1.jpg" alt="image"></div></div></html>""")
+        Truth.assertThat(html.toString())
+            .isEqualTo("""<html><div style="color:red"><div src="1.jpg" alt="image"></div></div></html>""")
     }
 
     @Test
-    fun `getByName returns list of tags that are in that tree`(){
+    fun `getByName returns list of tags that are in that tree`() {
         val html = HTMLBuilder.html {
             tag("div") {
-                tag("span"){
-                    + "parent"
-                    tag("span"){
-                        + "child"
+                tag("span") {
+                    +"parent"
+                    tag("span") {
+                        +"child"
                     }
                 }
                 tag("span") {
-                    + "second"
+                    +"second"
                 }
                 tag("div")
             }
@@ -146,24 +147,24 @@ class HtmlBuilderTest{
     }
 
     @Test
-    fun `getByName returns null if no elements found in that tree`(){
+    fun `getByName returns null if no elements found in that tree`() {
         val html = HTMLBuilder.html()
 
         Truth.assertThat(html.getByName("ul")).isNull()
     }
 
     @Test
-    fun `getByName returns tags in correct order`(){
+    fun `getByName returns tags in correct order`() {
         val html = HTMLBuilder.html {
             tag("div") {
-                tag("span"){
-                    + "parent"
-                    tag("span"){
-                        + "child"
+                tag("span") {
+                    +"parent"
+                    tag("span") {
+                        +"child"
                     }
                 }
                 tag("span") {
-                    + "second"
+                    +"second"
                 }
                 tag("div")
             }
@@ -179,16 +180,16 @@ class HtmlBuilderTest{
     }
 
     @Test
-    fun `getByName correctly works with nested calls`(){
+    fun `getByName correctly works with nested calls`() {
         val html = HTMLBuilder.html {
             tag("div") {
-               + "first div"
-                tag("span"){
-                    + "first span"
-                    tag("div"){
-                        + "second div"
-                        tag("span"){
-                            + "second span"
+                +"first div"
+                tag("span") {
+                    +"first span"
+                    tag("div") {
+                        +"second div"
+                        tag("span") {
+                            +"second span"
                         }
                     }
                 }
@@ -209,16 +210,16 @@ class HtmlBuilderTest{
     }
 
     @Test
-    fun `getByClass returns list of tags with class that are in that tree`(){
+    fun `getByClass returns list of tags with class that are in that tree`() {
         val html = HTMLBuilder.html {
             tag("div") {
-                + "root"
-                + Attributes("class" to "find")
-                tag("span"){
-                    + "parent"
-                    tag("span"){
-                        + "with class"
-                        + Attributes("class" to "find")
+                +"root"
+                +Attributes("class" to "find")
+                tag("span") {
+                    +"parent"
+                    tag("span") {
+                        +"with class"
+                        +Attributes("class" to "find")
                     }
                 }
                 tag("div")
@@ -239,7 +240,7 @@ class HtmlBuilderTest{
     }
 
     @Test
-    fun `getByClass returns null if no tags with class are in that tree`(){
+    fun `getByClass returns null if no tags with class are in that tree`() {
         val html = HTMLBuilder.html {
 
         }
@@ -249,9 +250,9 @@ class HtmlBuilderTest{
     }
 
     @Test
-    fun `parent property has the correct tag reference`(){
+    fun `parent property has the correct tag reference`() {
         val html = HTMLBuilder.html {
-            tag("div"){
+            tag("div") {
                 tag("span")
                 tag("p")
             }
@@ -267,7 +268,7 @@ class HtmlBuilderTest{
 
 
     @Test
-    fun `insertAt correctly inserts tag at given index`(){
+    fun `insertAt correctly inserts tag at given index`() {
         val html = HTMLBuilder.html {}
 
         val tag1 = Tag("div")
@@ -286,7 +287,7 @@ class HtmlBuilderTest{
     }
 
     @Test(expected = IndexOutOfBoundsException::class)
-    fun `insertAt throws outOfBound error if index is not correct`(){
+    fun `insertAt throws outOfBound error if index is not correct`() {
         val html = HTMLBuilder.html {
             tag("div")
         }
@@ -295,7 +296,7 @@ class HtmlBuilderTest{
     }
 
     @Test
-    fun `append always inserts the tag at the last index`(){
+    fun `append always inserts the tag at the last index`() {
         val html = HTMLBuilder.html {}
 
         val tag1 = Tag("div")
@@ -312,7 +313,7 @@ class HtmlBuilderTest{
     }
 
     @Test
-    fun `prepend always inserts the tag at the first index`(){
+    fun `prepend always inserts the tag at the first index`() {
         val html = HTMLBuilder.html {}
 
         val tag1 = Tag("div")
@@ -329,5 +330,67 @@ class HtmlBuilderTest{
         Truth.assertThat(html.tagList[0]).isEqualTo(tag3)
         Truth.assertThat(html.tagList[1]).isEqualTo(tag2)
         Truth.assertThat(html.tagList[2]).isEqualTo(tag1)
+    }
+
+    @Test
+    fun `addClass correctly adds the specified class`() {
+        val html = HTMLBuilder.html {
+            tag("div") {
+                tag("span") {
+
+                }
+            }
+        }
+
+        val div = html.tagList[0]
+        val span = div.tagList[0]
+
+        Truth.assertThat(div.className).isNull()
+        Truth.assertThat(span.className).isNull()
+
+        div.addClass("first")
+        Truth.assertThat(div.className).isEqualTo("first")
+
+        div.addClass("second")
+        Truth.assertThat(div.className).isEqualTo("first second")
+
+
+        span.addClass("   third   ")
+        Truth.assertThat(span.className).isEqualTo("third")
+
+        span.addClass("fourth    fifth   ")
+        Truth.assertThat(span.className).isEqualTo("third fourth fifth")
+    }
+
+    @Test
+    fun `removeClass correctly removes the specified class`() {
+        val html = HTMLBuilder.html {
+            tag("div") {
+                + Attributes("class" to "first second")
+                tag("span") {
+                    + Attributes("class" to "third fourth fifth")
+                }
+            }
+        }
+
+        val div = html.tagList[0]
+        val span = div.tagList[0]
+
+        Truth.assertThat(div.className).isEqualTo("first second")
+        Truth.assertThat(span.className).isEqualTo("third fourth fifth")
+
+        div.removeClass("first")
+        Truth.assertThat(div.className).isEqualTo("second")
+
+        div.removeClass("second")
+        Truth.assertThat(div.className).isNull()
+
+
+        span.removeClass("fourth")
+        Truth.assertThat(span.className).isEqualTo("third fifth")
+
+        span.removeClass("fifth")
+        Truth.assertThat(span.className).isEqualTo("third")
+
     }
 }
