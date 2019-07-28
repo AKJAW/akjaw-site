@@ -2,6 +2,14 @@
   {
     "logo-quiz-web":{
       "h1-name": "Logo-quiz web",
+      "projectTags": [
+        "JavaScript",
+        "Node.js",
+        "React",
+        "Redux",
+        "Firebase",
+        "PHP"
+      ],
       "div-description": {
         "h2": {
           "en": "The biggest project I have worked on",
@@ -29,7 +37,11 @@
   },
   {
     "akj-timer":{
-      "h1-name": "Akj Timer"
+      "h1-name": "Akj Timer",
+      "projectTags": [
+        "Android",
+        "Kotlin"
+      ]
     }
   }
 ]

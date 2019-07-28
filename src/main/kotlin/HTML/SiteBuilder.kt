@@ -138,7 +138,7 @@ class SiteBuilder(private val projects: List<Project>){
         if(jsonObject.keys.size == 0){
             val s = 's'
         }
-        jsonObject.keys.map {
+        jsonObject.keys.forEach {
             val parsed = jsonObject[it]
             when{
                 isSpecialTag(it) -> getSpecialTag(it, parsed)
@@ -151,23 +151,29 @@ class SiteBuilder(private val projects: List<Project>){
     }
 
     private fun isSpecialTag(name: String): Boolean {
-        return (
-                name == "list"
-                )
+        return when(name){
+            "list" -> true
+            "projectTags" -> true
+            else -> false
+        }
     }
 
 
-    private fun Tag.getSpecialTag(key: String, parsed: Any?): Tag {
+    private fun Tag.getSpecialTag(key: String, parsed: Any?) {
         val (name, className) = parseJsonKey(key)
 
-        return when(name){
-            "list" -> getListTag(name, className, parsed as JsonArray<*>)
+        when(name){
+            "list" -> createList(className, parsed as JsonArray<*>)
+            "projectTags" -> createProjectTags(className, parsed as JsonArray<*>)
             else -> throw IllegalStateException("tagName $name doesnt exists")
         }
     }
 
-    private fun Tag.getListTag(name: String, className: String?, listItems: JsonArray<*>): Tag {
-        return tag("ul"){
+    private fun Tag.createList(className: String?, listItems: JsonArray<*>) {
+        tag("ul"){
+            if (className != null){
+                + Attributes("class" to className)
+            }
             listItems.forEach {
                 getListItem(it)
 
@@ -189,23 +195,29 @@ class SiteBuilder(private val projects: List<Project>){
         }
     }
 
+    private fun Tag.createProjectTags(className: String?, projectTags: JsonArray<*>){
+        tag("div"){
+            val classValue = if(className != null){
+                "project-tags $className"
+            } else {
+                "project-tags"
+            }
+
+            + Attributes("class" to classValue)
+
+            projectTags
+                .map { it as String }
+                .forEach { tagName ->
+                    tag("div"){
+                        + tagName
+                    }
+                }
+        }
+    }
+
     private fun Tag.getString(key: String, value: String): Tag {
         return getSimpleString(key, value)
     }
-
-//    private fun Tag.getLanguageString(languageKey: String, value: String, isHidden: Boolean): Tag {
-//        //TODO ma tworzyć dwa razy takiego samego taga jak rodzic, a nie dwa divy w środku
-//        return tag("div"){
-//            + value
-//
-//            val classValue = if(isHidden){
-//                "$languageKey none"
-//            } else {
-//                languageKey
-//            }
-//            + Attributes("class" to classValue)
-//        }
-//    }
 
     private fun Tag.getSimpleString(key: String, value: String): Tag {
         val (tagName, tagClass) = parseJsonKey(key)
@@ -261,11 +273,11 @@ class SiteBuilder(private val projects: List<Project>){
         val (tagName, tagClass) = parseJsonKey(key)
 
         parsed.keys.map {
-            tag(tagName) {//TODO $languageKey
+            tag(tagName) {
                 val classValue = if(tagClass != null){
                     "$it $tagClass"
                 } else {
-                    "$it"
+                    it
                 }
                 + Attributes("class" to classValue)
 

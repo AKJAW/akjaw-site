@@ -7,14 +7,15 @@ import com.beust.klaxon.JsonObject
 import com.google.common.truth.Truth
 import org.junit.Test
 import java.io.File
+import java.lang.NullPointerException
 
 class SiteBuilderTest{
     private fun createProjectJsonObject(name: String, h1: String): JsonObject{
         return JsonObject(mapOf(name to JsonObject(mapOf("h1" to h1))))
     }
 
-    fun JsonObject.addList(listItems: List<String>){
-        this["list"] = JsonArray(listItems)
+    fun JsonObject.addList(key: String, listItems: List<String>){
+        this[key] = JsonArray(listItems)
     }
 
     @Test
@@ -45,6 +46,7 @@ class SiteBuilderTest{
     fun `Correctly creates custom list tag`(){
         val jsonObject1 = createProjectJsonObject("project1", "header1")
         (jsonObject1["project1"] as JsonObject).addList(
+            "list",
             listOf("first tech", "second tech", "third tech"))
 
         val projects = listOf(
@@ -61,6 +63,29 @@ class SiteBuilderTest{
         Truth.assertThat(li[0].textContent).isEqualTo("first tech")
         Truth.assertThat(li[1].textContent).isEqualTo("second tech")
         Truth.assertThat(li[2].textContent).isEqualTo("third tech")
+    }
+
+    @Test
+    fun `Correctly creates custom projectTags tag`(){
+        val jsonObject1 = createProjectJsonObject("project1", "header1")
+        (jsonObject1["project1"] as JsonObject).addList(
+            "projectTags",
+            listOf("JavaScript", "React", "Firebase"))
+
+        val projects = listOf(
+            Project(jsonObject1)
+        )
+
+        val builder = SiteBuilder(projects)
+        val html = builder.html
+
+        val div = html.getByClass("project-tags")
+        div ?: throw NullPointerException("project-tags cant  be null")
+        val tags = div[0].tagList
+        Truth.assertThat(tags).hasSize(3)
+        Truth.assertThat(tags[0].textContent).isEqualTo("JavaScript")
+        Truth.assertThat(tags[1].textContent).isEqualTo("React")
+        Truth.assertThat(tags[2].textContent).isEqualTo("Firebase")
     }
 
     @Test
