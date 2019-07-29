@@ -393,4 +393,46 @@ class HtmlBuilderTest {
         Truth.assertThat(span.className).isEqualTo("third")
 
     }
+
+    @Test
+    fun `addClass correctly updates tag attributes`() {
+        val html = HTMLBuilder.html {
+            tag("div") {
+            }
+        }
+
+        val div = html.tagList[0]
+
+        Truth.assertThat(div.className).isNull()
+
+        div.addClass("first")
+        Truth.assertThat(div.attributes).hasSize(1)
+        Truth.assertThat(div.attributes[0]).isEqualTo(Attribute("class", "first"))
+
+        div.addClass("second")
+        Truth.assertThat(div.attributes).hasSize(1)
+        Truth.assertThat(div.attributes[0]).isEqualTo(Attribute("class", "first second"))
+    }
+
+    @Test
+    fun `removeClass correctly updates tag attributes`() {
+        val html = HTMLBuilder.html {
+            tag("div") {
+                + Attributes("class" to "first second")
+            }
+        }
+
+        val div = html.tagList[0]
+
+        Truth.assertThat(div.attributes[0].value).isEqualTo("first second")
+
+        div.removeClass("first")
+        Truth.assertThat(div.attributes[0].value).isEqualTo("second")
+
+        div.removeClass("second")
+        Truth.assertThat(div.attributes).hasSize(0)
+
+    }
 }
+
+//git add . && git commit -m 'added replace and remove to Attributes / HtmlBuilder addClass and removeClass now correctly updates Attributes'

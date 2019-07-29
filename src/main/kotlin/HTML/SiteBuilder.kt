@@ -279,9 +279,13 @@ class SiteBuilder(private val projects: List<Project>){
                 } else {
                     it
                 }
-//                addClass //TODO
 
                 + Attributes("class" to classValue)
+
+                if(it == "pl"){//TODO wszędzie
+                    addClass("none")
+                }
+
 
                 val text = parsed[it]
                 if(text is String){

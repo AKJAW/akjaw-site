@@ -85,4 +85,49 @@ class AttributesTest{
         //Then toString returns empty string
         Truth.assertThat(attributes.toString()).isEqualTo(""" src="1.jpg" alt="image"""")
     }
+
+    @Test
+    fun `replace correctly replaces Attribute value`(){
+        val attributes = Attributes("class" to "1", "src" to "2", "href" to "3")
+        Truth.assertThat(attributes[0].value).isEqualTo("1")
+        Truth.assertThat(attributes[1].value).isEqualTo("2")
+        Truth.assertThat(attributes[2].value).isEqualTo("3")
+
+        attributes.replace(Attribute("class", "a"))
+        Truth.assertThat(attributes[0].value).isEqualTo("a")
+
+        attributes.replace(Attribute("src", "b"))
+        Truth.assertThat(attributes[1].value).isEqualTo("b")
+
+        attributes.replace(Attribute("href", "c"))
+        Truth.assertThat(attributes[2].value).isEqualTo("c")
+
+    }
+
+    @Test(expected = ArrayIndexOutOfBoundsException::class)
+    fun `when replace is called with incorrect attribute an error is thrown`(){
+        val attributes = Attributes("class" to "1")
+        attributes.replace(Attribute("a", "a"))
+    }
+
+    @Test
+    fun `remove correctly removes Attribute`(){
+        val attributes = Attributes("class" to "1", "src" to "2", "href" to "3")
+        Truth.assertThat(attributes).hasSize(3)
+        Truth.assertThat(attributes[0].name).isEqualTo("class")
+        Truth.assertThat(attributes[1].name).isEqualTo("src")
+        Truth.assertThat(attributes[2].name).isEqualTo("href")
+
+        attributes.remove("src")
+        Truth.assertThat(attributes).hasSize(2)
+        Truth.assertThat(attributes[0].name).isEqualTo("class")
+        Truth.assertThat(attributes[1].name).isEqualTo("href")
+
+        attributes.remove("class")
+        Truth.assertThat(attributes).hasSize(1)
+        Truth.assertThat(attributes[0].name).isEqualTo("href")
+
+        attributes.remove("href")
+        Truth.assertThat(attributes).hasSize(0)
+    }
 }

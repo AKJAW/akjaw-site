@@ -24,4 +24,25 @@ class Attributes(vararg attributes: Pair<String, String>): Iterable<Attribute>{
             _attrs.joinToString(" ", " ")
         }
     }
+
+    fun replace(replacement: Attribute){
+        if(_attrs.size == 0){
+            _attrs.add(replacement)
+            return
+        }
+
+        val index = _attrs.indexOfFirst {
+            it.name == replacement.name
+        }
+
+        _attrs[index] = replacement
+    }
+
+    fun remove(name: String){
+        val index = _attrs.indexOfFirst {
+            it.name == name
+        }
+
+        _attrs.removeAt(index)
+    }
 }

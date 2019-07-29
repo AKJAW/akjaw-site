@@ -52,7 +52,10 @@ class Tag(name: String){
     fun addClass(classValue: String){
         val classNameOrEmptyString = className ?: ""
         val newClassName = "$classNameOrEmptyString $classValue"
-        className = newClassName.trim().replace("\\s+".toRegex(), " ")
+            .trim().replace("\\s+".toRegex(), " ")
+        className = newClassName
+
+        attributes.replace(Attribute("class", newClassName))
     }
 
     fun removeClass(classValue: String){
@@ -66,11 +69,18 @@ class Tag(name: String){
             throw IllegalStateException("class $classValue does not is not inside className $className")
         }
 
-        className = if(newClasses.isEmpty()){
+        val newClassName = if(newClasses.isEmpty()){
+            attributes.remove("class")
             null
         } else {
-            newClasses.joinToString(" ")
+            val joined = newClasses.joinToString(" ")
+
+            attributes.replace(Attribute("class", joined))
+            joined
         }
+
+        className = newClassName
+
     }
 
     override fun toString(): String {
