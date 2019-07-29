@@ -40,7 +40,6 @@ function toggleLanguageText(activatedLanguage){
 
     for (var i = 0, len = textNodes.length; i < len; i++) {
         console.log(textNodes[i])
-        debugger;
         textNodes[i].toggleLanguage()
     }
 }

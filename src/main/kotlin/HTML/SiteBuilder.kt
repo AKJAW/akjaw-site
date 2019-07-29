@@ -39,6 +39,7 @@ class SiteBuilder(private val projects: List<Project>){
                 createAboutMeSection()
                 projects.map {
                     tag("div"){
+                        addClass("project")
                         getTag(it.projectData)
                     }
 
