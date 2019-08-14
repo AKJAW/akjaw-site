@@ -176,8 +176,21 @@ class SiteBuilder(private val projects: List<Project>){
                 + Attributes("class" to className)
             }
             listItems.forEach {
-                getListItem(it)
+                if(it is JsonObject){
+                    createLanguageTag("li", it)
+                } else {
+                    getListItem(it)
+                }
+            }
+        }
+    }
 
+    private fun Tag.getLanguageListItem(item: JsonObject) {
+        tag("li"){
+            item.forEach { languageItem ->
+                getString(languageItem.key, languageItem.value as String)
+
+                createLanguageTag("li", item)
             }
         }
     }
@@ -186,11 +199,13 @@ class SiteBuilder(private val projects: List<Project>){
         tag("li") {
             if (item is String) {
                 + item
-            } else if (item is JsonObject) {
-                item.forEach {
-                    getString(it.key, it.value as String)
-                }
-            } else {
+            }
+//            else if (item is JsonObject) {
+//                item.forEach {
+//                    getString(it.key, it.value as String)
+//                }
+//            }
+            else {
                 throw IllegalStateException("List item has incorrect type")
             }
         }
@@ -216,6 +231,7 @@ class SiteBuilder(private val projects: List<Project>){
         }
     }
 
+    //TODO remove
     private fun Tag.getString(key: String, value: String): Tag {
         return getSimpleString(key, value)
     }

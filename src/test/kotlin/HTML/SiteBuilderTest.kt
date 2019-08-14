@@ -14,7 +14,7 @@ class SiteBuilderTest{
         return JsonObject(mapOf(name to JsonObject(mapOf("h1" to h1))))
     }
 
-    fun JsonObject.addList(key: String, listItems: List<String>){
+    fun JsonObject.addList(key: String, listItems: List<Any>){
         this[key] = JsonArray(listItems)
     }
 
@@ -63,6 +63,50 @@ class SiteBuilderTest{
         Truth.assertThat(li[0].textContent).isEqualTo("first tech")
         Truth.assertThat(li[1].textContent).isEqualTo("second tech")
         Truth.assertThat(li[2].textContent).isEqualTo("third tech")
+    }
+
+    @Test
+    fun `Correctly creates language tags inside custom list tag`(){
+        val jsonObject1 = createProjectJsonObject("project1", "header1")
+        (jsonObject1["project1"] as JsonObject).addList(
+            "list",
+            listOf("first tech", JsonObject(mapOf("pl" to "drugi tech", "en" to "second tech")), "third tech"))
+
+        val projects = listOf(
+            Project(jsonObject1)
+        )
+
+        val builder = SiteBuilder(projects)
+        val html = builder.html
+
+        val ul = html.getByName("ul")!!
+        val li = ul[0].getByName("li")!!
+        Truth.assertThat(li).hasSize(4)
+
+        Truth.assertThat(li[0].textContent).isEqualTo("first tech")
+        Truth.assertThat(li[1].textContent).isEqualTo("drugi tech")
+        Truth.assertThat(li[2].textContent).isEqualTo("second tech")
+        Truth.assertThat(li[3].textContent).isEqualTo("third tech")
+    }
+
+    @Test
+    fun `Correctly hides language tags inside custom list tag`(){
+        val jsonObject1 = createProjectJsonObject("project1", "header1")
+        (jsonObject1["project1"] as JsonObject).addList(
+            "list",
+            listOf("first tech", JsonObject(mapOf("pl" to "drugi tech", "en" to "second tech")), "third tech"))
+
+        val projects = listOf(
+            Project(jsonObject1)
+        )
+
+        val builder = SiteBuilder(projects)
+        val html = builder.html
+
+        val ul = html.getByName("ul")!!
+        val li = ul[0].getByName("li")!!
+
+        Truth.assertThat(li[1].className).contains("none")
     }
 
     @Test
