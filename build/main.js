@@ -38,6 +38,7 @@ function toggleButtonActivation(button) {
 function toggleLanguageText(activatedLanguage){
     textNodes = document.querySelectorAll("." + activatedLanguage)
 
+    var len
     for (var i = 0, len = textNodes.length; i < len; i++) {
         console.log(textNodes[i])
         textNodes[i].toggleLanguage()
@@ -47,7 +48,7 @@ function toggleLanguageText(activatedLanguage){
 HTMLElement.prototype.toggleLanguage = function(){
     this.removeClass("none")
 
-    const sibling = this.getShownSibling()
+    var sibling = this.getShownLanguageSibling()
     sibling.addClass("none")
 }
 
@@ -59,12 +60,31 @@ HTMLElement.prototype.addClass = function(className){
     this.classList.add(className)
 }
 
-HTMLElement.prototype.getShownSibling = function(){//That is shown
+HTMLElement.prototype.getShownSibling = function(){
     if(this.previousSibling && !this.previousSibling.hasClass("none")){
         return this.previousSibling
     } else if(this.nextSibling && !this.nextSibling.hasClass("none")){
         return this.nextSibling
     }
+}
+
+
+HTMLElement.prototype.getShownLanguageSibling = function(){
+    if(this.previousSibling &&
+        this.previousSibling.isLanguageTag() &&
+        !this.previousSibling.hasClass("none") ){
+
+        return this.previousSibling
+    } else if(this.nextSibling &&
+        this.nextSibling.isLanguageTag() &&
+        !this.nextSibling.hasClass("none")){
+
+        return this.nextSibling
+    }
+}
+
+HTMLElement.prototype.isLanguageTag = function(){
+    return this.hasClass("pl") || this.hasClass("en")
 }
 
 HTMLElement.prototype.hasClass = function(className){
