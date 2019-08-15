@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="5501444b-1d28-43e3-ba48-b6f8ecabc86d" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/HTML/SiteBuilderTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/HTML/SiteBuilderTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/projects.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/projects.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/HTML/SiteBuilder.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/HTML/SiteBuilder.kt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -39,11 +42,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="projects.json" pinned="false" current-in-tab="false">
+      <file leaf-file-name="projects.json" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/data/projects.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="620">
-              <caret line="27" column="18" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
+            <state relative-caret-position="370">
+              <caret line="103" column="9" selection-start-line="103" selection-start-column="9" selection-end-line="103" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -51,16 +54,16 @@
       <file leaf-file-name="SiteBuilder.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/HTML/SiteBuilder.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="355">
-              <caret line="301" selection-start-line="301" selection-end-line="301" />
+            <state relative-caret-position="95">
+              <caret line="288" column="17" selection-start-line="288" selection-start-column="17" selection-end-line="288" selection-end-column="17" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SiteBuilderTest.kt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SiteBuilderTest.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/kotlin/HTML/SiteBuilderTest.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
+            <state relative-caret-position="20">
               <caret line="68" selection-start-line="68" selection-end-line="68" />
               <folding>
                 <element signature="e#14#256#0" expanded="true" />
@@ -90,8 +93,8 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/build/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+            <state relative-caret-position="150">
+              <caret line="135" column="20" selection-start-line="135" selection-start-column="20" selection-end-line="135" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -599,11 +602,11 @@
         <option value="$PROJECT_DIR$/src/main/kotlin/HTML/HtmlBuilder.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/HTML/Attributes.kt" />
         <option value="$PROJECT_DIR$/src/test/kotlin/HTML/HtmlBuilderTest.kt" />
-        <option value="$PROJECT_DIR$/build/style.css" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/HTML/SiteBuilder.kt" />
-        <option value="$PROJECT_DIR$/data/projects.json" />
         <option value="$PROJECT_DIR$/build/main.js" />
         <option value="$PROJECT_DIR$/src/test/kotlin/HTML/SiteBuilderTest.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/HTML/SiteBuilder.kt" />
+        <option value="$PROJECT_DIR$/build/style.css" />
+        <option value="$PROJECT_DIR$/data/projects.json" />
       </list>
     </option>
   </component>
@@ -628,7 +631,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="Course" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -766,6 +768,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Course" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -804,7 +807,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.SiteBuilderTest.Correctly hides one language by default">
+  <component name="RunManager" selected="Kotlin.akjaw.HTML.SiteBuilderKt">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
@@ -916,8 +919,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.SiteBuilderTest.Correctly hides one language by default" />
         <item itemvalue="Kotlin.akjaw.HTML.SiteBuilderKt" />
+        <item itemvalue="JUnit.SiteBuilderTest.Correctly hides one language by default" />
         <item itemvalue="JUnit.kotlin in site_test" />
         <item itemvalue="JUnit.SiteBuilderTest" />
         <item itemvalue="JUnit.SiteBuilderTest.Correctly hides language tags inside custom list tag" />
@@ -928,12 +931,6 @@
     <configuration />
   </component>
   <component name="TestHistory">
-    <history-entry file="SiteBuilderTest_Correctly_creates_custom_projectTags_tag - 2019.08.14 at 12h 52m 56s.xml">
-      <configuration name="SiteBuilderTest.Correctly creates custom projectTags tag" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SiteBuilderTest_Correctly_hides_language_tags_inside_custom_list_tag - 2019.08.14 at 12h 53m 04s.xml">
-      <configuration name="SiteBuilderTest.Correctly hides language tags inside custom list tag" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="SiteBuilderTest_Correctly_creates_language_tags_inside_custom_list_tag - 2019.08.14 at 12h 53m 07s.xml">
       <configuration name="SiteBuilderTest.Correctly creates language tags inside custom list tag" configurationId="JUnit" />
     </history-entry>
@@ -958,6 +955,12 @@
     <history-entry file="SiteBuilderTest_Correctly_hides_one_language_by_default - 2019.08.15 at 18h 50m 59s.xml">
       <configuration name="SiteBuilderTest.Correctly hides one language by default" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="SiteBuilderTest_Correctly_hides_one_language_by_default - 2019.08.15 at 18h 55m 38s.xml">
+      <configuration name="SiteBuilderTest.Correctly hides one language by default" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SiteBuilderTest_Correctly_hides_one_language_by_default - 2019.08.15 at 18h 55m 41s.xml">
+      <configuration name="SiteBuilderTest.Correctly hides one language by default" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -978,15 +981,15 @@
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5010661" side_tool="true" weight="0.39870688" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.3297414" />
-      <window_info anchor="bottom" id="Run" order="3" weight="0.33690986" />
+      <window_info active="true" anchor="bottom" id="Run" order="3" visible="true" weight="0.33690986" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26226014" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26492536" />
       <window_info anchor="bottom" id="Educational.CheckDetails" order="0" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="4" />
       <window_info anchor="right" id="Gradle" order="3" weight="0.3296875" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="3" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Debug" order="4" sideWeight="0.4989339" visible="true" weight="0.38412017" />
+      <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.4989339" weight="0.38412017" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -1053,18 +1056,6 @@
           <properties />
           <option name="timeStamp" value="177" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/HTML/SiteBuilder.kt</url>
-          <line>301</line>
-          <properties />
-          <option name="timeStamp" value="178" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/HTML/SiteBuilder.kt</url>
-          <line>292</line>
-          <properties />
-          <option name="timeStamp" value="189" />
-        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
@@ -1080,7 +1071,7 @@
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string />
+        <expression-string>it == &quot;pl&quot;</expression-string>
         <language-id>kotlin</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -1105,7 +1096,7 @@
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string />
+        <expression-string>it.value as String</expression-string>
         <language-id>kotlin</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -1324,13 +1315,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/settings.gradle">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1362,27 +1346,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/projects.json">
+    <entry file="file://$PROJECT_DIR$/src/test/kotlin/HTML/SiteBuilderTest.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="620">
-          <caret line="27" column="18" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
+        <state relative-caret-position="20">
+          <caret line="68" selection-start-line="68" selection-end-line="68" />
+          <folding>
+            <element signature="e#14#256#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="135" column="20" selection-start-line="135" selection-start-column="20" selection-end-line="135" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/HTML/SiteBuilder.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="301" selection-start-line="301" selection-end-line="301" />
+        <state relative-caret-position="95">
+          <caret line="288" column="17" selection-start-line="288" selection-start-column="17" selection-end-line="288" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/kotlin/HTML/SiteBuilderTest.kt">
+    <entry file="file://$PROJECT_DIR$/data/projects.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="68" selection-start-line="68" selection-end-line="68" />
-          <folding>
-            <element signature="e#14#256#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="370">
+          <caret line="103" column="9" selection-start-line="103" selection-start-column="9" selection-end-line="103" selection-end-column="9" />
         </state>
       </provider>
     </entry>

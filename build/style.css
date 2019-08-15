@@ -38,6 +38,7 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
+    z-index: 1;
 }
 
 .header > div {
@@ -129,6 +130,10 @@ body {
     padding: 5px 15px;
     margin: 35px 0;
     background: white;
+}
+
+h2.name{
+    font-size: 32px;
 }
 
 .project-tags{

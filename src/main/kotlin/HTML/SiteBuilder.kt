@@ -299,7 +299,7 @@ class SiteBuilder(private val projects: List<Project>){
 
                 + Attributes("class" to classValue)
 
-                if(it == "pl"){//TODO wszędzie
+                if(it == "pl"){
                     addClass("none")
                 }
 

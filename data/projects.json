@@ -1,7 +1,7 @@
 [
   {
     "logo-quiz-web":{
-      "h1-name": "Logo-quiz web",
+      "h2-name": "Logo-quiz web",
       "projectTags": [
         "JavaScript",
         "Node.js",
@@ -37,11 +37,72 @@
   },
   {
     "akj-timer":{
-      "h1-name": "Akj Timer",
+      "h2-name": "Akj Timer",
       "projectTags": [
         "Android",
         "Kotlin"
-      ]
+      ],
+      "div-description":{
+        "h2": {
+          "en": "A timer for tracking your progress",
+          "pl": "Timer do śledzenia twojego postępu"
+        },
+        "h4-1": {
+          "en": "Premise",
+          "pl": "Założenie"
+        },
+        "p-1": {
+          "en": "My first serious Android app that i have been working on since december of 2018. I wanted to learn android so after a couple of courses i started working on this project. The idea for this app came to me after i realised that tracking daily working hours by hand is really tedious and error prone.",
+          "pl": "Moja pierwsza poważna aplikacja na Android nad którą pracuję od grudnia 2018. Chciałem nauczyć się androida więc po paru kursach zacząłem pracować nad tym projektem. Na pomysł tej aplikacji wpadłem po tym jak doszedłem do wniosku że zapisywanie ręcznie godzin pracy jest uciążliwe i podatne na błędy."
+        },
+        "p-2": {
+          "en": "The app premise is to track how much time you spend doing a certain task it might be work related, a new skill you want to learn or just track how much time you spend doing something. It has a service that runs a timer in the background, an export and import data feature. The calendar was made from the ground up and is represented as a bottom sheet.",
+          "pl": "Głównym założeniem aplikacji jest pomiar ile czasu przeznaczasz na jakieś zadanie, może to być związane z pracą, nową umiejętnością, lub po prostu śledzenie ilości czasu poświecanej jakiejś wykonywanej rzeczy. Posiada service który uruchamia minutnik w tle, możliwość exportowania i importowania danych. Kalendarz stworzyłem własnoręcznie i jest zamieszczony jako bottom sheet."
+        },
+        "h4-2": {
+          "en": "Development",
+          "pl": "Rozwój"
+        },
+        "p-3": {
+          "en": "This app was developed using lot of Android Jetpack components because they were really prevalent as most of the official android tutorials use it. There project has undergone two big refactors, the first one was adding Dagger 2 to the codebase, and the second one was adding databinding to most of the layouts ",
+          "pl": "Aplikacja została stworzona przy użyciu wielu komponentów z Android Jetpack, ponieważ często się pojawiały w oficjalnych tutorialach Androida. Projekt przeszedł dwa główne refactor'y, pierwszym było dodanie do Dagger2, a drugim wprowadzenie databinding do większości layout'ów."
+        },
+        "h4-3": {
+          "en": "Testing",
+          "pl": "Testy"
+        },
+        "p-4": {
+          "en": "Unit test were done created on the ViewModels, without the use of Mockito, in hindsight It may have been useful. For UI testing i used Espresso without Robolectric, but gave up after the main screen, because of the limitations, and wierd bugs that i encountered.",
+          "pl": "Unit testy zostały głównie utworzone na ViewModel'ach, bez użycia Mockito, patrząc wstecz biblioteka może mogła trochę pomóc. Do testów UI użyłem Espresso bez Robolectric, ale odpuściłem po pierwszym ekranie z powodu limitacji i dziwnych błędów które napotkałem."
+        }
+      }
+    }
+  },
+  {
+    "akjaw-site": {
+      "h2-name": "AKJAW website",
+      "projectTags": [
+        "Kotlin",
+        "JavaScript"
+      ],
+      "div-description":{
+        "h2": {
+          "en": "The website you are on",
+          "pl": "Strona na której jesteś"
+        },
+        "h4-1": {
+          "en": "Premise",
+          "pl": "Założenie"
+        },
+        "p-1": {
+          "en": "This is my second attempt at making a portfolio website, the first one used React, Firebase and Next.js, but i soon abandoned the attempt because of low speed and unnecessary libraries. This time I wanted to make the website as lightwieght as i can, so that means no unnecessary JavaScript libraries. The idea for a Kotlin html creator was born whilst reading a chapter about DSLs in the book Kotlin in Action. I admit that i modeled a lot of the basic functionality from the official Kotlin HTML DSL.",
+          "pl": "To jest moja druga próba stworzenia strony portfolio, pierwsza używała React, Firebase i Next.js, ale szybko porzuciłem pomysł z powodu wolnej prędkości i niepotrzebnych bibliotek. Tym razem chciałem zrobić jak najlżejszą stronę jaką mogę, oznacza to że nieużywam niepotrzebnych bibliotek JavaScript. Pomysł na stworzenie kreatora HTML w kotlinie zrodził się podczas czytania rozdziału o DSL w książce Kotlin in Action. Przyznaję się że podstawowa funkcjonalność była bardzo wzorowana w oparciu o oficjalny HTML DSL w Kotlin."
+        },
+        "h4-2": {
+          "en": "Development",
+          "pl": "Rozwój"
+        }
+      }
     }
   }
 ]
