@@ -18,6 +18,10 @@ class SiteBuilderTest{
         this[key] = JsonArray(listItems)
     }
 
+    fun JsonObject.addObject(key: String, objectItems: Map<String, String>){
+        this[key] = JsonObject(objectItems)
+    }
+
     @Test
     fun `Always creates a head tag`(){
         val builder = SiteBuilder(listOf())
@@ -40,6 +44,28 @@ class SiteBuilderTest{
         val section = html.getByClass("about-me")
         Truth.assertThat(section).isNotNull()
         Truth.assertThat(section).hasSize(1)
+    }
+
+    @Test
+    fun `Correctly hides one language by default`(){
+        val jsonObject1 = createProjectJsonObject("project1", "header1")
+        (jsonObject1["project1"] as JsonObject).addObject("h1", mapOf("en" to "english", "pl" to "polski"))
+        (jsonObject1["project1"] as JsonObject).addObject("span", mapOf("en" to "english", "pl" to "polski"))
+
+        (jsonObject1["project1"] as JsonObject)["div"] = JsonObject()
+        ((jsonObject1["project1"] as JsonObject)["div"] as JsonObject)
+            .addObject("span", mapOf("en" to "english", "pl" to "polski"))
+
+        val projects = listOf(
+            Project(jsonObject1)
+        )
+
+        val builder = SiteBuilder(projects)
+        val html = builder.html
+
+        html.getByClass("pl")?.forEach {
+            Truth.assertThat(it.className).contains("none")
+        }
     }
 
     @Test
