@@ -1,5 +1,9 @@
-package akjaw.HTML
+package html
 
+import akjaw.HTML.Attributes
+import akjaw.HTML.HTMLBuilder
+import akjaw.HTML.Tag
+import akjaw.HTML.TagBuilder
 import akjaw.Model.Project
 import akjaw.Repository.JsonRepository
 import java.io.File

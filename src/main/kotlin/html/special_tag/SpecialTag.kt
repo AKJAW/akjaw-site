@@ -1,4 +1,4 @@
-package akjaw.HTML.special_tag
+package html.special_tag
 
 interface SpecialTag{
     val signature: String

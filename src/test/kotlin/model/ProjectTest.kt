@@ -1,9 +1,7 @@
-package Model
+package model
 
-import akjaw.JsonParser
 import akjaw.Model.Project
 import com.beust.klaxon.JsonObject
-import com.beust.klaxon.Parser
 import com.google.common.truth.Truth
 import org.junit.Test
 import java.lang.ClassCastException

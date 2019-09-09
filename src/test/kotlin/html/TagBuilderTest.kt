@@ -1,25 +1,19 @@
-package HTML.special_tag
+package html
 
 import akjaw.HTML.HTMLBuilder
 import akjaw.HTML.Tag
 import akjaw.HTML.TagBuilder
-import akjaw.Model.Project
-import com.beust.klaxon.JsonArray
-import com.beust.klaxon.JsonObject
 import com.google.common.truth.Truth
-import org.junit.Before
 import org.junit.Test
-import java.io.File
-import java.lang.NullPointerException
 
-class SpecialTagBuilderTest{
+class TagBuilderTest {
     fun initializeHtml(
         tagName: String = "div",
         englishText: String = "english",
         polishText: String = "polish",
         classes: String? = null
     ): Tag {
-        val html = HTMLBuilder.html {  }
+        val html = HTMLBuilder.html { }
 
         TagBuilder.createTagWithLanguages(
             html,

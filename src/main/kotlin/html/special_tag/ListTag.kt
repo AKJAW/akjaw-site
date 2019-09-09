@@ -1,4 +1,4 @@
-package akjaw.HTML.special_tag
+package html.special_tag
 
 class ListTag: SpecialTag {
     override val signature: String = "list"

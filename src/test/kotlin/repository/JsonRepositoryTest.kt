@@ -1,10 +1,8 @@
-package Repository
+package repository
 
 import akjaw.Repository.JsonRepository
-import akjaw.Repository.Repository
 import com.beust.klaxon.KlaxonException
 import com.google.common.truth.Truth
-import org.junit.Before
 import org.junit.Test
 import java.io.FileNotFoundException
 import java.lang.Exception

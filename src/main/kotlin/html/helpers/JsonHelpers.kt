@@ -1,4 +1,4 @@
-package HTML.helpers
+package html.helpers
 
 fun parseJsonKey(key: String): Pair<String, String?> {
     val split = key.split("-")

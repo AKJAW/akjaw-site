@@ -1,11 +1,11 @@
-package akjaw.HTML.special_tag
+package html.special_tag
 
-import HTML.helpers.parseJsonKey
+import html.helpers.parseJsonKey
 import akjaw.HTML.Attributes
-import akjaw.HTML.ProjectBuilder.createLanguageTagFromJsonObject
 import akjaw.HTML.Tag
 import com.beust.klaxon.JsonArray
 import com.beust.klaxon.JsonObject
+import html.ProjectBuilder.createLanguageTagFromJsonObject
 import java.lang.IllegalStateException
 
 object SpecialTagBuilder{
@@ -23,7 +23,7 @@ object SpecialTagBuilder{
     }
 
     fun isSpecialTag(name: String): Boolean {
-        return SpecialTag.isSpecialTag(name)
+        return SpecialTagBuilder.SpecialTag.isSpecialTag(name)
     }
 
     fun getSpecialTag(tag: Tag, key: String, parsed: Any?) {
@@ -31,10 +31,10 @@ object SpecialTagBuilder{
 
         tag.apply{
             when{
-                name.startsWith(SpecialTag.LIST.signature) -> {
+                name.startsWith(SpecialTagBuilder.SpecialTag.LIST.signature) -> {
                     createList(className, parsed as JsonArray<*>)
                 }
-                name.startsWith(SpecialTag.PROJECT_TAG.signature) -> {
+                name.startsWith(SpecialTagBuilder.SpecialTag.PROJECT_TAG.signature) -> {
                     createProjectTags(className, parsed as JsonArray<*>)
                 }
                 else -> throw IllegalStateException("tagName $name doesnt exists")

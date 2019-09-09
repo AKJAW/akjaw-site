@@ -1,8 +1,10 @@
-package akjaw.HTML
+package html
 
-import HTML.helpers.parseJsonKey
-import akjaw.HTML.special_tag.SpecialTagBuilder
-import com.beust.klaxon.JsonArray
+import akjaw.HTML.Attributes
+import akjaw.HTML.Tag
+import akjaw.HTML.TagBuilder
+import html.helpers.parseJsonKey
+import html.special_tag.SpecialTagBuilder
 import com.beust.klaxon.JsonObject
 import java.lang.IllegalArgumentException
 import java.lang.IllegalStateException

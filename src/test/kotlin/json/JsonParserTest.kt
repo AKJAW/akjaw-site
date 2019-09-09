@@ -1,4 +1,4 @@
-package JSON
+package json
 
 import akjaw.JsonParser
 import com.beust.klaxon.JsonArray

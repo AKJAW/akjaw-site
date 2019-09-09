@@ -1,16 +1,14 @@
-package HTML
-
-import akjaw.HTML.TagBuilder
-import akjaw.Model.Project
-import com.beust.klaxon.JsonArray
-import com.beust.klaxon.JsonObject
-import com.google.common.truth.Truth
-import org.junit.Test
-import java.io.File
-import java.lang.NullPointerException
-
+//package html
+//
+//import akjaw.HTML.TagBuilder
+//import com.beust.klaxon.JsonArray
+//import com.beust.klaxon.JsonObject
+//import com.google.common.truth.Truth
+//import org.junit.Test
+//import java.io.File
+//
 //class SiteTest{
-//    private fun createProjectJsonObject(name: String, h1: String): JsonObject{
+//    private fun createProjectJsonObject(name: String, h1: String): JsonObject {
 //        return JsonObject(mapOf(name to JsonObject(mapOf("h1" to h1))))
 //    }
 //
@@ -174,4 +172,4 @@ import java.lang.NullPointerException
 //        Truth.assertThat(fileContent.contains("<body>")).isTrue()
 //
 //    }
-//}
+////}

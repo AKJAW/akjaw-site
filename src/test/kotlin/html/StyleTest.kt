@@ -1,4 +1,4 @@
-package HTML
+package html
 
 import akjaw.HTML.Style
 import com.google.common.truth.Truth
