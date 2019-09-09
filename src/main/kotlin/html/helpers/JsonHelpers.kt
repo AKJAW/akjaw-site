@@ -2,8 +2,6 @@ package html.helpers
 
 import java.lang.IllegalArgumentException
 
-typealias JsonTagNameAndClass = Pair<String, String?>
-
 object JsonHelpers{
     data class JsonTagData(val tagName: String, val className: String? = null)
 

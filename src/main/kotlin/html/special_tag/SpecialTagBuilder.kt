@@ -21,7 +21,7 @@ class SpecialTagBuilder(specialTags: List<SpecialTag>){
 
         specialTagMap
             .getValue(name)
-            .createTag(tag, className, parsed)
+            .createTag(tag, parsed, className)
     }
 
 }

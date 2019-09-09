@@ -10,19 +10,26 @@ import java.lang.IllegalStateException
 class ListTag: SpecialTag {
     override val signature: String = "list"
 
-    override fun createTag(tag: Tag, className: String?, data: Any?): Tag {
-        val listItems = data as JsonArray<*>
+    override fun createTag(tag: Tag, data: Any?, className: String?): Tag {
 
         return tag.apply{
-            if (className != null){
-                + Attributes("class" to className)
-            }
-            listItems.forEach {
-                if(it is JsonObject){
-                    createLanguageTagFromJsonObject(this, "li", it)
-                } else {
-                    getListItem(it)
+            tag("ul"){
+                if (className != null){
+                    + Attributes("class" to className)
                 }
+                addListChilder(data)
+            }
+        }
+    }
+
+    private fun Tag.addListChilder(data: Any?){
+        val listItems = data as JsonArray<*>
+
+        listItems.forEach {
+            if(it is JsonObject){
+                createLanguageTagFromJsonObject(this, "li", it)
+            } else {
+                getListItem(it)
             }
         }
     }

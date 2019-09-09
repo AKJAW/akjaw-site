@@ -6,6 +6,13 @@ import com.beust.klaxon.JsonArray
 interface SpecialTag{
     val signature: String
 
-    fun isSpecialTag(name: String): Boolean = name.startsWith(signature)
-    fun createTag(tag: Tag, className: String?, data: Any?): Tag
+    fun isSpecialTag(name: String): Boolean{
+        val split = name.split("-")
+        return if(split.isEmpty()){
+            name == signature
+        } else {
+            split[0] == signature
+        }
+    }
+    fun createTag(tag: Tag, data: Any?, className: String? = null): Tag
 }
