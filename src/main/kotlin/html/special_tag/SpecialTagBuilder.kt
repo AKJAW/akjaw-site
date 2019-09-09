@@ -1,10 +1,10 @@
 package html.special_tag
 
-import html.helpers.parseJsonKey
 import akjaw.HTML.Attributes
 import akjaw.HTML.Tag
 import com.beust.klaxon.JsonArray
 import com.beust.klaxon.JsonObject
+import html.helpers.JsonHelpers.parseJsonKey
 import java.lang.IllegalStateException
 
 class SpecialTagBuilder(specialTags: List<SpecialTag>){
@@ -22,7 +22,6 @@ class SpecialTagBuilder(specialTags: List<SpecialTag>){
         specialTagMap
             .getValue(name)
             .createTag(tag, className, parsed)
-
     }
 
 }

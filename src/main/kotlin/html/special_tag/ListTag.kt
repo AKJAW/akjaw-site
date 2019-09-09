@@ -2,9 +2,9 @@ package html.special_tag
 
 import akjaw.HTML.Attributes
 import akjaw.HTML.Tag
-import akjaw.HTML.TagBuilder.createLanguageTagFromJsonObject
 import com.beust.klaxon.JsonArray
 import com.beust.klaxon.JsonObject
+import html.TagBuilder.createLanguageTagFromJsonObject
 import java.lang.IllegalStateException
 
 class ListTag: SpecialTag {

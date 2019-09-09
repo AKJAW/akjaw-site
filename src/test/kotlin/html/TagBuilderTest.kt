@@ -2,7 +2,6 @@ package html
 
 import akjaw.HTML.HTMLBuilder
 import akjaw.HTML.Tag
-import akjaw.HTML.TagBuilder
 import com.google.common.truth.Truth
 import org.junit.Test
 

@@ -1,10 +1,12 @@
-package akjaw.HTML
+package html
 
+import akjaw.HTML.Attributes
+import akjaw.HTML.Tag
 import akjaw.Model.Project
 import akjaw.Repository.JsonRepository
 import com.beust.klaxon.JsonArray
 import com.beust.klaxon.JsonObject
-import html.helpers.parseJsonKey
+import html.helpers.JsonHelpers.parseJsonKey
 import java.io.File
 import java.lang.IllegalStateException
 

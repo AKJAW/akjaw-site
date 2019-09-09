@@ -2,11 +2,10 @@ package html
 
 import akjaw.HTML.Attributes
 import akjaw.HTML.Tag
-import akjaw.HTML.TagBuilder
-import akjaw.HTML.TagBuilder.createLanguageTagFromJsonObject
 import akjaw.Model.Project
-import html.helpers.parseJsonKey
 import com.beust.klaxon.JsonObject
+import html.TagBuilder.createLanguageTagFromJsonObject
+import html.helpers.JsonHelpers.parseJsonKey
 import html.special_tag.SpecialTagBuilder
 import java.lang.IllegalArgumentException
 import java.lang.IllegalStateException
