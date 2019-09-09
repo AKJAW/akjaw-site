@@ -4,10 +4,27 @@ import akjaw.Model.Project
 import akjaw.Repository.JsonRepository
 import com.beust.klaxon.JsonArray
 import com.beust.klaxon.JsonObject
+import html.helpers.parseJsonKey
 import java.io.File
 import java.lang.IllegalStateException
 
 object TagBuilder{
+
+    fun createLanguageTagFromJsonObject(tag: Tag, key: String, parsed: JsonObject) {
+        val (tagName, tagClass) = parseJsonKey(key)
+
+        tag.apply {
+            TagBuilder.createTagWithLanguages(
+                this,
+                tagName,
+                parsed.getValue("en") as String,
+                parsed.getValue("pl") as String,
+                tagClass
+
+            )
+        }
+
+    }
 
     fun createTagWithLanguages(
         parentTag: Tag,

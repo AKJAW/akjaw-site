@@ -4,11 +4,14 @@ import akjaw.HTML.Attributes
 import akjaw.HTML.HTMLBuilder
 import akjaw.HTML.Tag
 import akjaw.HTML.TagBuilder
-import akjaw.Model.Project
 import akjaw.Repository.JsonRepository
+import akjaw.html.special_tag.TechnologyTagsTag
+import html.special_tag.ListTag
+import html.special_tag.SpecialTag
+import html.special_tag.SpecialTagBuilder
 import java.io.File
 
-class Site(private val projects: List<Project>){
+class Site(private val projectBuilder: ProjectBuilder){
     val html: Tag
 
     init {
@@ -39,9 +42,7 @@ class Site(private val projects: List<Project>){
                 + Attributes("class" to "content site-break")
                 createAboutMeSection()
 
-                projects.map {
-                    ProjectBuilder.createProject(this, it.projectData)
-                }
+                projectBuilder.getProjects(this)
             }
         }
     }
@@ -121,8 +122,17 @@ class Site(private val projects: List<Project>){
 }
 
 fun main(){
+    val specialTags = listOf<SpecialTag>(
+        ListTag(),
+        TechnologyTagsTag()
+    )
+    val specialTagBuilder = SpecialTagBuilder(specialTags)
+
     val projects = JsonRepository("data/projects.json").projects
-    val siteBuilder = Site(projects)
+    val projectBuilder = ProjectBuilder(projects, specialTagBuilder)
+
+    val siteBuilder = Site(projectBuilder)
+
     val html = siteBuilder.html
     siteBuilder.saveToFile("build/index.html")
     print(html)

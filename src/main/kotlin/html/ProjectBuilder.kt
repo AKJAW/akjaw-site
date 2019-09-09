@@ -3,15 +3,27 @@ package html
 import akjaw.HTML.Attributes
 import akjaw.HTML.Tag
 import akjaw.HTML.TagBuilder
+import akjaw.HTML.TagBuilder.createLanguageTagFromJsonObject
+import akjaw.Model.Project
 import html.helpers.parseJsonKey
-import html.special_tag.SpecialTagBuilder
 import com.beust.klaxon.JsonObject
+import html.special_tag.SpecialTagBuilder
 import java.lang.IllegalArgumentException
 import java.lang.IllegalStateException
 
-object ProjectBuilder{
+class ProjectBuilder(
+    private val projects: List<Project>,
+    private val specialTagBuilder: SpecialTagBuilder){
 
-    fun createProject(parentTag: Tag, jsonObject: JsonObject): Tag {
+    fun getProjects(tag: Tag) {
+        tag.apply {
+            projects.map {
+                createProject(this, it.projectData)
+            }
+        }
+    }
+
+    private fun createProject(parentTag: Tag, jsonObject: JsonObject): Tag {
         return parentTag.apply {
             tag("div"){
                 addClass("project")
@@ -28,10 +40,10 @@ object ProjectBuilder{
             jsonObject.keys.forEach {
                 val parsed = jsonObject[it]
                 when{
-                    SpecialTagBuilder.isSpecialTag(it) -> SpecialTagBuilder.getSpecialTag(this, it, parsed)
+                    specialTagBuilder.isSpecialTag(it) -> specialTagBuilder.getSpecialTag(this, it, parsed)
                     parsed is String -> getString(it, parsed)
                     parsed is JsonObject -> getNestedTag(it, parsed)
-                    else -> throw IllegalStateException()
+                    else -> throw IllegalStateException(it)
                 }
             }
 
@@ -52,7 +64,7 @@ object ProjectBuilder{
 
     private fun Tag.getNestedTag(key: String, parsed: JsonObject) {
         if(isNestedTagALanguageContainer(parsed)){
-            createLanguageTagFromJsonObject(key, parsed)
+            createLanguageTagFromJsonObject(this, key, parsed)
         } else {
             val (tagName, tagClass) = parseJsonKey(key)
             tag(tagName) {
@@ -72,20 +84,6 @@ object ProjectBuilder{
         } else {
             false
         }
-    }
-
-    fun Tag.createLanguageTagFromJsonObject(key: String, parsed: JsonObject) {
-        val (tagName, tagClass) = parseJsonKey(key)
-
-        TagBuilder.createTagWithLanguages(
-            this,
-            tagName,
-            parsed.getValue("en") as String,
-            parsed.getValue("pl") as String,
-            tagClass
-
-        )
-
     }
 
 }

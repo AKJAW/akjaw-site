@@ -134,10 +134,10 @@
 //    }
 //
 //    @Test
-//    fun `Correctly creates custom projectTags tag`(){
+//    fun `Correctly creates custom technologyTags tag`(){
 //        val jsonObject1 = createProjectJsonObject("project1", "header1")
 //        (jsonObject1["project1"] as JsonObject).addList(
-//            "projectTags",
+//            "technologyTags",
 //            listOf("JavaScript", "React", "Firebase"))
 //
 //        val projects = listOf(
