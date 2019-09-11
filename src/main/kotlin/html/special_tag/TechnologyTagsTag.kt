@@ -23,33 +23,12 @@ class TechnologyTagsTag: SpecialTag{
 
                 + Attributes("class" to classValue)
 
-                createTechnologyTags(data)
-            }
-        }
-    }
-
-    private fun Tag.createTechnologyTags(data: Any?){
-        val technologyTags = data as JsonArray<*>
-
-        technologyTags
-            .forEach {
-                if(it is JsonObject){
-                    TagBuilder.createLanguageTagFromJsonObject(this, "div", it)
-                } else {
-                    getListItem(it)
+                val operation: Tag.() -> Unit = {
+                    addClass("aaaaaaa")
                 }
-            }
-    }
-
-
-    private fun Tag.getListItem(item: Any?){
-        tag("div") {
-            if (item is String) {
-                + item
-            }
-            else {
-                throw IllegalStateException("List item has incorrect type")
+                TagBuilder.createTagsFromFlatJsonArray(this, data as JsonArray<*>, "div", operation)
             }
         }
     }
+
 }
