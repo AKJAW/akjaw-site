@@ -1,175 +1,77 @@
-//package html
-//
-//import akjaw.HTML.TagBuilder
-//import com.beust.klaxon.JsonArray
-//import com.beust.klaxon.JsonObject
-//import com.google.common.truth.Truth
-//import org.junit.Test
-//import java.io.File
-//
-//class SiteTest{
-//    private fun createProjectJsonObject(name: String, h1: String): JsonObject {
-//        return JsonObject(mapOf(name to JsonObject(mapOf("h1" to h1))))
-//    }
-//
-//    fun JsonObject.addList(key: String, listItems: List<Any>){
-//        this[key] = JsonArray(listItems)
-//    }
-//
-//    fun JsonObject.addObject(key: String, objectItems: Map<String, String>){
-//        this[key] = JsonObject(objectItems)
-//    }
-//
-//    @Test
-//    fun `Always creates a head tag`(){
-//        val builder = TagBuilder(listOf())
-//        val html = builder.html
-//        Truth.assertThat(html.getByName("head")).isNotNull()
-//    }
-//
-//    @Test
-//    fun `Always creates a body tag`(){
-//        val builder = TagBuilder(listOf())
-//        val html = builder.html
-//        Truth.assertThat(html.getByName("body")).isNotNull()
-//    }
-//
-//    @Test
-//    fun `Always creates an about me section`(){
-//        val builder = TagBuilder(listOf())
-//        val html = builder.html
-//
-//        val section = html.getByClass("about-me")
-//        Truth.assertThat(section).isNotNull()
-//        Truth.assertThat(section).hasSize(1)
-//    }
-//
-//    @Test
-//    fun `Correctly hides one language by default`(){
-//        val jsonObject1 = createProjectJsonObject("project1", "header1")
-//        (jsonObject1["project1"] as JsonObject).addObject("h1", mapOf("en" to "english", "pl" to "polski"))
-//        (jsonObject1["project1"] as JsonObject).addObject("span", mapOf("en" to "english", "pl" to "polski"))
-//
-//        (jsonObject1["project1"] as JsonObject)["div"] = JsonObject()
-//        ((jsonObject1["project1"] as JsonObject)["div"] as JsonObject)
-//            .addObject("span", mapOf("en" to "english", "pl" to "polski"))
-//
-//        val projects = listOf(
-//            Project(jsonObject1)
-//        )
-//
-//        val builder = TagBuilder(projects)
-//        val html = builder.html
-//
-//        html.getByClass("pl")?.forEach {
-//            Truth.assertThat(it.className).contains("none")
-//        }
-//    }
-//
-//    @Test
-//    fun `Correctly creates custom list tag`(){
-//        val jsonObject1 = createProjectJsonObject("project1", "header1")
-//        (jsonObject1["project1"] as JsonObject).addList(
-//            "list",
-//            listOf("first tech", "second tech", "third tech"))
-//
-//        val projects = listOf(
-//            Project(jsonObject1)
-//        )
-//
-//        val builder = TagBuilder(projects)
-//        val html = builder.html
-//
-//        val ul = html.getByName("ul")!!
-//        val li = ul[0].getByName("li")!!
-//        Truth.assertThat(li).hasSize(3)
-//
-//        Truth.assertThat(li[0].textContent).isEqualTo("first tech")
-//        Truth.assertThat(li[1].textContent).isEqualTo("second tech")
-//        Truth.assertThat(li[2].textContent).isEqualTo("third tech")
-//    }
-//
-//    @Test
-//    fun `Correctly creates language tags inside custom list tag`(){
-//        val jsonObject1 = createProjectJsonObject("project1", "header1")
-//        (jsonObject1["project1"] as JsonObject).addList(
-//            "list",
-//            listOf("first tech", JsonObject(mapOf("pl" to "drugi tech", "en" to "second tech")), "third tech"))
-//
-//        val projects = listOf(
-//            Project(jsonObject1)
-//        )
-//
-//        val builder = TagBuilder(projects)
-//        val html = builder.html
-//
-//        val ul = html.getByName("ul")!!
-//        val li = ul[0].getByName("li")!!
-//        Truth.assertThat(li).hasSize(4)
-//
-//        Truth.assertThat(li[0].textContent).isEqualTo("first tech")
-//        Truth.assertThat(li[1].textContent).isEqualTo("drugi tech")
-//        Truth.assertThat(li[2].textContent).isEqualTo("second tech")
-//        Truth.assertThat(li[3].textContent).isEqualTo("third tech")
-//    }
-//
-//    @Test
-//    fun `Correctly hides language tags inside custom list tag`(){
-//        val jsonObject1 = createProjectJsonObject("project1", "header1")
-//        (jsonObject1["project1"] as JsonObject).addList(
-//            "list",
-//            listOf("first tech", JsonObject(mapOf("pl" to "drugi tech", "en" to "second tech")), "third tech"))
-//
-//        val projects = listOf(
-//            Project(jsonObject1)
-//        )
-//
-//        val builder = TagBuilder(projects)
-//        val html = builder.html
-//
-//        val ul = html.getByName("ul")!!
-//        val li = ul[0].getByName("li")!!
-//
-//        Truth.assertThat(li[1].className).contains("none")
-//    }
-//
-//    @Test
-//    fun `Correctly creates custom technologyTags tag`(){
-//        val jsonObject1 = createProjectJsonObject("project1", "header1")
-//        (jsonObject1["project1"] as JsonObject).addList(
-//            "technologyTags",
-//            listOf("JavaScript", "React", "Firebase"))
-//
-//        val projects = listOf(
-//            Project(jsonObject1)
-//        )
-//
-//        val builder = TagBuilder(projects)
-//        val html = builder.html
-//
-//        val div = html.getByClass("project-tags")
-//        div ?: throw NullPointerException("project-tags cant  be null")
-//        val tags = div[0].tagList
-//        Truth.assertThat(tags).hasSize(3)
-//        Truth.assertThat(tags[0].textContent).isEqualTo("JavaScript")
-//        Truth.assertThat(tags[1].textContent).isEqualTo("React")
-//        Truth.assertThat(tags[2].textContent).isEqualTo("Firebase")
-//    }
-//
-//    @Test
-//    fun `It correctly saves the html tree to a file`(){
-//        val path = "src/test/resources/test_file.html"
-//        File("src/test/resources/test_file.html").delete()
-//
-//        val builder = TagBuilder(listOf())
-//        val html = builder.html
-//
-//        builder.saveToFile(path)
-//
-//        Truth.assertThat(File(path).exists()).isTrue()
-//        val fileContent = File(path).readText()
-//        Truth.assertThat(fileContent.contains("<head>")).isTrue()
-//        Truth.assertThat(fileContent.contains("<body>")).isTrue()
-//
-//    }
-////}
+package html
+
+import akjaw.Model.Project
+import akjaw.Repository.JsonRepository
+import akjaw.html.special_tag.TechnologyTagsTag
+import com.beust.klaxon.JsonArray
+import com.beust.klaxon.JsonObject
+import com.google.common.truth.Truth
+import html.special_tag.ListTag
+import html.special_tag.SpecialTag
+import html.special_tag.SpecialTagBuilder
+import org.junit.Test
+import java.io.File
+
+class SiteTest{
+    val specialTags = listOf<SpecialTag>(
+        ListTag(),
+        TechnologyTagsTag()
+    )
+    val specialTagBuilder = SpecialTagBuilder(specialTags)
+
+    val projects = listOf<Project>(
+        Project(createLanguageJsonObject("project1", "first", "pierwszy")),
+        Project(createLanguageJsonObject("project2", "second", "drugi"))
+    )
+    val projectBuilder = ProjectBuilder(projects, specialTagBuilder)
+
+
+    private fun createLanguageJsonObject(name: String, en: String, pl: String): JsonObject {
+        return JsonObject(
+            mapOf(name to JsonObject(mapOf("en" to en, "pl" to pl)))
+        )
+    }
+
+    @Test
+    fun `Always creates a head tag`(){
+        val siteBuilder = Site(projectBuilder)
+
+        val html = siteBuilder.html
+        Truth.assertThat(html.getByName("head")).isNotNull()
+    }
+
+    @Test
+    fun `Always creates a body tag`(){
+        val siteBuilder = Site(projectBuilder)
+
+        val html = siteBuilder.html
+        Truth.assertThat(html.getByName("body")).isNotNull()
+    }
+
+    @Test
+    fun `Always creates an about me section`(){
+        val siteBuilder = Site(projectBuilder)
+        val html = siteBuilder.html
+
+        val section = html.getByClass("about-me")
+        Truth.assertThat(section).isNotNull()
+        Truth.assertThat(section).hasSize(1)
+    }
+
+    @Test
+    fun `It correctly saves the html tree to a file`(){
+        val path = "src/test/resources/test_file.html"
+        File("src/test/resources/test_file.html").delete()
+
+        val siteBuilder = Site(projectBuilder)
+        val html = siteBuilder.html
+
+        siteBuilder.saveToFile(path)
+
+        Truth.assertThat(File(path).exists()).isTrue()
+        val fileContent = File(path).readText()
+        Truth.assertThat(fileContent.contains("<head>")).isTrue()
+        Truth.assertThat(fileContent.contains("<body>")).isTrue()
+
+    }
+}
