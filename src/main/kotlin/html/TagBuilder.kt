@@ -1,7 +1,5 @@
 package html
 
-import akjaw.HTML.Attributes
-import akjaw.HTML.Tag
 import com.beust.klaxon.JsonArray
 import com.beust.klaxon.JsonObject
 import html.helpers.JsonHelpers.parseJsonKey

@@ -1,4 +1,4 @@
-package akjaw.HTML
+package html
 
 class Attributes(vararg attributes: Pair<String, String>): Iterable<Attribute>{
     private val _attrs: MutableList<Attribute> = attributes.map {

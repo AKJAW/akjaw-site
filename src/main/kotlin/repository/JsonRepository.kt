@@ -1,12 +1,13 @@
-package akjaw.Repository
+package repository
 
-import akjaw.JsonParser
-import akjaw.Model.Project
+import model.Project
+import akjaw.Repository.Repository
+import json.JsonParser
 import com.beust.klaxon.JsonArray
 import com.beust.klaxon.JsonBase
 import com.beust.klaxon.JsonObject
 
-class JsonRepository(filePath: String): Repository{
+class JsonRepository(filePath: String): Repository {
     private val jsonProjects: JsonArray<JsonObject>
     override val projects: List<Project>
 
@@ -33,7 +34,4 @@ class JsonRepository(filePath: String): Repository{
 
 fun main() {
     val projects = JsonRepository("data/projects.json").projects
-    val s = 's'
-    val sss = 's'
-    val ss = 's'
 }

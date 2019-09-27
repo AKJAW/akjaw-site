@@ -1,6 +1,5 @@
 package repository
 
-import akjaw.Repository.JsonRepository
 import com.beust.klaxon.KlaxonException
 import com.google.common.truth.Truth
 import org.junit.Test

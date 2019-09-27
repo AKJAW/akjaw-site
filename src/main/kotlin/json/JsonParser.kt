@@ -1,17 +1,14 @@
-package akjaw
+package json
 
 import com.beust.klaxon.JsonBase
-import com.beust.klaxon.KlaxonException
 import com.beust.klaxon.Parser
-import java.io.FileNotFoundException
-import java.io.IOException
-import java.lang.IllegalArgumentException
 
 object JsonParser{
+
     private val parser = Parser.default()
 
     fun parse(filePath: String): Result<JsonBase> {
-        return tryToParse(filePath).map(::cast)
+        return tryToParse(filePath).map(JsonParser::cast)
     }
 
     private fun tryToParse(filePath: String): Result<Any> {
@@ -23,7 +20,6 @@ object JsonParser{
     private fun cast(json: Any): JsonBase{
         return json as JsonBase
     }
-
 }
 
 fun main(){

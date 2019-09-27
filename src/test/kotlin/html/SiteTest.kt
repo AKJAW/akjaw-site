@@ -1,9 +1,7 @@
 package html
 
-import akjaw.Model.Project
-import akjaw.Repository.JsonRepository
-import akjaw.html.special_tag.TechnologyTagsTag
-import com.beust.klaxon.JsonArray
+import model.Project
+import html.special_tag.TechnologyTagsTag
 import com.beust.klaxon.JsonObject
 import com.google.common.truth.Truth
 import html.special_tag.ListTag

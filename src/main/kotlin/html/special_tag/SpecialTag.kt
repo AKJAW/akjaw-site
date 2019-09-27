@@ -1,7 +1,6 @@
 package html.special_tag
 
-import akjaw.HTML.Tag
-import com.beust.klaxon.JsonArray
+import html.Tag
 
 interface SpecialTag{
     val signature: String

@@ -1,4 +1,4 @@
-package akjaw.HTML
+package html
 
 class Style(vararg rules: Pair<String, String>){
     private val rules = rules.joinToString("; ") {

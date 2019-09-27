@@ -1,8 +1,6 @@
 package html
 
-import akjaw.HTML.Attributes
-import akjaw.HTML.Tag
-import akjaw.Model.Project
+import model.Project
 import com.beust.klaxon.JsonObject
 import html.TagBuilder.createLanguageTagFromJsonObject
 import html.helpers.JsonHelpers.parseJsonKey

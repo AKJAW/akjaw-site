@@ -1,11 +1,7 @@
 package html.special_tag
 
-import akjaw.HTML.Attributes
-import akjaw.HTML.Tag
-import com.beust.klaxon.JsonArray
-import com.beust.klaxon.JsonObject
+import html.Tag
 import html.helpers.JsonHelpers.parseJsonKey
-import java.lang.IllegalStateException
 
 class SpecialTagBuilder(specialTags: List<SpecialTag>){
     private val specialTagMap = specialTags.map {

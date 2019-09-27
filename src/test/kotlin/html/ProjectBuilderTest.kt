@@ -1,10 +1,8 @@
 package html
 
-import akjaw.HTML.HTMLBuilder
-import akjaw.Model.Project
+import model.Project
 import com.beust.klaxon.JsonObject
 import com.google.common.truth.Truth
-import html.special_tag.SpecialTag
 import html.special_tag.SpecialTagBuilder
 import org.junit.Test
 

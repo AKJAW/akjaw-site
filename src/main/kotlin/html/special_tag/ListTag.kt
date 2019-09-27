@@ -1,11 +1,9 @@
 package html.special_tag
 
-import akjaw.HTML.Attributes
-import akjaw.HTML.Tag
+import html.Attributes
+import html.Tag
 import com.beust.klaxon.JsonArray
-import com.beust.klaxon.JsonObject
 import html.TagBuilder
-import java.lang.IllegalStateException
 
 class ListTag: SpecialTag {
     override val signature: String = "list"

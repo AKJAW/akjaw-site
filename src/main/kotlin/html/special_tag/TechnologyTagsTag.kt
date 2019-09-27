@@ -1,12 +1,9 @@
-package akjaw.html.special_tag
+package html.special_tag
 
-import akjaw.HTML.Attributes
-import akjaw.HTML.Tag
+import html.Attributes
+import html.Tag
 import com.beust.klaxon.JsonArray
-import com.beust.klaxon.JsonObject
 import html.TagBuilder
-import html.special_tag.SpecialTag
-import java.lang.IllegalStateException
 
 class TechnologyTagsTag: SpecialTag{
     override val signature: String = "technologyTags"
@@ -23,10 +20,7 @@ class TechnologyTagsTag: SpecialTag{
 
                 + Attributes("class" to classValue)
 
-                val operation: Tag.() -> Unit = {
-                    addClass("aaaaaaa")
-                }
-                TagBuilder.createTagsFromFlatJsonArray(this, data as JsonArray<*>, "div", operation)
+                TagBuilder.createTagsFromFlatJsonArray(this, data as JsonArray<*>, "div")
             }
         }
     }

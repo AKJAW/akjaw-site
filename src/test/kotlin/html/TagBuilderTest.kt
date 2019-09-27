@@ -1,7 +1,5 @@
 package html
 
-import akjaw.HTML.HTMLBuilder
-import akjaw.HTML.Tag
 import com.beust.klaxon.JsonArray
 import com.beust.klaxon.JsonObject
 import com.google.common.truth.Truth

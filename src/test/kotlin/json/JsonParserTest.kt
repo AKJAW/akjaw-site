@@ -1,6 +1,5 @@
 package json
 
-import akjaw.JsonParser
 import com.beust.klaxon.JsonArray
 import com.beust.klaxon.JsonBase
 import com.beust.klaxon.JsonObject

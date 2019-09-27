@@ -1,10 +1,7 @@
 package html
 
-import akjaw.HTML.Attributes
-import akjaw.HTML.HTMLBuilder
-import akjaw.HTML.Tag
-import akjaw.Repository.JsonRepository
-import akjaw.html.special_tag.TechnologyTagsTag
+import repository.JsonRepository
+import html.special_tag.TechnologyTagsTag
 import html.special_tag.ListTag
 import html.special_tag.SpecialTag
 import html.special_tag.SpecialTagBuilder
@@ -16,7 +13,7 @@ class Site(private val projectBuilder: ProjectBuilder){
     init {
         html = HTMLBuilder.html {
             tag("meta"){
-                + Attributes("charset" to "UTF-8")
+                +Attributes("charset" to "UTF-8")
             }
             createHead()
             createBody()
@@ -26,10 +23,13 @@ class Site(private val projectBuilder: ProjectBuilder){
     private fun Tag.createHead() {
         tag("head") {
             tag("link") {
-                + Attributes("rel" to "stylesheet", "href" to "style.css")
+                +Attributes("rel" to "stylesheet", "href" to "style.css")
             }
             tag("script") {
-                + Attributes("src" to "main.js", "type" to "text/javascript")
+                +Attributes("src" to "main.js", "type" to "text/javascript")
+            }
+            tag("meta") {
+                +Attributes("name" to "viewport", "content" to "width=device-width,initial-scale=1,shrink-to-fit=no")
             }
         }
     }
@@ -38,7 +38,8 @@ class Site(private val projectBuilder: ProjectBuilder){
         tag("body"){
             createHeader()
             tag("div"){
-                + Attributes("class" to "content site-break")
+                +Attributes("class" to "content site-break")
+                createUnderConstructionText()
                 createAboutMeSection()
 
                 projectBuilder.getProjects(this)
@@ -48,9 +49,9 @@ class Site(private val projectBuilder: ProjectBuilder){
 
     private fun Tag.createHeader() {
         tag("div"){
-            + Attributes("class" to "header")
+            +Attributes("class" to "header")
             tag("div"){
-                + Attributes("class" to "site-break")
+                +Attributes("class" to "site-break")
                 tag("h3"){
                     + "AKJAW"
                 }
@@ -58,7 +59,7 @@ class Site(private val projectBuilder: ProjectBuilder){
                 createLanguageIcons()
 
                 tag("div"){
-                    + Attributes("class" to "icon-container")
+                    +Attributes("class" to "icon-container")
                     createHeaderIcon(
                         "assets/GitHub-Mark-32px.png",
                         "https://github.com/AKJAW",
@@ -70,33 +71,46 @@ class Site(private val projectBuilder: ProjectBuilder){
 
     private fun Tag.createLanguageIcons(){
         tag("div"){
-            + Attributes("class" to "language-container")
+            +Attributes("class" to "language-container")
 
             tag("div"){
-                + Attributes("id" to "en-button", "class" to "language-button active")
+                +Attributes("id" to "en-button", "class" to "language-button active")
             }
 
             tag("div"){
-                + Attributes("id" to "pl-button", "class" to "language-button")
+                +Attributes("id" to "pl-button", "class" to "language-button")
             }
         }
     }
 
     private fun Tag.createHeaderIcon(iconPath: String, link: String, iconClassName: String){
         tag("a"){
-            + Attributes(
+            +Attributes(
                 "class" to "icon $iconClassName",
                 "href" to link,
-                "target" to "_blank")
+                "target" to "_blank"
+            )
             tag("img"){
-                + Attributes("src" to iconPath)
+                +Attributes("src" to iconPath)
             }
+        }
+    }
+
+    private fun Tag.createUnderConstructionText(){
+        tag("div"){
+            +Attributes("class" to "under-construction")
+
+            TagBuilder.createTagWithLanguages(
+                this,
+                "span",
+                "Site is still under construction",
+                "Strona jest w trakcie przygotowania")
         }
     }
 
     private fun Tag.createAboutMeSection() {
         tag("div"){
-            + Attributes("class" to "about-me")
+            +Attributes("class" to "about-me")
             TagBuilder.createTagWithLanguages(
                 this,
                 "h2",

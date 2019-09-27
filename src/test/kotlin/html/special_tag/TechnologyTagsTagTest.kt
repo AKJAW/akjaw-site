@@ -1,7 +1,6 @@
 package html.special_tag
 
-import akjaw.HTML.HTMLBuilder
-import akjaw.html.special_tag.TechnologyTagsTag
+import html.HTMLBuilder
 import com.beust.klaxon.JsonArray
 import com.beust.klaxon.JsonObject
 import com.google.common.truth.Truth

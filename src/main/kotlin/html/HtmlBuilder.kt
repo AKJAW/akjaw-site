@@ -1,7 +1,6 @@
-package akjaw.HTML
+package html
 
 import java.lang.IllegalStateException
-import java.lang.IndexOutOfBoundsException
 
 object HTMLBuilder{
     fun html(init: (Tag.() -> Unit)? = null): Tag {

@@ -1,6 +1,5 @@
 package html
 
-import akjaw.HTML.Attribute
 import com.google.common.truth.Truth
 import org.junit.Test
 

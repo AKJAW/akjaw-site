@@ -1,6 +1,5 @@
 package html.special_tag
 
-import akjaw.html.special_tag.TechnologyTagsTag
 import com.google.common.truth.Truth
 import org.junit.Test
 

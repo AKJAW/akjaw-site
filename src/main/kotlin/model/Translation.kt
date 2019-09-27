@@ -1,4 +1,4 @@
-package akjaw.Model
+package model
 
 import com.beust.klaxon.JsonObject
 import javax.management.Descriptor

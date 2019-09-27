@@ -1,6 +1,5 @@
 package model
 
-import akjaw.Model.Project
 import com.beust.klaxon.JsonObject
 import com.google.common.truth.Truth
 import org.junit.Test

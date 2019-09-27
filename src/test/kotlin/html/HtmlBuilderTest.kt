@@ -1,6 +1,6 @@
 package html
 
-import akjaw.HTML.*
+
 import com.google.common.truth.Truth
 import org.junit.Test
 import java.lang.NullPointerException
