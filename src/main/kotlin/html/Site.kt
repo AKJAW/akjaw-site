@@ -1,10 +1,7 @@
 package html
 
+import html.special_tag.*
 import repository.JsonRepository
-import html.special_tag.TechnologyTagsTag
-import html.special_tag.ListTag
-import html.special_tag.SpecialTag
-import html.special_tag.SpecialTagBuilder
 import java.io.File
 
 class Site(private val projectBuilder: ProjectBuilder){
@@ -22,8 +19,14 @@ class Site(private val projectBuilder: ProjectBuilder){
 
     private fun Tag.createHead() {
         tag("head") {
+            tag("title") {
+                + "Aleksander Jaworski"
+            }
             tag("link") {
                 +Attributes("rel" to "stylesheet", "href" to "style.css")
+            }
+            tag("script") {
+                +Attributes("src" to "lory.min.js", "type" to "text/javascript")
             }
             tag("script") {
                 +Attributes("src" to "main.js", "type" to "text/javascript")
@@ -137,7 +140,8 @@ class Site(private val projectBuilder: ProjectBuilder){
 fun main(){
     val specialTags = listOf<SpecialTag>(
         ListTag(),
-        TechnologyTagsTag()
+        TechnologyTagsTag(),
+        GalleryTag()
     )
     val specialTagBuilder = SpecialTagBuilder(specialTags)
 

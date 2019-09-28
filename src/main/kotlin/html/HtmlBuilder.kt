@@ -103,7 +103,7 @@ class Tag(name: String){
             if(tagClass == null){
                 false
             } else {
-                tagClass == classNameToFind
+                classNameToFind in tagClass.split(" ")
             }
         }
     }

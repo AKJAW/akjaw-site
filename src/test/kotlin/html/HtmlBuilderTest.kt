@@ -214,7 +214,7 @@ class HtmlBuilderTest {
         val html = HTMLBuilder.html {
             tag("div") {
                 +"root"
-                +Attributes("class" to "find")
+                +Attributes("class" to "find another")
                 tag("span") {
                     +"parent"
                     tag("span") {
