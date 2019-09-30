@@ -145,7 +145,8 @@ fun main(){
     val specialTags = listOf<SpecialTag>(
         ListTag(),
         TechnologyTagsTag(),
-        GalleryTag()
+        GalleryTag(),
+        LinkTag()
     )
     val specialTagBuilder = SpecialTagBuilder(specialTags)
 

@@ -7,7 +7,7 @@ import com.google.common.truth.Truth
 import html.Attribute
 import org.junit.Test
 
-class GalleryTest{
+class GalleryTagTest{
 
     @Test
     fun `has the signature is correct`(){

@@ -3,8 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="5501444b-1d28-43e3-ba48-b6f8ecabc86d" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/projects.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/projects.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/html/Site.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/html/Site.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/html/special_tag/GalleryTag.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/html/special_tag/GalleryTag.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/html/special_tag/GalleryTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/html/special_tag/GalleryTagTest.kt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -40,11 +41,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="projects.json" pinned="false" current-in-tab="false">
+      <file leaf-file-name="projects.json" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/data/projects.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3200">
-              <caret line="160" column="4" selection-start-line="160" selection-start-column="4" selection-end-line="160" selection-end-column="4" />
+            <state relative-caret-position="320">
+              <caret line="205" column="9" selection-start-line="205" selection-start-column="9" selection-end-line="205" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -52,8 +53,8 @@
       <file leaf-file-name="Site.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/html/Site.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="26" column="19" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="19" />
+            <state relative-caret-position="190">
+              <caret line="131" column="11" lean-forward="true" selection-start-line="131" selection-start-column="11" selection-end-line="131" selection-end-column="11" />
               <folding>
                 <element signature="e#14#92#0" expanded="true" />
               </folding>
@@ -61,19 +62,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build/main.js">
+      <file leaf-file-name="LinkTest.kt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/kotlin/html/special_tag/LinkTest.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="940">
-              <caret line="47" column="9" selection-start-line="47" selection-start-column="9" selection-end-line="47" selection-end-column="9" />
+            <state relative-caret-position="364">
+              <caret line="96" lean-forward="true" selection-start-line="96" selection-end-line="96" />
+              <folding>
+                <element signature="e#26#257#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GalleryTag.kt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GalleryTag.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/html/special_tag/GalleryTag.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="20">
+            <state relative-caret-position="160">
               <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
               <folding>
                 <element signature="e#26#163#0" expanded="true" />
@@ -82,11 +86,32 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GalleryTest.kt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/kotlin/html/special_tag/GalleryTest.kt">
+      <file leaf-file-name="LinkTag.kt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/html/special_tag/LinkTag.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1240">
-              <caret line="67" selection-start-line="67" selection-end-line="67" />
+            <state relative-caret-position="420">
+              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+              <folding>
+                <element signature="e#26#198#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Attributes.kt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/html/Attributes.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="40">
+              <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GalleryTagTest.kt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/kotlin/html/special_tag/GalleryTagTest.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="664">
+              <caret line="62" column="40" lean-forward="true" selection-start-line="62" selection-start-column="40" selection-end-line="63" selection-end-column="50" />
             </state>
           </provider>
         </entry>
@@ -106,8 +131,8 @@
       <file leaf-file-name="HtmlBuilder.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/html/HtmlBuilder.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2100">
-              <caret line="105" column="54" selection-start-line="105" selection-start-column="54" selection-end-line="105" selection-end-column="54" />
+            <state relative-caret-position="350">
+              <caret line="43" column="28" selection-start-line="43" selection-start-column="28" selection-end-line="43" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -596,10 +621,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/kotlin/HTML/SiteBuilder.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/main.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/HTML/TagBuilder.kt" />
-        <option value="$PROJECT_DIR$/src/test/kotlin/HTML/SiteTest.kt" />
         <option value="$PROJECT_DIR$/src/test/kotlin/HTML/TagBuilderTest.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/HTML/Site.kt" />
         <option value="$PROJECT_DIR$/src/test/kotlin/HTML/SpecialTagBuilderTest.kt" />
@@ -641,11 +662,15 @@
         <option value="$PROJECT_DIR$/build/playground/gallery.html" />
         <option value="$PROJECT_DIR$/src/main/kotlin/html/HtmlBuilder.kt" />
         <option value="$PROJECT_DIR$/src/test/kotlin/html/HtmlBuilderTest.kt" />
-        <option value="$PROJECT_DIR$/src/test/kotlin/html/special_tag/GalleryTest.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/html/special_tag/GalleryTag.kt" />
         <option value="$PROJECT_DIR$/build/main.js" />
         <option value="$PROJECT_DIR$/build/style.css" />
+        <option value="$PROJECT_DIR$/src/test/kotlin/html/special_tag/GalleryTest.kt" />
+        <option value="$PROJECT_DIR$/src/test/kotlin/html/special_tag/GalleryTagTest.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/html/special_tag/linkTag.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/html/Site.kt" />
+        <option value="$PROJECT_DIR$/src/test/kotlin/html/special_tag/LinkTest.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/html/special_tag/LinkTag.kt" />
         <option value="$PROJECT_DIR$/data/projects.json" />
       </list>
     </option>
@@ -875,9 +900,10 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateKotlinClassDialog.RecentsKey">
-      <recent name="akjaw.HTML.special_tag" />
-      <recent name="akjaw.Repository" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/build/assets" />
+      <recent name="$PROJECT_DIR$/src/main/kotlin/JSON" />
+      <recent name="$PROJECT_DIR$/src/main/kotlin/HTML" />
     </key>
     <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
       <recent name="html.special_tag" />
@@ -895,10 +921,9 @@
       <recent name="akjaw.HTML.special_tag" />
       <recent name="HTML.special_tag" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/build/assets" />
-      <recent name="$PROJECT_DIR$/src/main/kotlin/JSON" />
-      <recent name="$PROJECT_DIR$/src/main/kotlin/HTML" />
+    <key name="CreateKotlinClassDialog.RecentsKey">
+      <recent name="akjaw.HTML.special_tag" />
+      <recent name="akjaw.Repository" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -934,14 +959,14 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="GalleryTest.createTag builds the images inside a frame" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LinkTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="site_test" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="html.special_tag" />
-      <option name="MAIN_CLASS_NAME" value="html.special_tag.GalleryTest" />
-      <option name="METHOD_NAME" value="createTag builds the images inside a frame" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="html.special_tag.LinkTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
@@ -951,13 +976,13 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="HtmlBuilderTest.getByClass returns list of tags with class that are in that tree" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LinkTest.throws an error if text-en is not present" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="site_test" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="html" />
-      <option name="MAIN_CLASS_NAME" value="html.HtmlBuilderTest" />
-      <option name="METHOD_NAME" value="getByClass returns list of tags with class that are in that tree" />
+      <option name="PACKAGE_NAME" value="html.special_tag" />
+      <option name="MAIN_CLASS_NAME" value="html.special_tag.LinkTest" />
+      <option name="METHOD_NAME" value="throws an error if text-en is not present" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -1018,18 +1043,18 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.GalleryTest" />
-      <item itemvalue="JUnit.GalleryTest.createTag builds the images inside a frame" />
-      <item itemvalue="JUnit.HtmlBuilderTest.getByClass returns list of tags with class that are in that tree" />
       <item itemvalue="JUnit.kotlin in site_test" />
       <item itemvalue="Kotlin.html.SiteKt" />
+      <item itemvalue="JUnit.LinkTest" />
+      <item itemvalue="JUnit.LinkTest.throws an error if text-en is not present" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Kotlin.html.SiteKt" />
+        <item itemvalue="JUnit.LinkTest" />
+        <item itemvalue="JUnit.LinkTest.throws an error if text-en is not present" />
         <item itemvalue="JUnit.kotlin in site_test" />
         <item itemvalue="JUnit.GalleryTest" />
-        <item itemvalue="JUnit.GalleryTest.createTag builds the images inside a frame" />
-        <item itemvalue="JUnit.HtmlBuilderTest.getByClass returns list of tags with class that are in that tree" />
       </list>
     </recent_temporary>
   </component>
@@ -1037,35 +1062,35 @@
     <configuration />
   </component>
   <component name="TestHistory">
-    <history-entry file="GalleryTest_createTag_builds_the_images_inside_a_frame - 2019.09.28 at 16h 30m 01s.xml">
-      <configuration name="GalleryTest.createTag builds the images inside a frame" configurationId="JUnit" />
+    <history-entry file="LinkTest - 2019.09.30 at 20h 26m 01s.xml">
+      <configuration name="LinkTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GalleryTest_createTag_builds_the_images_inside_a_frame - 2019.09.28 at 16h 30m 14s.xml">
-      <configuration name="GalleryTest.createTag builds the images inside a frame" configurationId="JUnit" />
+    <history-entry file="LinkTest - 2019.09.30 at 20h 34m 51s.xml">
+      <configuration name="LinkTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GalleryTest_createTag_builds_the_images_inside_a_frame - 2019.09.28 at 16h 43m 04s.xml">
-      <configuration name="GalleryTest.createTag builds the images inside a frame" configurationId="JUnit" />
+    <history-entry file="LinkTest - 2019.09.30 at 20h 35m 17s.xml">
+      <configuration name="LinkTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GalleryTest_createTag_builds_the_images_inside_a_frame - 2019.09.28 at 16h 43m 28s.xml">
-      <configuration name="GalleryTest.createTag builds the images inside a frame" configurationId="JUnit" />
+    <history-entry file="LinkTest - 2019.09.30 at 20h 35m 29s.xml">
+      <configuration name="LinkTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GalleryTest_createTag_builds_the_images_inside_a_frame - 2019.09.28 at 16h 45m 20s.xml">
-      <configuration name="GalleryTest.createTag builds the images inside a frame" configurationId="JUnit" />
+    <history-entry file="LinkTest - 2019.09.30 at 20h 37m 09s.xml">
+      <configuration name="LinkTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GalleryTest_createTag_builds_the_images_inside_a_frame - 2019.09.28 at 16h 45m 40s.xml">
-      <configuration name="GalleryTest.createTag builds the images inside a frame" configurationId="JUnit" />
+    <history-entry file="LinkTest_throws_an_error_if_text-en_is_not_present - 2019.09.30 at 20h 39m 22s.xml">
+      <configuration name="LinkTest.throws an error if text-en is not present" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="HtmlBuilderTest_getByClass_returns_list_of_tags_with_class_that_are_in_that_tree - 2019.09.28 at 16h 46m 28s.xml">
-      <configuration name="HtmlBuilderTest.getByClass returns list of tags with class that are in that tree" configurationId="JUnit" />
+    <history-entry file="LinkTest - 2019.09.30 at 20h 39m 56s.xml">
+      <configuration name="LinkTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GalleryTest_createTag_builds_the_images_inside_a_frame - 2019.09.28 at 16h 46m 34s.xml">
-      <configuration name="GalleryTest.createTag builds the images inside a frame" configurationId="JUnit" />
+    <history-entry file="LinkTest - 2019.09.30 at 20h 42m 22s.xml">
+      <configuration name="LinkTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GalleryTest - 2019.09.28 at 16h 46m 47s.xml">
-      <configuration name="GalleryTest" configurationId="JUnit" />
+    <history-entry file="LinkTest - 2019.09.30 at 20h 42m 47s.xml">
+      <configuration name="LinkTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="kotlin_in_site_test - 2019.09.28 at 16h 46m 57s.xml">
-      <configuration name="kotlin in site_test" configurationId="JUnit" />
+    <history-entry file="LinkTest - 2019.09.30 at 20h 45m 51s.xml">
+      <configuration name="LinkTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -1082,13 +1107,14 @@
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="7" weight="0.3297414" />
+      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.49946696" weight="0.32832617" />
       <window_info anchor="right" id="Palette&#9;" order="5" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5010661" side_tool="true" weight="0.39870688" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.3297414" />
-      <window_info anchor="bottom" id="Run" order="3" weight="0.33690986" />
+      <window_info active="true" anchor="bottom" id="Run" order="3" visible="true" weight="0.33690986" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2260128" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2260128" />
       <window_info anchor="bottom" id="Educational.CheckDetails" order="0" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="4" />
       <window_info anchor="right" id="Gradle" order="3" weight="0.3296875" />
@@ -1099,7 +1125,6 @@
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.49946696" weight="0.32832617" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Build" order="12" weight="0.32983193" />
@@ -1202,7 +1227,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="239" />
+      <option name="time" value="240" />
     </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
@@ -1261,8 +1286,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-common/1.3.21/224a3bcfa1c088dd5d7c4a3958a68427b44c65dc/kotlin-stdlib-common-1.3.21-sources.jar!/generated/_Collections.kt" />
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/main.kt" />
     <entry file="file://$PROJECT_DIR$/src/test/kotlin/html/helpers.kt" />
     <entry file="file://$PROJECT_DIR$/src/test/kotlin/html/special_tag/SpecialTagTest.kt" />
     <entry file="file://$PROJECT_DIR$/.gitignore">
@@ -1497,20 +1520,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/html/Attributes.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/kotlin/html/special_tag/GalleryTest.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1240">
-          <caret line="67" selection-start-line="67" selection-end-line="67" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/resources/test_file.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="20">
@@ -1557,37 +1566,71 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/html/HtmlBuilder.kt">
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/html/special_tag/GalleryTag.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2100">
-          <caret line="105" column="54" selection-start-line="105" selection-start-column="54" selection-end-line="105" selection-end-column="54" />
+        <state relative-caret-position="160">
+          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+          <folding>
+            <element signature="e#26#163#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/projects.json">
+    <entry file="file://$PROJECT_DIR$/src/test/kotlin/html/special_tag/GalleryTagTest.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3200">
-          <caret line="160" column="4" selection-start-line="160" selection-start-column="4" selection-end-line="160" selection-end-column="4" />
+        <state relative-caret-position="664">
+          <caret line="62" column="40" lean-forward="true" selection-start-line="62" selection-start-column="40" selection-end-line="63" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/html/Attributes.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/html/HtmlBuilder.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="43" column="28" selection-start-line="43" selection-start-column="28" selection-end-line="43" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/html/special_tag/LinkTag.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+          <folding>
+            <element signature="e#26#198#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/html/Site.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="26" column="19" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="19" />
+        <state relative-caret-position="190">
+          <caret line="131" column="11" lean-forward="true" selection-start-line="131" selection-start-column="11" selection-end-line="131" selection-end-column="11" />
           <folding>
             <element signature="e#14#92#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/html/special_tag/GalleryTag.kt">
+    <entry file="file://$PROJECT_DIR$/src/test/kotlin/html/special_tag/LinkTest.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+        <state relative-caret-position="364">
+          <caret line="96" lean-forward="true" selection-start-line="96" selection-end-line="96" />
           <folding>
-            <element signature="e#26#163#0" expanded="true" />
+            <element signature="e#26#257#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/projects.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="205" column="9" selection-start-line="205" selection-start-column="9" selection-end-line="205" selection-end-column="9" />
         </state>
       </provider>
     </entry>
