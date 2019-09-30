@@ -34,7 +34,7 @@ class Site(private val projectBuilder: ProjectBuilder){
                 +Attributes("src" to "main.js", "type" to "text/javascript")
             }
             tag("meta") {
-                +Attributes("name" to "viewport", "content" to "width=device-width,initial-scale=1,shrink-to-fit=no")
+                +Attributes("name" to "viewport", "content" to "width=device-width, initial-scale=1.0")
             }
             tag("meta") {
                 +Attributes("name" to "description", "content" to "My personal website and a portfolio for my work")
@@ -98,7 +98,7 @@ class Site(private val projectBuilder: ProjectBuilder){
 
             TagBuilder.createTagWithLanguages(
                 this,
-                "span",
+                "div",
                 "Site is still under construction, best viewed on Desktop",
                 "Strona jest w trakcie przygotowania, najlepiej przeglądać na Desktop")
         }

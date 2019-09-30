@@ -29,10 +29,16 @@ class LinkTag: SpecialTag {
                 val englishText = jsonObject["text-en"] as String?
                     ?: throw IllegalArgumentException("text-en is empty in Link")
 
-                val polishText = jsonObject["text-pl"] as String? ?: englishText
+                val polishText = jsonObject["text-pl"] as String?
+                if(polishText != null){
+                    val languageJsonObject = JsonObject(mapOf("en" to englishText, "pl" to polishText))
+                    TagBuilder.createLanguageTagFromJsonObject(this, "span", languageJsonObject)
+                } else {
+                    tag("span"){
+                        + englishText
+                    }
+                }
 
-                val languageJsonObject = JsonObject(mapOf("en" to englishText, "pl" to polishText))
-                TagBuilder.createLanguageTagFromJsonObject(this, "span", languageJsonObject)
 
 
             }

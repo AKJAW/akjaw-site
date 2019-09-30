@@ -68,17 +68,16 @@ class LinkTest{
     }
 
     @Test
-    fun `if the polish anchor text is empty then it uses the english one`(){
+    fun `if the polish anchor text is empty then it creates one span`(){
         val arguments = mapOf("href" to "test.com", "text-en" to "one")
         val html = createLink(arguments)
 
         val link = html.tagList[0]
 
-        val englishNode = link.tagList[0]
-        Truth.assertThat(englishNode.textContent).contains(arguments.getValue("text-en"))
+        Truth.assertThat(link.tagList).hasSize(1)
 
-        val polishNode = link.tagList[1]
-        Truth.assertThat(polishNode.textContent).contains(arguments.getValue("text-en"))
+        val node = link.tagList[0]
+        Truth.assertThat(node.textContent).contains(arguments.getValue("text-en"))
     }
 
     @Test
