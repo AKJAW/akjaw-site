@@ -18,7 +18,7 @@ class GalleryTag: SpecialTag {
 
         return tag.apply{
             tag("div"){
-                + Attributes("class" to "slider js_simple_dots gallery ${className.orEmpty()}")
+                + Attributes("class" to "slider gallery ${className.orEmpty()}")
                 createFrame(data as JsonArray<*>)
                 createArrows()
                 createDots()

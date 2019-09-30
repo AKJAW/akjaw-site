@@ -22,6 +22,7 @@ class Site(private val projectBuilder: ProjectBuilder){
             tag("title") {
                 + "Aleksander Jaworski"
             }
+
             tag("link") {
                 +Attributes("rel" to "stylesheet", "href" to "style.css")
             }
@@ -33,6 +34,9 @@ class Site(private val projectBuilder: ProjectBuilder){
             }
             tag("meta") {
                 +Attributes("name" to "viewport", "content" to "width=device-width,initial-scale=1,shrink-to-fit=no")
+            }
+            tag("meta") {
+                +Attributes("name" to "description", "content" to "My personal website and a portfolio for my work")
             }
         }
     }
@@ -106,8 +110,8 @@ class Site(private val projectBuilder: ProjectBuilder){
             TagBuilder.createTagWithLanguages(
                 this,
                 "span",
-                "Site is still under construction",
-                "Strona jest w trakcie przygotowania")
+                "Site is still under construction, best viewed on Desktop",
+                "Strona jest w trakcie przygotowania, najlepiej przeglądać na Desktop")
         }
     }
 
