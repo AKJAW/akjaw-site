@@ -23,7 +23,12 @@ class Site(private val projectBuilder: ProjectBuilder){
             tag("title") {
                 + "Aleksander Jaworski"
             }
-
+            tag("link") {
+                +Attributes("rel" to "icon", "type" to "image/png", "href" to "/favicon-32x32.png")
+            }
+            tag("link") {
+                +Attributes("rel" to "icon", "type" to "image/png", "href" to "/favicon-16x16.png")
+            }
             tag("link") {
                 +Attributes("rel" to "stylesheet", "href" to "style.css")
             }
@@ -61,8 +66,10 @@ class Site(private val projectBuilder: ProjectBuilder){
             +Attributes("class" to "header")
             tag("div"){
                 +Attributes("class" to "site-break")
-                tag("h3"){
-                    + "AKJAW"
+                tag("img"){
+                    + Attributes(
+                        "class" to "logo",
+                        "src" to "assets/logo-white.png")
                 }
 
                 createLanguageIcons()
@@ -115,9 +122,17 @@ class Site(private val projectBuilder: ProjectBuilder){
 
             TagBuilder.createTagWithLanguages(
                 this,
-                "div",
-                "My name is Aleksander Jaworski. Currently im am studying applied computer science at the University of Silesia. I am working as a remote developer for 4 online stores and Bubble quiz games. I have finished many projects, mostly web ones, but I have made some desktop application. Also I am working on my own Android app. This web page is a portfolio for these projects.",
-                "Nazywam się Aleksander Jaworski. Obecnie jestem studentem informatyki stosowanej na Uniwersytecie Śląskim. Pracuję jako zdalny deweloper dla 4 sklepów internetowych oraz Bubble quiz games. Zakończyłem wiele projektów, głownie internetowych, ale stworzyłem też parę aplikacji desktopowych. Dodatkowo pracuje nad swoją własną aplikacją na systemy Android. Ta strona jest moim portfolio dla tych projektów."
+                "p",
+                "My name is Aleksander Jaworski, currently I am studying applied computer science at the University of Silesia. I started programming in the middle of 2016 and have been doing it almost everyday since. My work experience includes several web and desktop applications for three online stores and Bubble quiz games. I've finished some personal projects on the side, but they were created mostly for learning purposes. My biggest personal project is my Android app Timi.",
+                "Nazywam się Aleksander Jaworski, obecnie jestem studentem informatyki stosowanej na Uniwersytecie Śląskim. Zacząłem programować w połowie 2016 i od tego czasu robię to prawie codziennie. Jako programista stworzyłem parę aplikacji internetowych oraz komputerowych dla trzech sklepów internetowych oraz Bubble quiz games. Skończyłem trochę osobistych projektów, ale były one stworzone głównie w celu edukacyjnych. Moim największym osobistym projektem jest aplikacja na Android Timi."
+            )
+
+            TagBuilder.createTagWithLanguages(
+                this,
+                "p",
+                "This web page is a portfolio for all my notable projects.",
+                "Ta strona jest portfolio dla większości moich projektów."
+
             )
         }
     }
@@ -169,7 +184,8 @@ fun main(){
         ListTag(),
         TechnologyTagsTag(),
         GalleryTag(),
-        LinkTag()
+        LinkTag(),
+        IconTag()
     )
     val specialTagBuilder = SpecialTagBuilder(specialTags)
 
