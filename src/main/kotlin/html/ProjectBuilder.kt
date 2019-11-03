@@ -9,10 +9,10 @@ import java.lang.IllegalArgumentException
 import java.lang.IllegalStateException
 
 class ProjectBuilder(
-    private val projects: List<Project>,
+    val projects: List<Project>,
     private val specialTagBuilder: SpecialTagBuilder){
 
-    fun getProjects(tag: Tag) {
+    fun createProjects(tag: Tag) {
         tag.apply {
             projects.map {
                 createProject(this, it.projectData)

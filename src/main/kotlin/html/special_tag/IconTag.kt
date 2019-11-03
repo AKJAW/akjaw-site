@@ -2,10 +2,6 @@ package html.special_tag
 
 import html.Attributes
 import html.Tag
-import com.beust.klaxon.JsonArray
-import com.beust.klaxon.JsonObject
-import com.sun.javaws.exceptions.InvalidArgumentException
-import html.TagBuilder
 
 class IconTag: SpecialTag {
     override val signature: String = "icon"

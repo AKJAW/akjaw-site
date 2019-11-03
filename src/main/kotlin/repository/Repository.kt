@@ -1,4 +1,4 @@
-package akjaw.Repository
+package repository
 
 import model.Project
 

@@ -1,7 +1,9 @@
 package html
 
+import com.beust.klaxon.JsonArray
 import com.beust.klaxon.JsonObject
 import html.special_tag.*
+import model.Project
 import repository.JsonRepository
 import java.io.File
 
@@ -19,6 +21,7 @@ class Site(private val projectBuilder: ProjectBuilder){
     }
 
     private fun Tag.createHead() {
+        val release = "3"
         tag("head") {
             tag("title") {
                 + "Aleksander Jaworski"
@@ -30,13 +33,13 @@ class Site(private val projectBuilder: ProjectBuilder){
                 +Attributes("rel" to "icon", "type" to "image/png", "href" to "/favicon-16x16.png")
             }
             tag("link") {
-                +Attributes("rel" to "stylesheet", "href" to "style.css")
+                +Attributes("href" to "style.css?v=$release", "rel" to "stylesheet")
             }
             tag("script") {
                 +Attributes("src" to "lory.min.js", "type" to "text/javascript")
             }
             tag("script") {
-                +Attributes("src" to "main.js", "type" to "text/javascript")
+                +Attributes("src" to "main.js?v=$release", "type" to "text/javascript")
             }
             tag("meta") {
                 +Attributes("name" to "viewport", "content" to "width=device-width, initial-scale=1.0")
@@ -55,8 +58,9 @@ class Site(private val projectBuilder: ProjectBuilder){
                 createUnderConstructionText()
                 createAboutMeSection()
                 createSocialSection()
+                createTagSection(projectBuilder.projects)
 
-                projectBuilder.getProjects(this)
+                projectBuilder.createProjects(this)
             }
         }
     }
@@ -141,22 +145,22 @@ class Site(private val projectBuilder: ProjectBuilder){
         tag("div"){
             + Attributes("class" to "content-out-of-box")
 
-                TagBuilder.createTagWithLanguages(this,
-                    "h3",
-                    "Social links",
-                    "Linki social")
+            TagBuilder.createTagWithLanguages(this,
+                "h3",
+                "Social links",
+                "Linki social")
 
-                createSocialLink(
-                    "AKJAW",
-                    "https://github.com/AKJAW",
-                    "assets/GitHub-Mark-32px.png"
-                )
+            createSocialLink(
+                "AKJAW",
+                "https://github.com/AKJAW",
+                "assets/GitHub-Mark-32px.png"
+            )
 
-                createSocialLink(
-                    "Aleksander Jaworski",
-                    "https://www.linkedin.com/in/akjaw/",
-                    "assets/linked-in.png"
-                )
+            createSocialLink(
+                "Aleksander Jaworski",
+                "https://www.linkedin.com/in/akjaw/",
+                "assets/linked-in.png"
+            )
         }
     }
 
@@ -168,6 +172,47 @@ class Site(private val projectBuilder: ProjectBuilder){
         tag("p"){
             LinkTag()
                 .createTag(this, jsonObject, "social-link")
+        }
+    }
+
+    private fun Tag.createTagSection(projects: List<Project>){
+        val tags: List<List<String>?> = projects.map {
+            (it.projectData["technologyTags"] as? JsonArray<String>)?.value
+        }
+
+        val tagSet: Set<String> = tags
+            .filterNotNull()
+            .flatten()
+            .toSet()
+
+        tag("div") {
+            +Attributes("class" to "content-out-of-box")
+            TagBuilder.createTagWithLanguages(
+                this,
+                "h3",
+                "Available tags",
+                "Dostępne tagi"
+            )
+
+            tag("div") {
+                +Attributes("class" to "technology-tags", "id" to "available")
+                tagSet.map {
+                    tag("div") {
+                        +it
+                    }
+                }
+            }
+
+            TagBuilder.createTagWithLanguages(
+                this,
+                "h3",
+                "Selected tags",
+                "Wybrane tagi"
+            )
+
+            tag("div") {
+                +Attributes("class" to "technology-tags", "id" to "selected")
+            }
         }
     }
 

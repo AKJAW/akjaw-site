@@ -24,7 +24,7 @@ class ProjectBuilderTest{
         val projectBuilder = ProjectBuilder(projects, specialTagBuilder)
 
         val html = HTMLBuilder.html {  }
-        projectBuilder.getProjects(html)
+        projectBuilder.createProjects(html)
 
         Truth.assertThat(html.tagList).hasSize(2)
     }
@@ -36,7 +36,7 @@ class ProjectBuilderTest{
         val projectBuilder = ProjectBuilder(projects, specialTagBuilder)
 
         val html = HTMLBuilder.html {  }
-        projectBuilder.getProjects(html)
+        projectBuilder.createProjects(html)
 
         Truth.assertThat(html.tagList).hasSize(2)
         Truth.assertThat(html.tagList[0].className).contains("project")

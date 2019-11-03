@@ -1,7 +1,6 @@
 package repository
 
 import model.Project
-import akjaw.Repository.Repository
 import json.JsonParser
 import com.beust.klaxon.JsonArray
 import com.beust.klaxon.JsonBase
