@@ -13,5 +13,6 @@ interface SpecialTag{
             split[0] == signature
         }
     }
+
     fun createTag(tag: Tag, data: Any?, className: String? = null): Tag
 }

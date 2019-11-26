@@ -230,7 +230,8 @@ fun main(){
         TechnologyTagsTag(),
         GalleryTag(),
         LinkTag(),
-        IconTag()
+        IconTag(),
+        ImageLinkTag()
     )
     val specialTagBuilder = SpecialTagBuilder(specialTags)
 
