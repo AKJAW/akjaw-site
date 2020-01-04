@@ -65,4 +65,24 @@ class GalleryTagTest{
             Truth.assertThat(image.attributes.contains(attribute)).isTrue()
         }
     }
+
+    @Test
+    fun `createTag creates a video tag if the path has an mp4 file`(){
+        val galleryTag = GalleryTag()
+
+        val tag = HTMLBuilder.html {  }
+
+        val items = listOf("one.mp4")
+        val data = JsonArray(items)
+
+        galleryTag.createTag(tag, data)
+        val video = tag.getByName("video")
+        Truth.assertThat(video).hasSize(1)
+
+        val source = video!![0].tagList[0]
+        Truth.assertThat(source.name).isEqualTo("source")
+
+        val attribute = Attribute("src", "one.mp4")
+        Truth.assertThat(source.attributes).contains(attribute)
+    }
 }

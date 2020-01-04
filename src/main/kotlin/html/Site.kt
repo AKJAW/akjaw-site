@@ -21,7 +21,7 @@ class Site(private val projectBuilder: ProjectBuilder){
     }
 
     private fun Tag.createHead() {
-        val release = "3"
+        val release = "6"
         tag("head") {
             tag("title") {
                 + "Aleksander Jaworski"

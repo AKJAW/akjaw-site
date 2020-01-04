@@ -3,7 +3,6 @@ package html.special_tag
 import html.Attributes
 import html.Tag
 import com.beust.klaxon.JsonArray
-import html.TagBuilder
 import java.lang.IllegalArgumentException
 
 class GalleryTag: SpecialTag {
@@ -34,16 +33,19 @@ class GalleryTag: SpecialTag {
             tag("div") {
                 +Attributes("class" to "slides js_slides")
 
-                iterateOverImagePaths(jsonArray)
+                iterateOverPaths(jsonArray)
             }
         }
     }
 
-    private fun Tag.iterateOverImagePaths(jsonArray: JsonArray<*>) {
+    private fun Tag.iterateOverPaths(jsonArray: JsonArray<*>) {
         jsonArray.forEach {
             when (it) {
                 is String -> {
-                    createImageTag(it)
+                    tag("li") {
+                        +Attributes("class" to "js_slide")
+                        createItemTag(it)
+                    }
                 }
                 else -> {
                     throw IllegalArgumentException("JsonArray item has incorrect type")
@@ -52,16 +54,35 @@ class GalleryTag: SpecialTag {
         }
     }
 
-    private fun Tag.createImageTag(path: String){
-        tag("li"){
-            + Attributes("class" to "js_slide")
+    private fun Tag.createItemTag(path: String){
+        println(path)
+        return when{
+            path.endsWith("mp4") -> createVideoTag(path)
+            else -> createImageTag(path)
+        }
+    }
 
-            tag("img"){
+    private fun Tag.createVideoTag(path: String){
+        tag("video"){
+            + Attributes(
+                "controls" to "true"
+            )
+
+            tag("source"){
                 + Attributes(
-                    "draggable" to "false",
-                    "src" to path
-                    )
+                    "src" to path,
+                    "type" to "video/mp4"
+                )
             }
+        }
+    }
+
+    private fun Tag.createImageTag(path: String){
+        tag("img"){
+            + Attributes(
+                "draggable" to "false",
+                "src" to path
+            )
         }
     }
 
@@ -93,22 +114,22 @@ class GalleryTag: SpecialTag {
     }
 }
 //<div class="slider js_simple_dots simple">
-    //<div class="frame js_frame">
-        //<ul class="slides js_slides">
-            //<li class="js_slide"><img draggable="false" src="../assets/faltur/error.JPG"/></li>
-            //<li class="js_slide"><img draggable="false" src="../assets/faltur/afterUpdate2.JPG"/></li>
-            //<li class="js_slide"><img draggable="false" src="../assets/faltur/afterUpdate.JPG"/></li>
-            //<li class="js_slide"><img draggable="false" src="../assets/faltur/afterRead.JPG"/></li>
-        //</ul>
-    //</div>
-    //
-    //<span class="js_prev prev">
-        //<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 501.5 501.5"><g><path fill="#2E435A" d="M302.67 90.877l55.77 55.508L254.575 250.75 358.44 355.116l-55.77 55.506L143.56 250.75z"></path></g></svg>
-    //</span>
-    //
-    //<span class="js_next next">
-        //<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 501.5 501.5"><g><path fill="#2E435A" d="M199.33 410.622l-55.77-55.508L247.425 250.75 143.56 146.384l55.77-55.507L358.44 250.75z"></path></g></svg>
-    //</span>
-    //
-    //<ul class="js_dots dots"></ul>
+//<div class="frame js_frame">
+//<ul class="slides js_slides">
+//<li class="js_slide"><img draggable="false" src="../assets/faltur/error.JPG"/></li>
+//<li class="js_slide"><img draggable="false" src="../assets/faltur/afterUpdate2.JPG"/></li>
+//<li class="js_slide"><img draggable="false" src="../assets/faltur/afterUpdate.JPG"/></li>
+//<li class="js_slide"><img draggable="false" src="../assets/faltur/afterRead.JPG"/></li>
+//</ul>
+//</div>
+//
+//<span class="js_prev prev">
+//<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 501.5 501.5"><g><path fill="#2E435A" d="M302.67 90.877l55.77 55.508L254.575 250.75 358.44 355.116l-55.77 55.506L143.56 250.75z"></path></g></svg>
+//</span>
+//
+//<span class="js_next next">
+//<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 501.5 501.5"><g><path fill="#2E435A" d="M199.33 410.622l-55.77-55.508L247.425 250.75 143.56 146.384l55.77-55.507L358.44 250.75z"></path></g></svg>
+//</span>
+//
+//<ul class="js_dots dots"></ul>
 //</div>
